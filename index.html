@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Data Centers — Infrastructure for What's Next</title>
+  <meta name="description" content="High-density, sustainable colocation and cloud infrastructure built for AI-scale workloads." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Meridian
+      </a>
+      <ul class="nav-links">
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#stats">Scale</a></li>
+        <li><a href="#sustainability">Sustainability</a></li>
+        <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Colocation · Cloud · AI infrastructure</p>
+        <h1>Infrastructure built for what's next.</h1>
+        <p class="lede">
+          High-density, liquid-cooled data centers engineered for AI-scale
+          compute — with the reliability, security, and sustainability your
+          workloads demand.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Request a tour</a>
+          <a href="#capabilities" class="btn btn-ghost">Explore capabilities</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section">
+      <div class="container">
+        <h2 class="section-title">Capabilities</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>High-density compute</h3>
+            <p>Racks up to 130 kW with direct-to-chip liquid cooling, purpose-built for GPU clusters.</p>
+          </article>
+          <article class="card">
+            <h3>99.999% uptime</h3>
+            <p>Concurrently maintainable, fault-tolerant power and cooling with N+1 redundancy throughout.</p>
+          </article>
+          <article class="card">
+            <h3>Low-latency interconnect</h3>
+            <p>Carrier-neutral meet-me rooms and direct on-ramps to every major cloud provider.</p>
+          </article>
+          <article class="card">
+            <h3>Compliance-ready</h3>
+            <p>SOC 2 Type II, ISO 27001, HIPAA, and PCI-DSS aligned facilities and processes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Built at scale</h2>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value" data-target="450">0</span>
+            <span class="stat-label">MW capacity</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="12">0</span>
+            <span class="stat-label">Global regions</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="99999" data-format="uptime">0</span>
+            <span class="stat-label">% uptime SLA</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="100">0</span>
+            <span class="stat-label">% renewable matched</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sustainability" class="section">
+      <div class="container split">
+        <div class="split-text">
+          <h2 class="section-title">Sustainable by design</h2>
+          <p>
+            Every Meridian facility runs on 100% renewable-matched energy with an
+            average PUE of 1.15. Waste heat is recaptured to warm nearby
+            communities, and closed-loop cooling cuts water usage to near zero.
+          </p>
+          <ul class="checklist">
+            <li>1.15 average PUE across the fleet</li>
+            <li>Closed-loop, near-zero-water cooling</li>
+            <li>Waste-heat recovery for district heating</li>
+          </ul>
+        </div>
+        <div class="split-visual" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta-band">
+      <div class="container cta-inner">
+        <h2>Let's talk capacity.</h2>
+        <p>Tell us about your workload and we'll design a deployment around it.</p>
+        <form class="contact-form" onsubmit="return handleContact(event)">
+          <input type="text" name="name" placeholder="Name" required aria-label="Name" />
+          <input type="email" name="email" placeholder="Work email" required aria-label="Work email" />
+          <button type="submit" class="btn btn-primary">Request a tour</button>
+        </form>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Meridian Data Centers</span>
+      <span class="footer-note">A static landing-page demo.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
