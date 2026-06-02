@@ -3,128 +3,767 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meridian Data Centers — Infrastructure for What's Next</title>
-  <meta name="description" content="High-density, sustainable colocation and cloud infrastructure built for AI-scale workloads." />
+  <title>Grid Mitigation &amp; Data Centers — An Advocacy Playbook</title>
+  <meta name="description" content="A playbook for residents, civil society, county officials, state lawmakers, and Congress to ensure the data center boom benefits communities. From Americans for Responsible Innovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="#" class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        Meridian
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="org" href="#top">
+        Americans for Responsible Innovation
       </a>
-      <ul class="nav-links">
-        <li><a href="#capabilities">Capabilities</a></li>
-        <li><a href="#stats">Scale</a></li>
-        <li><a href="#sustainability">Sustainability</a></li>
-        <li><a href="#contact" class="nav-cta">Get in touch</a></li>
-      </ul>
-    </nav>
+      <nav class="section-nav" aria-label="Sections">
+        <a href="#summary">Summary</a>
+        <a href="#incentives">Incentives</a>
+        <a href="#energy">Energy</a>
+        <a href="#stakeholders">Stakeholders</a>
+        <a href="#guides">Guides</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">Colocation · Cloud · AI infrastructure</p>
-        <h1>Infrastructure built for what's next.</h1>
-        <p class="lede">
-          High-density, liquid-cooled data centers engineered for AI-scale
-          compute — with the reliability, security, and sustainability your
-          workloads demand.
+  <main id="top">
+    <!-- ░░ COVER ░░ -->
+    <section class="cover">
+      <div class="ekg" aria-hidden="true">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+          <path d="M0,100 L260,100 L290,100 L305,40 L320,160 L335,70 L350,100 L600,100 L630,100 L645,30 L662,170 L678,60 L694,100 L960,100 L990,100 L1005,45 L1020,155 L1035,75 L1050,100 L1200,100" />
+        </svg>
+      </div>
+      <div class="container cover-inner">
+        <p class="kicker">Advocacy Playbook</p>
+        <h1 class="cover-title">Grid Mitigation <span class="amp">&amp;</span><br />Data Centers</h1>
+        <p class="standfirst">
+          The data center boom is reshaping America's grid, budgets, and
+          neighborhoods — often behind closed doors. This is a field guide for
+          making it work for communities, not just hyperscalers.
         </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Request a tour</a>
-          <a href="#capabilities" class="btn btn-ghost">Explore capabilities</a>
+        <div class="cover-meta">
+          <span>Americans for Responsible Innovation</span>
+          <span class="dot" aria-hidden="true">●</span>
+          <span>May 29, 2026</span>
         </div>
+        <a href="#summary" class="scroll-cue" aria-label="Begin reading">
+          <span>Begin reading</span>
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><path d="M7 0v18M1 12l6 6 6-6" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
       </div>
     </section>
 
-    <section id="capabilities" class="section">
+    <!-- ░░ EXECUTIVE SUMMARY ░░ -->
+    <section class="section summary" id="summary">
+      <div class="container measure">
+        <p class="section-label"><span class="num">00</span> Executive Summary</p>
+        <p class="lead">
+          <span class="dropcap">D</span>ata center developers hunt for sites with cheap power,
+          pre-zoned land, and skilled workers. Resource-constrained state and local
+          governments race to entice them — dangling tax exemptions and utility
+          incentives that, paradoxically, deprive communities of the very benefits
+          data centers promise to bring.
+        </p>
+        <p>
+          Unmitigated buildouts impose real financial pressure: utilities socialize
+          the cost of grid and transmission upgrades across <em>all</em> ratepayers, and
+          when developers abandon projects, local consumers can be left paying for
+          infrastructure no one needed. Beyond cost, novel data center load patterns
+          can destabilize the grid and bring industrial externalities — diesel exhaust,
+          round-the-clock noise, and light.
+        </p>
+        <p>
+          Yet managed responsibly, data centers <em>can</em> deliver: meaningful local tax
+          revenue that lowers homeowner burdens and funds schools, plus short-term
+          construction jobs and permanent, high-skilled positions. The difference is
+          policy. Too often, deals are shrouded in non-disclosure agreements, and
+          operators face no standardized federal reporting — leaving citizens and
+          regulators in the dark.
+        </p>
+        <p class="kicker-inline">
+          This playbook equips residents, civil society organizations, county
+          officials, state lawmakers, and Congress with the tools to act — across
+          transparency, balanced incentives, ratepayer protections, and enforceable
+          community benefit agreements.
+        </p>
+      </div>
+    </section>
+
+    <!-- ░░ 01 INCENTIVES ░░ -->
+    <section class="section" id="incentives">
       <div class="container">
-        <h2 class="section-title">Capabilities</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>High-density compute</h3>
-            <p>Racks up to 130 kW with direct-to-chip liquid cooling, purpose-built for GPU clusters.</p>
-          </article>
-          <article class="card">
-            <h3>99.999% uptime</h3>
-            <p>Concurrently maintainable, fault-tolerant power and cooling with N+1 redundancy throughout.</p>
-          </article>
-          <article class="card">
-            <h3>Low-latency interconnect</h3>
-            <p>Carrier-neutral meet-me rooms and direct on-ramps to every major cloud provider.</p>
-          </article>
-          <article class="card">
-            <h3>Compliance-ready</h3>
-            <p>SOC 2 Type II, ISO 27001, HIPAA, and PCI-DSS aligned facilities and processes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="stats" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Built at scale</h2>
-        <div class="stats">
-          <div class="stat">
-            <span class="stat-value" data-target="450">0</span>
-            <span class="stat-label">MW capacity</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="12">0</span>
-            <span class="stat-label">Global regions</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="99999" data-format="uptime">0</span>
-            <span class="stat-label">% uptime SLA</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="100">0</span>
-            <span class="stat-label">% renewable matched</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sustainability" class="section">
-      <div class="container split">
-        <div class="split-text">
-          <h2 class="section-title">Sustainable by design</h2>
+        <header class="section-head">
+          <p class="section-label"><span class="num">01</span> The Incentive Trap</p>
+          <h2 class="section-title">If you incentivize it,<br />they will build.</h2>
+        </header>
+        <div class="measure">
           <p>
-            Every Meridian facility runs on 100% renewable-matched energy with an
-            average PUE of 1.15. Waste heat is recaptured to warm nearby
-            communities, and closed-loop cooling cuts water usage to near zero.
+            Data centers can pad local revenues and employ both short-term construction
+            crews and long-term facility staff. That makes them irresistible to
+            cash-strapped local governments, which court hyperscalers with tax
+            exemptions, rezoning, and bespoke agreements — frequently on terms that
+            favor the developer.
           </p>
-          <ul class="checklist">
-            <li>1.15 average PUE across the fleet</li>
-            <li>Closed-loop, near-zero-water cooling</li>
-            <li>Waste-heat recovery for district heating</li>
-          </ul>
+          <h3 class="subhead">Searching, siting, securing</h3>
+          <p>
+            Hyperscalers seek accessible telecom infrastructure and cheap, available
+            electricity, clustering near metro areas to serve population centers via
+            edge computing. Existing data center clusters become magnets — they already
+            check every box.
+          </p>
         </div>
-        <div class="split-visual" aria-hidden="true"></div>
+
+        <div class="stat-strip">
+          <div class="stat">
+            <span class="stat-value" data-target="2" data-suffix=" yrs">0</span>
+            <span class="stat-label">to construct a typical facility</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="1500" data-prefix="~">0</span>
+            <span class="stat-label">construction workers on site</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="250" data-suffix="K ft²">0</span>
+            <span class="stat-label">≈ four football fields</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-target="50" data-prefix="~">0</span>
+            <span class="stat-label">permanent full-time jobs</span>
+          </div>
+        </div>
+
+        <div class="measure">
+          <p>
+            The economic promise can be real. In 2023, Virginia generated
+            <strong>$9.1&nbsp;billion</strong> in GDP from data center construction and
+            operations. In Loudoun County, data center revenue is projected to make up
+            nearly <strong>half</strong> of 2027 tax revenue — money officials have used to cut
+            homeowner taxes and fund schools. In Virginia, every data center job is
+            estimated to support <strong>3.5</strong> more in the surrounding economy.
+          </p>
+          <p>
+            But to win buildouts, governments engage in race-to-the-bottom dynamics.
+            Data centers have become one of the most subsidized industries in the
+            country. States and counties commonly offer:
+          </p>
+        </div>
+
+        <div class="ledger">
+          <div class="ledger-row ledger-head">
+            <div>Incentive</div><div>What it does</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Sales &amp; use tax exemptions</div>
+            <div>Exempt qualifying equipment — servers, cooling, cabling — from sales tax. Scope and duration vary widely; some have no end date.</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Property tax abatements</div>
+            <div>Reduce or eliminate taxes on real and personal property owned by operators.</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Corporate income tax breaks</div>
+            <div>Cut corporate income taxes outright, or via investment tax credits.</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Utility &amp; cost incentives</div>
+            <div>Offer discounted electricity rates or tax exemptions on energy consumed.</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Job &amp; wage tax credits</div>
+            <div>Tie incentives to employment quotas and wage thresholds.</div>
+          </div>
+          <div class="ledger-row">
+            <div class="ledger-term">Enterprise zone incentives</div>
+            <div>Reward builds in designated areas — enterprise zones or rural land.</div>
+          </div>
+        </div>
+
+        <div class="figure-row">
+          <div class="figure">
+            <span class="figure-value">36</span>
+            <span class="figure-label">states exempt sales &amp; use tax on equipment</span>
+          </div>
+          <div class="figure">
+            <span class="figure-value">9</span>
+            <span class="figure-label">states offer property tax exemptions</span>
+          </div>
+          <div class="figure figure-hot">
+            <span class="figure-value">$1.6B</span>
+            <span class="figure-label">Virginia's sales/use tax exemptions, FY2025</span>
+          </div>
+        </div>
+
+        <div class="measure">
+          <p>
+            These exemptions hand high-leverage companies even more leverage, while
+            localities trade away community benefits chasing a promise. And incentives
+            in places hyperscalers <em>already</em> want only deprive localities of revenue
+            they'd have collected anyway.
+          </p>
+        </div>
+
+        <div class="quote-block">
+          <blockquote>
+            Tax incentives impose a double burden: all state residents fund
+            developments concentrated in a handful of counties — and without enforceable
+            agreements, even host communities can't recover the costs.
+          </blockquote>
+        </div>
+
+        <div class="measure">
+          <h3 class="subhead">Public costs through private deals</h3>
+          <p>
+            How these deals get done is as troubling as the subsidies themselves.
+            Officials sign opaque agreements; companies hide behind LLCs; and no federal
+            rule requires operators to disclose their energy use in any standardized,
+            detailed way. Communities bear the costs with little ability to understand,
+            question, or challenge them.
+          </p>
+        </div>
+
+        <div class="field-notes">
+          <article class="note">
+            <span class="note-tag">Virginia</span>
+            <p>Of 31 localities with proposed data centers (2024–25), <strong>80%</strong> of
+            governments had signed NDAs with developers — likely an undercount, given the
+            agreements' secrecy.</p>
+          </article>
+          <article class="note">
+            <span class="note-tag">Kentucky</span>
+            <p>A farmer was offered <strong>$10&nbsp;million</strong> for a 250-acre plot for
+            "industrial development" — without being told the activity, the company, or
+            even the names of the people negotiating.</p>
+          </article>
+        </div>
+
+        <div class="measure">
+          <p>
+            The industry's favorite yardstick — power usage effectiveness (PUE) — is a
+            two-decade-old snapshot that fails to capture what's actually driving energy
+            use. Without mandatory, standardized reporting, citizens, regulators, and
+            lawmakers are all flying blind.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="section cta-band">
-      <div class="container cta-inner">
-        <h2>Let's talk capacity.</h2>
-        <p>Tell us about your workload and we'll design a deployment around it.</p>
-        <form class="contact-form" onsubmit="return handleContact(event)">
-          <input type="text" name="name" placeholder="Name" required aria-label="Name" />
-          <input type="email" name="email" placeholder="Work email" required aria-label="Work email" />
-          <button type="submit" class="btn btn-primary">Request a tour</button>
-        </form>
-        <p class="form-status" id="formStatus" role="status"></p>
+    <!-- ░░ 02 ENERGY (DARK) ░░ -->
+    <section class="section dark" id="energy">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label"><span class="num">02</span> Energy Impacts</p>
+          <h2 class="section-title">Who pays when<br />the grid groans?</h2>
+        </header>
+        <div class="measure">
+          <p>
+            Unmitigated buildouts are coming to a neighborhood near you — and beyond the
+            windowless, industrial design, they demand enormous regional power that can
+            raise residential rates and inject volatility into the lines.
+          </p>
+        </div>
+
+        <ol class="problems">
+          <li>
+            <h4>Socialized infrastructure</h4>
+            <p>Before a data center connects, utilities build new lines and upgrades so
+            everyone keeps the lights on — then spread the cost across all ratepayers,
+            even though new loads reap the benefit. Co-locating with power plants curtails
+            supply for others and pushes prices up.</p>
+          </li>
+          <li>
+            <h4>A spiky EKG, not a flat line</h4>
+            <p>AI workloads consume power in sharp, intermittent bursts. Loads can suddenly
+            exceed grid capacity — tripping protective disconnects — or instantly drop,
+            risking cascading failures and blackouts that damage equipment.</p>
+          </li>
+          <li>
+            <h4>Inflexible when it matters most</h4>
+            <p>Many AI data centers can't curtail demand without degrading operations —
+            making them a liability precisely on hot summer days when operators must
+            balance supply and demand fast.</p>
+          </li>
+          <li>
+            <h4>Stranded assets, real bills</h4>
+            <p>If a hyperscaler walks after upgrades are built, utilities recoup the cost
+            from everyone else. Inflated forecasts and "location shopping" — even
+            double-counted sites — drive overinvestment that consumers underwrite.</p>
+          </li>
+        </ol>
+
+        <div class="bigstat">
+          <div class="bigstat-figure">~1,500&nbsp;MW</div>
+          <p class="bigstat-caption">
+            vanished from the grid in seconds. In 2024, a routine transmission line
+            fault caused roughly 1,500 MW of data centers to disconnect at once — the
+            equivalent of a nuclear plant suddenly disappearing without warning.
+          </p>
+        </div>
+
+        <div class="measure">
+          <h3 class="subhead">Industrial externalities</h3>
+          <p>
+            Beyond bills and reliability, data centers impose invisible costs on host
+            communities. Round-the-clock operation means backup diesel generators that
+            emit hazardous pollutants, while on-site equipment can exceed
+            <strong>85&nbsp;dBA</strong> — a level NIOSH considers harmful over an eight-hour day.
+          </p>
+        </div>
+
+        <div class="field-notes on-dark">
+          <article class="note">
+            <span class="note-tag">Tennessee</span>
+            <p>Researchers found the xAI Colossus campus raised peak nitrogen dioxide
+            concentrations by <strong>79%</strong> in nearby areas — spikes with real health
+            consequences for residents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ 03 STAKEHOLDERS ░░ -->
+    <section class="section" id="stakeholders">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label"><span class="num">03</span> The Coalition</p>
+          <h2 class="section-title">Who holds the<br />levers of change.</h2>
+        </header>
+        <div class="measure">
+          <p>
+            Effective advocacy requires transparency — and it works best when each actor
+            uses the authority and resources only they possess. When citizens, civil
+            society, counties, states, and federal agencies move in concert, they can
+            reset the terms of development to maximize local gains and mitigate harms.
+          </p>
+        </div>
+
+        <div class="actors">
+          <article class="actor">
+            <span class="actor-num">i</span>
+            <h4>Citizens &amp; communities</h4>
+            <p>Vote, organize, and show up — demonstrating to officials how buildouts
+            affect them, and deciding who earns another term.</p>
+          </article>
+          <article class="actor">
+            <span class="actor-num">ii</span>
+            <h4>Civil society organizations</h4>
+            <p>Fill the technical, legal, and informational gaps — researching, intervening
+            in proceedings, and negotiating community benefit agreements.</p>
+          </article>
+          <article class="actor">
+            <span class="actor-num">iii</span>
+            <h4>County officials</h4>
+            <p>The key siting decision-makers — wielding zoning, permitting, and
+            ordinances on energy use, noise, and workforce standards.</p>
+          </article>
+          <article class="actor">
+            <span class="actor-num">iv</span>
+            <h4>State lawmakers</h4>
+            <p>Regulate ratepayer costs through PUCs, design tax incentives, and set
+            permanent baseline standards for future projects.</p>
+          </article>
+          <article class="actor">
+            <span class="actor-num">v</span>
+            <h4>Federal authorities</h4>
+            <p>Provide the regulatory floor — energy-data collection, grid reliability
+            standards, and pollution rules that standardize a fragmented landscape.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ 04 GUIDES (TABS) ░░ -->
+    <section class="section section-alt" id="guides">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label"><span class="num">04</span> Field Guides</p>
+          <h2 class="section-title">Advocacy, by role.</h2>
+          <p class="section-intro">Successful advocacy takes a different shape for each
+          stakeholder. Choose your guide — complete with real-world examples of tactics
+          that worked.</p>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Advocacy guides">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="county">County Officials</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="state">State Lawmakers</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="cso">Civil Society</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="citizens">Citizens</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="federal">Federal</button>
+        </div>
+
+        <!-- COUNTY -->
+        <div class="panel is-active" role="tabpanel" data-panel="county">
+          <p class="panel-lead">County officials wield significant authority through
+          zoning, permitting, moratoriums, and standards on noise and energy use.</p>
+
+          <h4 class="play-group">Secure smart siting</h4>
+          <ul class="plays">
+            <li><b>Optimize existing assets.</b> Prioritize pre-zoned industrial,
+            commercial, or brownfield sites to reduce litigation and infrastructure friction.</li>
+            <li><b>Use appropriate approvals.</b> Shift from by-right to special-use
+            permits so the public has a voice and residents get better terms.</li>
+            <li><b>Secure neighborhood character.</b> Require enclosed cooling and screened
+            mechanical equipment to protect aesthetics and property values.</li>
+            <li><b>Site for grid stability.</b> Demand grid reliability assessments before
+            granting permits.</li>
+            <li><b>Use temporary pauses.</b> Moratoriums create political space to write
+            lasting ordinances and modernize outdated rules.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Sterling Heights, MI</span>
+            <p>The City Council unanimously paused new data centers for one year — using
+            the time to rewrite zoning rules last set in 1978.</p></article>
+          </div>
+
+          <h4 class="play-group">Mandate transparency</h4>
+          <ul class="plays">
+            <li><b>Standardized disclosure.</b> Require non-aggregated data on predicted
+            demand, backup systems, flexible-load assurance, and contingency plans.</li>
+            <li><b>Avoid secrecy.</b> Refuse NDAs to maintain constituent trust.</li>
+            <li><b>Implement sunshine periods.</b> Mandate public review before votes on
+            NDA-covered projects.</li>
+            <li><b>Follow GAAP.</b> Disclose abatement revenue losses under GASB Statement
+            No. 77 in your Annual Comprehensive Financial Report.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Pima County, AZ</span>
+            <p>After Project Blue NDAs surfaced, the county instituted a 90-day sunshine
+            period, capped economic-development NDA terms at two years, and now reports
+            active NDAs to the Board quarterly.</p></article>
+          </div>
+
+          <h4 class="play-group">Optimize incentives</h4>
+          <ul class="plays">
+            <li><b>Know your worth.</b> In high-demand clusters, you have the leverage to
+            raise equipment taxes or remove exemptions.</li>
+            <li><b>Protect residential ratepayers.</b> Ensure rates shield residents from
+            up-front transmission, capacity, and stranded-asset costs.</li>
+            <li><b>Review underperforming incentives.</b> Periodically test whether
+            exemptions deliver a balanced return.</li>
+            <li><b>Lobby the state.</b> Push to repeal unproductive state exemptions that
+            cost the county revenue.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Prince William County, VA</span>
+            <p>Supervisors raised the computer-and-peripheral tax from $2.15 to $4.15 per
+            $100 of assessed value (2024–2026), and commissioned a fiscal-impact analysis
+            that found data centers a local net benefit.</p></article>
+            <article class="note"><span class="note-tag">Pima County, AZ</span>
+            <p>The Board directed its state lobbyist to advocate for eliminating state and
+            local tax exemptions on data center equipment.</p></article>
+          </div>
+
+          <h4 class="play-group">Ensure quality-of-life protections</h4>
+          <ul class="plays">
+            <li><b>Set enforceable thresholds.</b> Establish limits for noise and
+            residential setback distances.</li>
+            <li><b>Enforce community benefit standards.</b> Use CBAs that mandate minimum
+            tax payments and local hiring in exchange for subsidies.</li>
+            <li><b>Translate technical impacts.</b> Express power demand in local terms
+            residents can grasp.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">West Des Moines, IA</span>
+            <p>Officials struck a deal with Microsoft securing 100% renewable operation
+            and over $2 billion in tax revenue.</p></article>
+          </div>
+          <p class="resources"><b>Resources:</b> Data Center Regulation Tracker · Database
+          of Emerging Large-Load Tariffs</p>
+        </div>
+
+        <!-- STATE -->
+        <div class="panel" role="tabpanel" data-panel="state" hidden>
+          <p class="panel-lead">State lawmakers hold the highest authority to regulate
+          utility mandates, design incentives, and set permanent reforms that protect
+          ratepayers while enabling responsible growth.</p>
+
+          <h4 class="play-group">Codify grid stability &amp; ratepayer protections</h4>
+          <ul class="plays">
+            <li><b>Create advisory boards.</b> Stand up expert-led panels to guide policy.</li>
+            <li><b>Mandate grid impact assessments.</b> Require them for interconnection
+            requests above a set threshold.</li>
+            <li><b>Determine cost causation.</b> Authorize PUCs to assess and publish how
+            new loads shift costs onto other customers.</li>
+            <li><b>Recover capacity &amp; infrastructure costs.</b> Assign recovery rates to
+            the large loads driving them.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">California · SB 57</span>
+            <p>Lets the PUC evaluate whether data center costs are shifted onto other
+            customers, with public findings reported to the legislature.</p></article>
+            <article class="note"><span class="note-tag">Virginia · HB 1393 / HB 503</span>
+            <p>Would direct Dominion to recover added generating-capacity costs from
+            customers with 25 MW+ demand — and recover any "but-for" data center costs
+            solely from facilities of 100 MW or greater.</p></article>
+          </div>
+
+          <h4 class="play-group">Plan for contingencies</h4>
+          <ul class="plays">
+            <li><b>Stranded-asset contingency funding.</b> Require financial assurances
+            before construction to cover abandoned-project costs.</li>
+            <li><b>Define flexible-load standards.</b> Require the ability to raise or lower
+            consumption in response to grid needs.</li>
+            <li><b>Incentivize temporal flexibility.</b> Encourage shifting workloads to
+            off-peak or high-renewable hours.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">South Carolina · SB 867</span>
+            <p>Would create a Data Center Development Office and tiered, load-based
+            permitting with strict noise and decommissioning standards.</p></article>
+            <article class="note"><span class="note-tag">9 states + D.C. → PJM</span>
+            <p>Legislators demanded that data centers joining the grid accept interruptible
+            service, letting PJM curtail them during peak demand.</p></article>
+          </div>
+
+          <h4 class="play-group">Maximize benefits</h4>
+          <ul class="plays">
+            <li><b>Freeze or restructure weak exemptions.</b> Audit them; narrow, raise, or
+            repeal those that don't deliver.</li>
+            <li><b>Tie incentives to standards.</b> Condition breaks on wage thresholds,
+            environmental baselines, and 20+ year commitments.</li>
+            <li><b>Support CBAs.</b> Build legal frameworks for enforceable local hiring,
+            job-quality, and environmental commitments.</li>
+            <li><b>Unlock industry development &amp; resident wealth.</b> Require investment in
+            the local tech ecosystem; let communities co-invest.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">New Jersey</span>
+            <p>CoreWeave co-founded Princeton's NJ AI Hub with a $20M investment; the state
+            now offers up to $250M in tradable incentives for matching ecosystem
+            investment.</p></article>
+            <article class="note"><span class="note-tag">Alaska · N. Dakota · New Mexico</span>
+            <p>Resource-revenue funds — the Alaska Permanent Fund, ND Legacy Fund, and a
+            $7B New Mexico childcare endowment — model resident wealth-sharing.</p></article>
+          </div>
+
+          <h4 class="play-group">Mandate transparency</h4>
+          <ul class="plays">
+            <li><b>Prohibit NDAs.</b> Ban government NDAs tied to data center projects.</li>
+            <li><b>Require resource reporting.</b> Mandate standardized energy and emissions
+            data.</li>
+            <li><b>Publicize secured commitments.</b> Launch dashboards of jobs, wages, and
+            subsidies.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">New York · SB 373</span>
+            <p>Would bar the state and its authorities from economic-development NDAs.</p></article>
+            <article class="note"><span class="note-tag">Nevada · Illinois</span>
+            <p>Both publish data center project commitments — promised jobs, wages, and
+            incentive applications.</p></article>
+          </div>
+          <p class="resources"><b>Resources:</b> Data Center Regulation Tracker · Database
+          of Emerging Large-Load Tariffs · Multistate.ai</p>
+        </div>
+
+        <!-- CSO -->
+        <div class="panel" role="tabpanel" data-panel="cso" hidden>
+          <p class="panel-lead">Civil society organizations supply the legal, technical,
+          and regulatory expertise that individual citizens often lack.</p>
+
+          <h4 class="play-group">Identify risks &amp; leverage points</h4>
+          <ul class="plays">
+            <li><b>Track unpermitted infrastructure.</b> Watch for gas turbines and other
+            assets operating without permits.</li>
+            <li><b>Produce independent cost-benefit analysis.</b> Quantify the true costs
+            communities face.</li>
+            <li><b>Translate the technical.</b> Turn transmission and pollution impacts into
+            plain terms.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Oregon</span>
+            <p>The Citizens Utility Board found PGE planned to push 34–45% of new supply and
+            transmission costs onto households — and accused it of circumventing Oregon's
+            POWER Act.</p></article>
+          </div>
+
+          <h4 class="play-group">Master the technical foundations</h4>
+          <ul class="plays">
+            <li><b>Commission expert studies.</b> Fund public-health and externality analyses
+            of co-located plants and generators.</li>
+            <li><b>Monitor legislative trends.</b> Track bills that assign infrastructure
+            costs to data centers.</li>
+            <li><b>Scrutinize energy metrics.</b> Challenge reliance on outdated measures
+            like PUE.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">South Memphis, TN</span>
+            <p>The xAI Colossus campus ran 20 unpermitted gas turbines at double its
+            permitted capacity. A CSO commissioned flyovers after residents reported gas
+            smells; a TIME-commissioned analysis revealed a 79% spike in peak pollutants.</p></article>
+          </div>
+
+          <h4 class="play-group">Formally intervene &amp; empower communities</h4>
+          <ul class="plays">
+            <li><b>Secure intervenor status.</b> File in PUC proceedings to cross-examine
+            witnesses and submit expert testimony.</li>
+            <li><b>Draft CBAs.</b> Help local groups negotiate enforceable hiring, noise, and
+            grid-upgrade commitments.</li>
+            <li><b>Build coalitions &amp; coordinate records requests.</b> Use FOIA to surface
+            contracts, incentives, and NDAs.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Virginia</span>
+            <p>The Piedmont Environmental Council intervened in a rate case; the SCC ruling
+            acknowledged data centers are driving massive grid costs potentially
+            subsidized by ratepayers.</p></article>
+            <article class="note"><span class="note-tag">Arizona</span>
+            <p>Luminaria's records request revealed Project Blue's end user was AWS — under
+            an NDA that promised AWS 10 days' notice to seek protective orders.</p></article>
+          </div>
+          <p class="resources"><b>Resources:</b> Data Center Regulation Tracker · Database
+          of Emerging Large-Load Tariffs · Community Benefit Agreements · Heatmap</p>
+        </div>
+
+        <!-- CITIZENS -->
+        <div class="panel" role="tabpanel" data-panel="citizens" hidden>
+          <p class="panel-lead">How to ensure new data centers bring benefits to your
+          community — and how to push back when they don't.</p>
+
+          <h4 class="play-group">Know the risks</h4>
+          <ul class="plays">
+            <li><b>Watch for red flags.</b> Unregulated noise, emissions, 24/7 lighting, and
+            exposed equipment in residential or agricultural zones.</li>
+            <li><b>Mind long-term concessions.</b> Property-tax exemptions can gut K-12
+            funding; abandoned projects can strand costs on residents.</li>
+            <li><b>Keep the upside in view.</b> Revenue, lower taxes, jobs, and digital
+            access are real — CBAs help make them materialize.</li>
+          </ul>
+
+          <h4 class="play-group">Get the facts</h4>
+          <ul class="plays">
+            <li><b>Use public records.</b> Most state laws let you request NDAs and
+            contracts.</li>
+            <li><b>Leverage expert help.</b> Ask CSOs for cost-benefit analysis on your
+            rates.</li>
+            <li><b>Adopt proven strategies.</b> Use trackers like datacentertracker.org to
+            see what's working elsewhere.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Pima County, AZ</span>
+            <p>A public records request revealed Project Blue's user was AWS — despite a
+            county agreement not to share the name.</p></article>
+          </div>
+
+          <h4 class="play-group">Speak up &amp; show up</h4>
+          <ul class="plays">
+            <li><b>Demand transparency.</b> Ask for contract and exemption breakdowns
+            <em>before</em> any vote.</li>
+            <li><b>Show up in numbers.</b> Large hearing turnout and petitions give officials
+            cover to act.</li>
+            <li><b>Organize &amp; intervene.</b> Form groups, raise awareness, and ask CSOs to
+            serve as intervenors.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Minnesota</span>
+            <p>CURE MN intervened before the PUC and argued an Amazon proposal needed full
+            review — the PUC rejected Amazon's exemption request.</p></article>
+          </div>
+
+          <h4 class="play-group">Exercise legal &amp; electoral power</h4>
+          <ul class="plays">
+            <li><b>Vote for utility oversight.</b> In 11 states (GA, AZ, AL…) citizens elect
+            PUC members directly.</li>
+            <li><b>Recall &amp; referendum.</b> Recall officials or place transparency ordinances
+            on the ballot.</li>
+            <li><b>The legal option.</b> Sue when officials violate zoning or notice laws.</li>
+          </ul>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Georgia · Oregon · Wisconsin</span>
+            <p>Georgia voters unseated two PUC incumbents; Cascade Locks, OR recalled
+            officials backing a 10 MW project; Port Washington, WI passed a referendum
+            requiring voter approval before granting data center incentives.</p></article>
+          </div>
+        </div>
+
+        <!-- FEDERAL -->
+        <div class="panel" role="tabpanel" data-panel="federal" hidden>
+          <p class="panel-lead">Most siting is state and local — but Congress has standing
+          federal authorities to bring relief. Twelve relevant bills were introduced in
+          Q1 2026 alone, signaling growing appetite for action.</p>
+
+          <h4 class="play-group">Existing authorities</h4>
+          <ul class="plays">
+            <li><b>EIA</b> — collects major energy-consumption data and has launched pilots
+            on data center energy sources, consumption, and cooling.</li>
+            <li><b>FERC</b> — regulates wholesale interstate power and is weighing direct
+            authority over large-load interconnection; must keep rates "just and reasonable."</li>
+            <li><b>NERC</b> — could set mandatory reliability standards for novel data center
+            loads, subject to FERC approval.</li>
+            <li><b>DOE</b> — researches grid impacts, issues resource-adequacy assessments,
+            and serves as the energy sector risk-management agency.</li>
+            <li><b>EPA &amp; NRC</b> — set Clean Air Act pollution standards; license the nuclear
+            reactors hyperscalers increasingly eye for power.</li>
+          </ul>
+
+          <h4 class="play-group">Areas for potential action</h4>
+          <div class="ledger">
+            <div class="ledger-row ledger-head"><div>Action</div><div>Description</div></div>
+            <div class="ledger-row"><div class="ledger-term">Hyperscalers pay upgrade costs</div>
+            <div>Condition federal tax benefits on states directing PUCs to allocate
+            transmission and modernization costs to data centers.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Efficiency R&amp;D co-investment</div>
+            <div>Require large facilities to co-fund federal R&amp;D in liquid cooling, power
+            distribution, and low-power chips.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Environmental floor</div>
+            <div>Set federal emissions limits and efficiency standards scaled to facility
+            size and load.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Build in industrial zones</div>
+            <div>Incentivize buildouts on commercial, industrial, brownfield, and disturbed
+            land.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Enforceable CBAs</div>
+            <div>Require a revenue-sharing floor, NDA restrictions, and local labor and wage
+            standards.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Consumption reporting</div>
+            <div>Mandate disclosure of load behavior, energy use, and prices paid to improve
+            forecasting.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Flexible-load requirements</div>
+            <div>Incentivize states and NERC rules directing PUCs to enforce
+            disconnect-capable, backup-equipped loads.</div></div>
+            <div class="ledger-row"><div class="ledger-term">Opportunity Zone conditions</div>
+            <div>Require enforceable CBAs with CSO involvement so communities benefit.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CONCLUSION ░░ -->
+    <section class="section conclusion" id="conclusion">
+      <div class="container measure">
+        <p class="section-label"><span class="num">05</span> Conclusion</p>
+        <h2 class="section-title">Communities are<br />not powerless.</h2>
+        <p>
+          Hyperscalers are proposing buildouts at gigawatt scale, often catching
+          communities off guard. New loads strain the grid; socialized cost models raise
+          residential bills; abandoned projects can strand costs on everyone else. All
+          the while, states forgo billions in revenue, deals are struck in secret, and no
+          standardized reporting exists.
+        </p>
+        <p>
+          Yet local and state actors are already proving responsible development is
+          achievable. Citizens are filling hearings, CSOs are intervening in PUC
+          proceedings, and lawmakers are shifting costs back onto developers and mandating
+          transparency.
+        </p>
+        <p class="closing-line">
+          The tools for change are in people's hands. With the right information — and
+          coordination across stakeholders — communities can ensure the data center boom
+          works for <em>them</em>.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Meridian Data Centers</span>
-      <span class="footer-note">A static landing-page demo.</span>
+      <div>
+        <p class="footer-org">Americans for Responsible Innovation</p>
+        <p class="footer-sub">Grid Mitigation &amp; Data Centers: An Advocacy Playbook · May 29, 2026</p>
+      </div>
+      <p class="footer-note">© <span id="year"></span> Americans for Responsible Innovation.
+      A field guide for residents, civil society, county officials, state lawmakers, and Congress.</p>
     </div>
   </footer>
 

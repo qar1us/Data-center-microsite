@@ -1,27 +1,46 @@
-# Data Center Microsite
+# Grid Mitigation & Data Centers — Advocacy Playbook
 
-A static landing-page microsite for a fictional data center company (**Meridian Data Centers**). Built with plain HTML, CSS, and vanilla JavaScript — no build step required.
+A narrative, single-page microsite of the **Grid Mitigation & Data Centers: Advocacy Playbook** from *Americans for Responsible Innovation*. It distills the playbook into a long-form, editorial reading experience with an interactive guide for each stakeholder group.
 
-## Features
+Built with plain HTML, CSS, and vanilla JavaScript — no build step.
 
-- Responsive landing page: sticky nav, hero, capabilities grid, animated stat counters, sustainability section, and a contact CTA.
-- Animated stat counters that fire on scroll (IntersectionObserver).
-- Client-side contact form (demo only — no backend).
-- Dark, modern theme driven by CSS custom properties in `styles.css`.
+## Design
+
+Bold but academic: a warm-paper palette with ink text and a single vermilion signal color; a high-contrast display serif (Fraunces) paired with a screen-optimized reading serif (Newsreader) and a monospace for labels and data (IBM Plex Mono). Fonts load from Google Fonts.
+
+The page is structured as a narrative: cover → executive summary → the incentive trap → energy impacts (a dramatic dark section) → the coalition of stakeholders → role-by-role field guides (tabbed) → conclusion.
+
+## Sections & content
+
+- **Executive summary** with drop cap and editorial lead.
+- **01 · The Incentive Trap** — siting dynamics, animated stat strip, an incentives ledger, headline figures, and "field note" case cards (Virginia NDAs, Kentucky).
+- **02 · Energy Impacts** — the four "who pays" problems, the ~1,500 MW disconnect, and industrial externalities (xAI Colossus, TN).
+- **03 · The Coalition** — the five stakeholder groups.
+- **04 · Field Guides** — interactive tabs for County Officials, State Lawmakers, Civil Society, Citizens, and Federal levers, each with strategies and real-world examples.
+- **05 · Conclusion** — closing call to action.
+
+## Interactions (`script.js`)
+
+- Reading-progress bar.
+- Scroll-spy section nav highlighting.
+- Stat counters that animate on scroll.
+- Accessible tabbed stakeholder guides (click + arrow-key navigation).
+
+All content lives in the HTML, so it remains fully readable if JavaScript is disabled.
 
 ## Project structure
 
 ```
 .
-├── index.html    # Markup and page sections
-├── styles.css    # Theme tokens and all styling
-├── script.js     # Stat counters, footer year, contact form
+├── index.html    # All content and page sections
+├── styles.css    # Design system: tokens, typography, layout
+├── script.js     # Progress bar, scroll-spy, counters, tabs
 └── README.md
 ```
 
 ## Running locally
 
-It's a static site — open `index.html` directly, or serve it:
+It's a static site — open `index.html`, or serve it:
 
 ```sh
 python3 -m http.server 8000
@@ -30,10 +49,10 @@ python3 -m http.server 8000
 
 ## Customizing
 
-- Colors and spacing: edit the `:root` variables at the top of `styles.css`.
+- Colors, fonts, and spacing: edit the `:root` tokens at the top of `styles.css`.
 - Copy and sections: edit `index.html`.
-- Stat values: change the `data-target` attributes on `.stat-value` elements.
+- Animated figures: change the `data-target` / `data-prefix` / `data-suffix` attributes on `.stat-value` elements.
 
 ## Deploying
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages, etc.). For GitHub Pages, enable Pages on the repo and point it at the `main` branch root.
+Any static host works (GitHub Pages, Netlify, Cloudflare Pages). For GitHub Pages, enable Pages on the repo and point it at the `main` branch root.
