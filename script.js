@@ -148,6 +148,18 @@ tabs.forEach((tab) => {
   tab.addEventListener("click", () => activateTab(tab.dataset.tab));
 });
 
+// Deep-link from the action page: ?guide=<key> opens that guide and scrolls to it
+const guideParam = new URLSearchParams(window.location.search).get("guide");
+if (guideParam && tabs.some((t) => t.dataset.tab === guideParam)) {
+  activateTab(guideParam);
+  const guidesSection = document.getElementById("guides");
+  if (guidesSection) {
+    requestAnimationFrame(() =>
+      guidesSection.scrollIntoView({ behavior: "smooth", block: "start" })
+    );
+  }
+}
+
 // Keyboard navigation for the tablist
 const tablist = document.querySelector(".tabs");
 if (tablist) {
