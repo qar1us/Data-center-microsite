@@ -267,6 +267,43 @@
           </p>
         </div>
 
+        <figure class="loadchart" aria-labelledby="lc-cap">
+          <div class="loadchart-frame">
+            <svg viewBox="0 0 800 380" role="img" aria-label="Chart comparing a smooth typical industrial power load against the spiky, intermittent load of an AI data center that ends in a sudden disconnect.">
+              <!-- grid -->
+              <g class="lc-grid">
+                <line x1="70" y1="80" x2="770" y2="80" />
+                <line x1="70" y1="150" x2="770" y2="150" />
+                <line x1="70" y1="220" x2="770" y2="220" />
+                <line x1="70" y1="290" x2="770" y2="290" />
+              </g>
+              <!-- axes -->
+              <line class="lc-axis-line" x1="70" y1="40" x2="70" y2="320" />
+              <line class="lc-axis-line" x1="70" y1="320" x2="770" y2="320" />
+              <!-- disconnect guide -->
+              <line class="lc-drop" x1="718" y1="205" x2="718" y2="318" />
+              <!-- flat industrial load -->
+              <path class="lc-line lc-flat" d="M70,238 C150,228 230,246 310,234 C390,224 470,242 550,232 C630,224 710,238 770,233" />
+              <!-- spiky AI load -->
+              <path class="lc-line lc-spiky" d="M70,200 L105,202 L130,198 L145,196 L155,70 L166,300 L176,150 L188,205 L210,203 L250,206 L275,205 L288,95 L299,290 L309,160 L320,205 L350,204 L390,207 L410,205 L424,60 L436,300 L447,170 L458,205 L490,206 L520,204 L545,205 L560,110 L571,285 L582,165 L593,205 L620,206 L650,205 L690,205 L715,205 L719,318 L770,318" />
+              <circle class="lc-pulse" cx="70" cy="200" r="4.5" />
+              <!-- labels -->
+              <text class="lc-axis" x="70" y="30">POWER DEMAND</text>
+              <text class="lc-axis" x="770" y="356" text-anchor="end">TIME →</text>
+              <text class="lc-annot" x="712" y="344" text-anchor="end">sudden disconnect ↓</text>
+            </svg>
+          </div>
+          <div class="lc-legend">
+            <span class="lc-key lc-key-flat">Typical industrial load</span>
+            <span class="lc-key lc-key-spiky">AI data center load</span>
+          </div>
+          <figcaption id="lc-cap" class="lc-cap">
+            Most industrial demand is steady and predictable. AI workloads spike and
+            collapse in seconds — straining a grid built for a flatter line, until a
+            single fault can drop them all at once.
+          </figcaption>
+        </figure>
+
         <ol class="problems">
           <li>
             <h4>Socialized infrastructure</h4>

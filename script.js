@@ -74,6 +74,59 @@ if ("IntersectionObserver" in window) {
   statEls.forEach((el) => animateStat(el));
 }
 
+// ── Load chart: draw-in + traveling pulse ─────────────
+(function initLoadChart() {
+  const chart = document.querySelector(".loadchart");
+  if (!chart) return;
+
+  const lines = chart.querySelectorAll(".lc-line");
+  const spiky = chart.querySelector(".lc-spiky");
+  const dot = chart.querySelector(".lc-pulse");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Prime each line as a fully "undrawn" dash.
+  lines.forEach((p) => {
+    const len = p.getTotalLength();
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = reduce ? 0 : len;
+  });
+
+  function startPulse() {
+    if (!spiky || !dot) return;
+    const len = spiky.getTotalLength();
+    const duration = 3400;
+    let startT = null;
+    function frame(now) {
+      if (startT === null) startT = now;
+      const progress = ((now - startT) % duration) / duration;
+      const pt = spiky.getPointAtLength(progress * len);
+      dot.setAttribute("cx", pt.x.toFixed(1));
+      dot.setAttribute("cy", pt.y.toFixed(1));
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  if (reduce || !("IntersectionObserver" in window)) {
+    chart.classList.add("in-view");
+    return;
+  }
+
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          chart.classList.add("in-view");
+          setTimeout(startPulse, 1800); // begin after the lines finish drawing
+          obs.disconnect();
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+  obs.observe(chart);
+})();
+
 // ── Stakeholder guide tabs ────────────────────────────
 const tabs = Array.from(document.querySelectorAll(".tab"));
 const panels = Array.from(document.querySelectorAll(".panel"));

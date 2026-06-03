@@ -312,6 +312,49 @@ strong, b { font-weight: 600; }
 }
 .bigstat-caption { font-size: 1.15rem; line-height: 1.5; margin: 0; max-width: 34rem; }
 
+/* ── Load chart (signature visual) ──────────────────── */
+.loadchart { margin: 3.5rem 0; }
+.loadchart-frame {
+  border: 1px solid #2f2f37; border-radius: 6px;
+  background: #18181d; padding: 1.4rem 1.4rem 0.6rem;
+}
+.loadchart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lc-grid line { stroke: #27272e; stroke-width: 1; }
+.lc-axis-line { stroke: #3a3a42; stroke-width: 1; }
+.lc-drop { stroke: #e8754f; stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.55; }
+.lc-line { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+.lc-flat { stroke: #6f8b96; opacity: 0.9; }
+.lc-spiky { stroke: #e8754f; filter: drop-shadow(0 0 5px rgba(232,117,79,0.35)); }
+.lc-pulse { fill: #fff; opacity: 0; filter: drop-shadow(0 0 6px rgba(255,255,255,0.9)); }
+.lc-axis { fill: #6f6a60; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; }
+.lc-annot { fill: #e8754f; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; }
+
+/* draw-in animation, triggered when scrolled into view */
+.loadchart .lc-line { stroke-dashoffset: 0; }
+.loadchart.armed .lc-line { /* set by JS once lengths are known */ }
+.loadchart.in-view .lc-line {
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  stroke-dashoffset: 0 !important;
+}
+.loadchart.in-view .lc-pulse { opacity: 1; transition: opacity 0.5s ease 2s; }
+
+.lc-legend { display: flex; flex-wrap: wrap; gap: 1.8rem; margin-top: 1.1rem; }
+.lc-key {
+  font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.03em;
+  text-transform: uppercase; color: #cfcabf;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+}
+.lc-key::before {
+  content: ""; width: 16px; height: 3px; border-radius: 2px;
+}
+.lc-key-flat::before { background: #6f8b96; }
+.lc-key-spiky::before { background: #e8754f; }
+.lc-cap {
+  font-family: var(--serif-text); font-style: italic;
+  font-size: 1.05rem; line-height: 1.5; color: #9d988c;
+  margin-top: 1.2rem; max-width: 40rem;
+}
+
 /* ── Actors grid ────────────────────────────────────── */
 .actors {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
