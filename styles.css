@@ -416,6 +416,25 @@ strong, b { font-weight: 600; }
   transform: rotate(45deg);
 }
 .plays b { color: var(--ink); }
+.plays.qlist li { font-style: italic; color: var(--ink); }
+.play-note {
+  max-width: 44rem; font-size: 1.08rem; line-height: 1.55;
+  color: var(--ink-2); margin: 1.2rem 0;
+}
+.play-note b { color: var(--ink); }
+.subplays {
+  list-style: none; max-width: 44rem; margin: 0.4rem 0 1.4rem;
+}
+.subplays li {
+  position: relative; padding-left: 1.6rem; margin-bottom: 0.7rem;
+  font-size: 1.06rem; line-height: 1.55; color: var(--ink-2);
+}
+.subplays li::before {
+  content: ""; position: absolute; left: 0.1rem; top: 0.7em;
+  width: 0.45rem; height: 0.45rem; border: 1.5px solid var(--signal);
+  border-radius: 50%;
+}
+.subplays.qlist li { font-style: italic; }
 .resources {
   font-family: var(--ui); font-size: 0.82rem; letter-spacing: 0.02em;
   color: var(--ink-3); margin-top: 2.5rem; padding-top: 1.2rem;
