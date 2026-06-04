@@ -8,10 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body class="action-page">
   <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- amber duotone filter (charcoal shadows → amber highlights) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="duo-amber" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.063 0.965" />
+        <feFuncG type="table" tableValues="0.078 0.698" />
+        <feFuncB type="table" tableValues="0.106 0.180" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
 
   <header class="topbar">
     <div class="container topbar-inner">
@@ -30,8 +42,8 @@
   <main id="top">
     <!-- ░░ ACTION HERO ░░ -->
     <section class="action-hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <span class="hero-tag" aria-hidden="true">Hero image →</span>
+      <img class="hero-photo" src="images/dc-exterior-1.jpg" alt="" aria-hidden="true" />
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="container action-hero-inner">
         <p class="preline">A data center is proposed or being built near you?</p>
         <h1>Here’s what<br />you can do.</h1>
@@ -60,7 +72,7 @@
 
         <div class="roles">
           <a class="role-card role-card--primary" href="index.html?guide=citizens#guides">
-            <span class="ico role-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><circle cx="17" cy="9.5" r="2.3"/><path d="M16 14.6c2.8.2 4.8 2.3 4.8 5.4"/></svg></span>
+            <img class="role-photo" src="images/family.jpg" alt="" loading="lazy" />
             <span class="role-eyebrow">Most common</span>
             <h3>I’m a resident or neighbor</h3>
             <p>Vote, organize, and show up. Use public records, public hearings, petitions,
@@ -69,7 +81,7 @@
             <span class="role-go">Open the resident guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=county#guides">
-            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M5 10h14"/><path d="M8.5 13v5M12 13v5M15.5 13v5"/></svg></span>
+            <img class="role-photo" src="images/zoning.jpg" alt="" loading="lazy" />
             <span class="role-eyebrow">Local government</span>
             <h3>I’m a county official</h3>
             <p>Zoning, permitting, moratoriums, transparency rules, and enforceable community
@@ -77,7 +89,7 @@
             <span class="role-go">Open the county guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=state#guides">
-            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21v-8h14v8"/><path d="M6 13a6 6 0 0112 0"/><path d="M12 3.5V7"/><path d="M9 13v8M12 13v8M15 13v8"/></svg></span>
+            <img class="role-photo" src="images/town-hall.jpg" alt="" loading="lazy" />
             <span class="role-eyebrow">State government</span>
             <h3>I’m a state lawmaker</h3>
             <p>Protect ratepayers through PUCs, redesign incentives, plan for stranded assets,
@@ -85,7 +97,7 @@
             <span class="role-go">Open the state guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=cso#guides">
-            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M4 9.5v5l10 4v-13l-10 4z"/><path d="M14 7.5l5-2v13l-5-2"/><path d="M6.5 15v3.2l2.8 1"/></svg></span>
+            <img class="role-photo" src="images/grassroots.jpg" alt="" loading="lazy" />
             <span class="role-eyebrow">Civil society</span>
             <h3>I’m an organizer or nonprofit</h3>
             <p>Bring the technical firepower: independent analysis, PUC intervention, public
@@ -93,7 +105,7 @@
             <span class="role-go">Open the CSO guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=federal#guides">
-            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M8 20h8"/><path d="M5 7.5h14"/><path d="M12 4.5l-7 3M12 4.5l7 3"/><path d="M2.5 13a2.5 2.5 0 005 0L5 7.5 2.5 13z"/><path d="M16.5 13a2.5 2.5 0 005 0L19 7.5l-2.5 5.5z"/></svg></span>
+            <img class="role-photo" src="images/capitol.jpg" alt="" loading="lazy" />
             <span class="role-eyebrow">Federal</span>
             <h3>I work in federal policy</h3>
             <p>Use the levers Congress and agencies already hold — EIA, FERC, NERC, DOE, EPA —
@@ -197,21 +209,21 @@
         </header>
         <div class="actors">
           <a class="actor why-card" href="index.html#incentives">
-            <span class="ph ph-16x9" data-label="Utility bill / meter" style="margin-bottom:1.1rem"></span>
+            <img class="why-photo" src="images/bills-1.jpg" alt="" loading="lazy" />
             <h4>Your bills</h4>
             <p>Utilities often socialize the cost of grid and transmission upgrades across all
             ratepayers — and abandoned projects can strand those costs on you.</p>
             <span class="role-go">How the costs land on you →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="ph ph-16x9" data-label="Transmission lines" style="margin-bottom:1.1rem"></span>
+            <img class="why-photo" src="images/grid-1.jpg" alt="" loading="lazy" />
             <h4>Your grid</h4>
             <p>AI loads spike and collapse in seconds. In 2024, a single fault dropped ~1,500
             MW at once — the equivalent of a nuclear plant vanishing without warning.</p>
             <span class="role-go">See the reliability risk →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="ph ph-16x9" data-label="Neighborhood" style="margin-bottom:1.1rem"></span>
+            <img class="why-photo" src="images/neighborhood-1.jpg" alt="" loading="lazy" />
             <h4>Your neighborhood</h4>
             <p>Diesel backup generators, equipment above 85 dBA, and 24/7 lighting — one
             campus raised peak NO₂ by 79% in nearby areas.</p>
@@ -224,8 +236,7 @@
     <!-- ░░ FULL-WIDTH IMAGE BAND (placeholder) ░░ -->
     <section class="section section-alt">
       <div class="container">
-        <span class="ph ph-wide" data-label="Full-width image — e.g., a packed public hearing"></span>
-        <p class="ph-caption">Placeholder — a wide, duotone-treated photo will live here.</p>
+        <img class="band-photo" src="images/dc-exterior-2.jpg" alt="A data center campus" loading="lazy" />
       </div>
     </section>
 

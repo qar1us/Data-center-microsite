@@ -710,6 +710,31 @@ strong, b { font-weight: 600; }
   margin-top: 0.7rem; text-align: center;
 }
 
+/* ── Real imagery, amber duotone-treated ── */
+.hero-photo, .role-photo, .why-photo, .band-photo { filter: url(#duo-amber); }
+.hero-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.hero-scrim {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(15,19,24,0.94) 0 36%, rgba(15,19,24,0.66) 72%, rgba(15,19,24,0.48) 100%),
+    linear-gradient(0deg, rgba(15,19,24,0.55), transparent 42%);
+}
+.role-photo {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 5px; margin-bottom: 1.2rem;
+}
+.why-photo {
+  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 6px; margin-bottom: 1.1rem;
+}
+.band-photo {
+  display: block; width: 100%; aspect-ratio: 3 / 1; object-fit: cover;
+  border-radius: 6px;
+}
+
 @media (max-width: 900px) {
   .roles { grid-template-columns: repeat(2, 1fr); }
 }
