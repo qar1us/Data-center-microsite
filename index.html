@@ -3,1295 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grid Mitigation &amp; Data Centers — An Advocacy Playbook</title>
-  <meta name="description" content="A playbook for residents, civil society, county officials, state lawmakers, and Congress to ensure the data center boom benefits communities. From Americans for Responsible Innovation." />
+  <title>A data center near you? Here's what you can do.</title>
+  <meta name="description" content="A community action toolkit for speaking out on data center development. Find your role — resident, county official, state lawmaker, or organizer — and your next move. From Americans for Responsible Innovation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
-<body>
+<body class="action-page">
   <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- amber duotone filter (charcoal shadows → amber highlights) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="duo-amber" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.063 0.965" />
+        <feFuncG type="table" tableValues="0.078 0.698" />
+        <feFuncB type="table" tableValues="0.106 0.180" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="org" href="#top">Americans for Responsible Innovation</a>
-      <nav class="section-nav" aria-label="Sections">
-        <a href="#summary">Summary</a>
-        <a href="#incentives">Incentives</a>
-        <a href="#energy">Energy</a>
-        <a href="#stakeholders">Stakeholders</a>
-        <a href="#guides">Guides</a>
-        <a href="#conclusion">Conclusion</a>
-        <a href="sources.html">Sources</a>
-        <a href="action.html" class="nav-action">Take Action →</a>
+      <a class="org" href="index.html">Americans for Responsible Innovation</a>
+      <nav class="section-nav" aria-label="Choose your role">
+        <a href="playbook.html?guide=citizens#guides">Residents</a>
+        <a href="playbook.html?guide=county#guides">County</a>
+        <a href="playbook.html?guide=state#guides">State</a>
+        <a href="playbook.html?guide=cso#guides">Organizers</a>
+        <a href="playbook.html?guide=federal#guides">Federal</a>
+        <a href="playbook.html" class="nav-pb">Playbook</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <!-- ░░ COVER ░░ -->
-    <section class="cover">
-      <div class="ekg" aria-hidden="true">
-        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
-          <path d="M0,100 L260,100 L290,100 L305,40 L320,160 L335,70 L350,100 L600,100 L630,100 L645,30 L662,170 L678,60 L694,100 L960,100 L990,100 L1005,45 L1020,155 L1035,75 L1050,100 L1200,100" />
-        </svg>
-      </div>
-      <div class="container cover-inner">
-        <p class="kicker">Advocacy Playbook</p>
-        <h1 class="cover-title">Grid Mitigation <span class="amp">&amp;</span><br />Data Centers</h1>
+    <!-- ░░ ACTION HERO ░░ -->
+    <section class="action-hero">
+      <img class="hero-photo" src="images/dc-exterior-1.jpg" alt="" aria-hidden="true" />
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container action-hero-inner">
+        <p class="preline">A data center is proposed or being built near you?</p>
+        <h1>Here’s what<br />you can do.</h1>
         <p class="standfirst">
-          Federal, state, and local lawmakers have the power to ensure a responsible
-          data center boom benefits communities and advances U.S. innovation.
+          You are not powerless. Across the country, residents, counties, and states are
+          already reshaping these projects — and some have stopped them outright. Find your
+          role and your next move.
         </p>
-        <div class="cover-meta">
-          <span>Americans for Responsible Innovation</span>
-          <span class="dot" aria-hidden="true">●</span>
-          <span>June 2026</span>
+        <div class="hero-cta">
+          <a href="#roles" class="btn btn-primary">Find your role ↓</a>
+          <a href="playbook.html" class="btn btn-ghost">Read the full playbook</a>
         </div>
-        <a href="#summary" class="scroll-cue" aria-label="Begin reading">
-          <span>Begin reading</span>
-          <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><path d="M7 0v18M1 12l6 6 6-6" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
       </div>
     </section>
 
-    <!-- ░░ EXECUTIVE SUMMARY ░░ -->
-    <section class="section summary" id="summary">
-      <div class="container measure">
-        <p class="section-label"><span class="num">00</span> Executive Summary</p>
-        <p class="lead">
-          <span class="dropcap">D</span>ata center developers often search for opportune
-          project sites with available telecommunications and energy infrastructure;
-          pre-zoned land; and skilled workers in construction and operational fields.
-          Simultaneously, resource-constrained state and local governments race to entice
-          these developers’ buildouts in the hope of increasing their tax revenues and
-          boosting local jobs. However, state and local incentives, such as tax
-          exemptions, deprive localities of the very benefits data centers can bring.
-        </p>
-        <p>
-          Unmitigated data center buildouts can impose financial pressures on local
-          communities, as these facilities often bring energy generation and transmission
-          infrastructure upgrade costs that utilities socialize across all ratepayers. And
-          if developers abandon their projects, local consumers could foot the bill for
-          unnecessary, preemptive grid investments. Beyond energy costs, data center load
-          types can destabilize power grids and bring industrial externalities, including
-          noise and air pollution.
-        </p>
-        <p>
-          Despite these challenges, data centers can offer substantial economic benefits
-          if managed responsibly. They can generate significant local tax revenue, which
-          governments can use to reduce homeowner tax burdens and fund public schools.
-          Additionally, the construction and operation of these facilities create
-          short-term jobs and permanent, high-skilled positions in engineering and
-          operations.
-        </p>
-        <p>
-          State and county policies often compound data center problems rather than
-          maximizing their benefits. To attract developers, many state and local
-          governments offer up to billions in tax exemptions and utility incentives that
-          deprive communities of much-needed revenue. These deals are frequently shrouded
-          in secrecy, leaving the public unable to weigh what community benefits
-          governments secured against the incentives they gave away. Moreover, data center
-          owners and operators are not subject to standardized federal energy reporting
-          requirements, leaving citizens and regulators uninformed about the facilities’
-          energy use and grid impacts.
-        </p>
-        <p>
-          In response, stakeholders, including residents, civil society organizations
-          (CSOs), county officials, and state policymakers, are organizing and enacting
-          policies to mitigate these impacts. Their efforts include assessing how data
-          center energy costs are shifted onto households, banning non-disclosure
-          agreements (NDAs), and securing local investments from hyperscalers. Federal,
-          state, and local lawmakers have the power to ensure a responsible data center
-          boom benefits communities and advances U.S. innovation.
-        </p>
-        <p class="kicker-inline">
-          This Playbook equips stakeholders, including local, state, and federal
-          policymakers; concerned citizens; and CSOs, with the tools they need to act.
-          Inside, Americans for Responsible Innovation provides (1) an explainer and (2)
-          stakeholder-oriented toolkits on transparency, balanced incentives, ratepayer
-          protections, and enforceable community benefit agreements.
-        </p>
-      </div>
-    </section>
-
-    <!-- ░░ 01 INCENTIVES ░░ -->
-    <section class="section" id="incentives">
+    <!-- ░░ ROLE ROUTER ░░ -->
+    <section class="section" id="roles">
       <div class="container">
         <header class="section-head">
-          <p class="section-label"><span class="num">01</span> Incentives</p>
-          <h2 class="section-title">If you incentivize it,<br />they will build.</h2>
+          <p class="section-label"><span class="num">01</span> Start Here</p>
+          <h2 class="section-title">Where do you fit in?</h2>
+          <p class="section-intro">Effective advocacy works best when each actor uses the
+          authority and resources only they have. Pick the role that fits you — each opens a
+          field guide with concrete tactics and real-world examples.</p>
         </header>
-        <div class="measure">
-          <p>
-            Data centers can contribute to local revenues and employ short-term
-            construction and long-term facility workers. This makes them attractive
-            developments for resource-constrained local governments, which try to entice
-            hyperscalers through tax exemptions, rezoning, and industry-centered
-            agreements.
-          </p>
-          <h3 class="subhead">Searching, Siting, Securing</h3>
-          <p>
-            Hyperscalers typically search for sites with accessible telecommunications
-            infrastructure, as well as cheap and available electricity to reduce costs and
-            shorten timelines for building new power and connecting to the internet. They
-            require skilled workers in construction, electrical, mechanical, and
-            operational fields. These facilities also cluster around metropolitan areas to
-            provide population centers with reliable internet service via edge computing.
-            Therefore, areas with existing data center clusters are attractive real estate,
-            as they often encompass all of the criteria above.
-          </p>
-          <p>
-            Once a location is found, data centers take one to two years to construct,
-            employing an average of 1,500 construction workers on site. These 250,000
-            square foot facilities (that’s 4 football fields’ worth of space) then employ
-            about 50 full-time workers, including technicians, engineers, operational
-            managers, and security personnel.
-          </p>
-        </div>
 
-        <div class="stat-strip">
-          <div class="stat">
-            <span class="stat-value" data-target="2" data-prefix="1–" data-suffix=" yrs">0</span>
-            <span class="stat-label">to construct</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="1500" data-prefix="~">0</span>
-            <span class="stat-label">construction workers on site</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="250" data-suffix="K ft²">0</span>
-            <span class="stat-label">≈ four football fields</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value" data-target="50" data-prefix="~">0</span>
-            <span class="stat-label">full-time workers</span>
-          </div>
-        </div>
-
-        <div class="measure">
-          <p>
-            The economic promises can be significant: In 2023, the state of Virginia
-            generated $9.1 billion in GDP from data center construction, operations, and
-            supporting services. In Loudoun County, data center revenue is projected to
-            make up nearly half the county’s 2027 tax revenue, funds that officials have
-            used to reduce homeowner tax burdens and increase funding for county schools.
-            In Virginia, every job in the data center industry has brought an estimated
-            3.5 jobs in the surrounding economy.
-          </p>
-          <p>
-            To attract more buildouts and unlock the promises they hold, local governments
-            engage in race-to-the-bottom dynamics, negotiating deals that benefit
-            hyperscalers and are less lucrative for host communities. In fact, data centers
-            have become one of the most subsidized industries in the country, with states
-            forfeiting billions of dollars in tax abatements. States and counties have
-            offered data center owners the following incentives:
-          </p>
-        </div>
-
-        <div class="ledger">
-          <div class="ledger-row ledger-head">
-            <div>Incentive</div><div>Description</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Sales and Use Tax Exemptions</div>
-            <div>Exempt data centers from sales taxes on qualifying equipment, such as servers, cooling systems, and cables. The scope and the duration of the exemption can vary significantly from state to state, with some offering no end date.</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Property Tax Abatements and Reductions</div>
-            <div>Reduce or eliminate taxes on real and personal property owned by data center operators.</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Corporate Income Tax Exemptions or Credit</div>
-            <div>Reduce corporate income taxes. Some states offer full exemptions, while others offer investment tax credits.</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Utility and Cost Incentives</div>
-            <div>Offer discounted electricity rates or tax exemptions on energy consumed by data centers.</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Job Creation and Wage-Based Tax Credits</div>
-            <div>Tie incentives to employment quotas and other wage thresholds.</div>
-          </div>
-          <div class="ledger-row">
-            <div class="ledger-term">Enterprise Zone and Location Incentives</div>
-            <div>Offer financial incentives for data centers built in designated geographic areas, such as enterprise zones or rural areas.</div>
-          </div>
-        </div>
-
-        <div class="figure-row">
-          <div class="figure">
-            <span class="figure-value">36</span>
-            <span class="figure-label">U.S. states exempt hyperscalers from sales and use taxes on building materials and equipment</span>
-          </div>
-          <div class="figure">
-            <span class="figure-value">9</span>
-            <span class="figure-label">states offer property tax exemptions for data centers</span>
-          </div>
-          <div class="figure figure-hot">
-            <span class="figure-value">$1.6B</span>
-            <span class="figure-label">Virginia’s data center retail sales and use tax exemptions, FY2025</span>
-          </div>
-        </div>
-
-        <div class="measure">
-          <p>
-            The structure of all these exemptions attracts hyperscalers with high
-            negotiating power. These companies leverage that power to secure favorable
-            terms, while localities sacrifice community benefits by chasing economic
-            promises. Moreover, tax incentives in areas that are already attractive to
-            hyperscalers may deprive localities of revenue they would have otherwise
-            received. The scale of these giveaways is significant: about 36 U.S. states
-            exempt hyperscalers from sales and use taxes on building materials and
-            specialized equipment; many extend utility tax breaks; and nine states offer
-            property tax exemptions for data centers. In fiscal year 2025, Virginia’s data
-            center retail sales and use tax exemptions reached $1.6 billion.
-          </p>
-          <p>
-            Tax incentives impose a double burden on residents. First, state budgets draw
-            on overall tax revenue to subsidize data center buildouts in only a handful of
-            counties, so all state residents indirectly fund concentrated developments. The
-            benefits flowing back to host communities (local jobs, reduced homeowner taxes,
-            and school funding) represent an uneven return on a statewide investment.
-            Second, without enforceable community benefit agreements (CBAs), even the data
-            center host communities cannot recover these costs. Property taxes, for
-            instance, can fund K-12 education, yet local governments routinely offer
-            developers property tax exemptions, directly undermining public service
-            budgets. If incentives are granted without enforceable standards, the promise
-            of community gains will not materialize.
-          </p>
-          <h3 class="subhead">Public Costs Through Private Deals</h3>
-          <p>
-            The subsidies that hyperscalers secure are only part of the problem; equally
-            troubling is how those deals are secured. Local and state governments routinely
-            sign opaque agreements, while companies obscure their identities through
-            limited liability companies (LLCs). Moreover, data centers face no federal
-            obligation to uniformly disclose their energy consumption in detail. The result
-            is a system where communities bear real costs with little ability to
-            understand, question, or challenge secured deals.
-          </p>
-          <p>
-            Local and state officials often enter into non-disclosure agreements (NDAs),
-            which prohibit officials from publicly disclosing business plans, potential
-            community impacts, stakeholder identities, facility size, company names,
-            predicted energy consumption, and granted tax breaks. Hyperscalers’ use of LLCs
-            to secure land and infrastructure further obscures public knowledge of which
-            companies actually plan to lease the compute being built.
-          </p>
-        </div>
-
-        <div class="field-notes">
-          <article class="note">
-            <span class="note-tag">Virginia</span>
-            <p>In Virginia, of the 31 localities where data centers were proposed
-            (2024-2025), a researcher discovered that 80 percent of the governments had
-            signed NDAs with the developers; this figure is likely an undercount given the
-            agreements’ secretive nature.</p>
-          </article>
-          <article class="note">
-            <span class="note-tag">Kentucky</span>
-            <p>In Kentucky, a farmer was offered $10 million for a 250-acre plot of land to
-            be used for industrial development without being told the type of industrial
-            activity planned, the company name, or the names of the people negotiating the
-            deal.</p>
-          </article>
-        </div>
-
-        <div class="measure">
-          <p>
-            Outside of specific environmental permits and utility reporting, there is no
-            comprehensive, standardized requirement for data center owners to publicly
-            report energy use or emissions, leaving major gaps in transparency. What little
-            data does exist is voluntarily disclosed and buried in aggregate figures that
-            make it impossible for communities to understand the real footprint of these
-            facilities. The industry’s go-to measuring stick, power usage effectiveness
-            (PUE), is a two-decade-old snapshot that hyperscalers, cloud providers, and
-            colocation facilities continue to rely on despite its failure to capture the
-            full, disaggregated stack of what is actually driving data center energy use.
-            Consumption reporting should include the energy used by IT equipment, AI model
-            factors (e.g., size and query types), facility size, power sources and delivery
-            systems, cooling infrastructure, backup capacity (e.g., batteries and
-            generators), and miscellaneous loads such as lighting.
-          </p>
-          <p>
-            Without mandatory, standardized reporting requirements, citizens, regulators,
-            and lawmakers are all left flying blind–unable to advocate for stronger
-            efficiency standards or build the evidentiary foundation needed for smarter
-            policy.
-          </p>
+        <div class="roles">
+          <a class="role-card role-card--primary" href="playbook.html?guide=citizens#guides">
+            <img class="role-photo" src="images/family.jpg" alt="" loading="lazy" />
+            <span class="role-eyebrow">Most common</span>
+            <h3>I’m a resident or neighbor</h3>
+            <p>Vote, organize, and show up. Use public records, public hearings, petitions,
+            referendums, and the ballot box to demand transparency and shape — or stop — a
+            project.</p>
+            <span class="role-go">Open the resident guide →</span>
+          </a>
+          <a class="role-card" href="playbook.html?guide=county#guides">
+            <img class="role-photo" src="images/zoning.jpg" alt="" loading="lazy" />
+            <span class="role-eyebrow">Local government</span>
+            <h3>I’m a county official</h3>
+            <p>Zoning, permitting, moratoriums, transparency rules, and enforceable community
+            benefit agreements are yours to wield.</p>
+            <span class="role-go">Open the county guide →</span>
+          </a>
+          <a class="role-card" href="playbook.html?guide=state#guides">
+            <img class="role-photo" src="images/town-hall.jpg" alt="" loading="lazy" />
+            <span class="role-eyebrow">State government</span>
+            <h3>I’m a state lawmaker</h3>
+            <p>Protect ratepayers through PUCs, redesign incentives, plan for stranded assets,
+            and mandate transparency.</p>
+            <span class="role-go">Open the state guide →</span>
+          </a>
+          <a class="role-card" href="playbook.html?guide=cso#guides">
+            <img class="role-photo" src="images/grassroots.jpg" alt="" loading="lazy" />
+            <span class="role-eyebrow">Civil society</span>
+            <h3>I’m an organizer or nonprofit</h3>
+            <p>Bring the technical firepower: independent analysis, PUC intervention, public
+            records requests, and CBAs.</p>
+            <span class="role-go">Open the CSO guide →</span>
+          </a>
+          <a class="role-card" href="playbook.html?guide=federal#guides">
+            <img class="role-photo" src="images/capitol.jpg" alt="" loading="lazy" />
+            <span class="role-eyebrow">Federal</span>
+            <h3>I work in federal policy</h3>
+            <p>Use the levers Congress and agencies already hold — EIA, FERC, NERC, DOE, EPA —
+            to set a national floor.</p>
+            <span class="role-go">Open the federal guide →</span>
+          </a>
+          <a class="role-card role-card--muted" href="playbook.html">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M12 6.5C9.8 5 6.5 5 4 6v13c2.5-1 5.8-1 8 .5 2.2-1.5 5.5-1.5 8-.5V6c-2.5-1-5.8-1-8 .5z"/><path d="M12 6.5V20"/></svg></span>
+            <span class="role-eyebrow">Not sure?</span>
+            <h3>I’m just getting up to speed</h3>
+            <p>Start with the full playbook — the explainer, the evidence, and every guide in
+            one place.</p>
+            <span class="role-go">Read the playbook →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ░░ 02 ENERGY (DARK) ░░ -->
-    <section class="section dark" id="energy">
+    <!-- ░░ FIRST MOVES (RESIDENTS) ░░ -->
+    <section class="section section-alt" id="firstmoves">
       <div class="container">
         <header class="section-head">
-          <p class="section-label"><span class="num">02</span> Energy Impacts</p>
-          <h2 class="section-title">Data Center<br />Energy Impacts</h2>
+          <p class="section-label"><span class="num">02</span> For Residents</p>
+          <h2 class="section-title">Your first three moves.</h2>
         </header>
-        <div class="measure">
-          <p>
-            Due to the trends above, unmitigated data center buildouts are coming to a
-            neighborhood near you, and it’s not pretty. Aside from their windowless,
-            industrial design, these facilities require massive amounts of regional power,
-            which can raise residential electricity rates and increase volatility in power
-            lines.
-          </p>
-          <h3 class="subhead">Who Pays?</h3>
-          <p>
-            Understanding who bears the costs of the energy infrastructure buildouts for
-            data centers requires examining three interconnected problems: (1) how grid
-            upgrade costs are socialized, (2) how data centers’ novel demand patterns
-            threaten reliability, and (3) how speculative overbuilding can leave everyday
-            consumers on the hook for project costs.
-          </p>
-          <p>
-            First, even though data centers are usually private entities, the physical
-            infrastructure required to meet their energy demands is often implicitly
-            treated as a public good and, therefore, subsidized by all ratepayers
-            (including residential consumers). Before new data centers connect to the grid,
-            utilities often have to invest in new power lines and other infrastructure
-            upgrades to ensure that everyone on the grid can still keep their lights on. The
-            problem? While these upgrades disproportionately benefit new loads, utilities
-            typically socialize the costs across all grid users.
-          </p>
-          <p>
-            Infrastructure costs are just one part of the affordability problem. Wholesale
-            electricity markets determine the prices utilities pay for energy, so when
-            demand from new buildouts increases without matched supply, prices can rise for
-            everyone. Now, some facilities are co-locating with existing power plants to
-            secure continuous electricity, which curtails the supply available to other
-            customers and increases costs. Others are establishing on-site, behind the
-            meter generation, but still relying on the grid’s capacity to meet their total
-            demand.
-          </p>
-          <p>
-            Second, data centers’ unprecedented power demand, combined with fluctuating AI
-            workloads, can strain electric grids, degrading power reliability in nearby
-            neighborhoods. AI data centers use lots of power, yes. But they also use that
-            power through intermittent consumption. This means that AI data center demand
-            looks more like a spiky EKG chart than the flat demand line that is more common
-            across other industrial loads.
-          </p>
+
+        <div class="moves">
+          <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h7"/><path d="M14 3l4 4v4"/><path d="M14 3v4h4"/><circle cx="16" cy="16" r="3.2"/><path d="M18.4 18.4L21 21"/></svg></span>
+            <span class="move-num">01</span>
+            <h3>Get the facts</h3>
+            <p>Opacity is widespread, but most state laws let you request records — including
+            non-disclosure agreements (NDAs) and contracts. Ask a local civil society
+            organization for a cost-benefit analysis of what the project means for your
+            rates.</p>
+          </article>
+          <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.4"/><circle cx="5" cy="9" r="2"/><circle cx="19" cy="9" r="2"/><path d="M7.5 20c0-3 2-4.8 4.5-4.8s4.5 1.8 4.5 4.8"/><path d="M2 19c0-2 1-3.4 3-3.9M22 19c0-2-1-3.4-3-3.9"/></svg></span>
+            <span class="move-num">02</span>
+            <h3>Show up in numbers</h3>
+            <p>Pack the hearing and circulate a petition — a large presence and thousands of
+            signatures give officials a reason to act. Demand a breakdown of contract terms
+            and tax exemptions <em>before</em> any vote.</p>
+          </article>
+          <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><path d="M3.5 9.5L12 6l8.5 3.5"/><path d="M4 9.5V20h16V9.5"/><path d="M9 9.5v2.2h6V9.5"/><path d="M8.8 15.7l2 2 3.6-3.8"/></svg></span>
+            <span class="move-num">03</span>
+            <h3>Use your power</h3>
+            <p>Intervene at the Public Utility Commission, place a transparency ordinance on
+            the ballot, vote for the commissioners who set your rates, or recall officials who
+            won’t listen.</p>
+          </article>
         </div>
+        <p class="moves-more">
+          <a href="playbook.html?guide=citizens#guides" class="btn btn-primary">See the full resident playbook →</a>
+        </p>
+      </div>
+    </section>
 
-        <figure class="loadchart" aria-labelledby="lc-cap">
-          <div class="loadchart-frame">
-            <svg viewBox="0 0 800 380" role="img" aria-label="Chart comparing a smooth typical industrial power load against the spiky, intermittent load of an AI data center that ends in a sudden disconnect.">
-              <g class="lc-grid">
-                <line x1="70" y1="80" x2="770" y2="80" />
-                <line x1="70" y1="150" x2="770" y2="150" />
-                <line x1="70" y1="220" x2="770" y2="220" />
-                <line x1="70" y1="290" x2="770" y2="290" />
-              </g>
-              <line class="lc-axis-line" x1="70" y1="40" x2="70" y2="320" />
-              <line class="lc-axis-line" x1="70" y1="320" x2="770" y2="320" />
-              <line class="lc-drop" x1="718" y1="205" x2="718" y2="318" />
-              <path class="lc-line lc-flat" d="M70,238 C150,228 230,246 310,234 C390,224 470,242 550,232 C630,224 710,238 770,233" />
-              <path class="lc-line lc-spiky" d="M70,200 L105,202 L130,198 L145,196 L155,70 L166,300 L176,150 L188,205 L210,203 L250,206 L275,205 L288,95 L299,290 L309,160 L320,205 L350,204 L390,207 L410,205 L424,60 L436,300 L447,170 L458,205 L490,206 L520,204 L545,205 L560,110 L571,285 L582,165 L593,205 L620,206 L650,205 L690,205 L715,205 L719,318 L770,318" />
-              <circle class="lc-pulse" cx="70" cy="200" r="4.5" />
-              <text class="lc-axis" x="70" y="30">POWER DEMAND</text>
-              <text class="lc-axis" x="770" y="356" text-anchor="end">TIME →</text>
-              <text class="lc-annot" x="712" y="344" text-anchor="end">sudden disconnect ↓</text>
-            </svg>
-          </div>
-          <div class="lc-legend">
-            <span class="lc-key lc-key-flat">Typical industrial load</span>
-            <span class="lc-key lc-key-spiky">AI data center load</span>
-          </div>
-          <figcaption id="lc-cap" class="lc-cap">
-            AI data center demand looks more like a spiky EKG chart than the flat demand
-            line common across other industrial loads — until a single fault can drop
-            ~1,500 MW at once.
-          </figcaption>
-        </figure>
-
-        <div class="measure">
-          <p>
-            Data center loads can suddenly exceed the available grid capacity (supply),
-            leading to parts of the grid automatically disconnecting (“tripping”) to
-            prevent equipment damage. Or they can instantly cut their demand. These
-            disconnections can bring about cascading failures and blackouts, disrupting
-            power delivery to other loads and damaging equipment that can cost thousands to
-            millions of dollars to repair.
-          </p>
-          <p>
-            In 2024, a routine wire failure (transmission line fault) caused ~1,500 MW of
-            data centers to simultaneously and unexpectedly disconnect from the Bulk
-            Electric System (the “interstate highway” of the grid). This is equivalent to a
-            nuclear plant suddenly appearing without warning. Such events can contribute to
-            cascading failures under stressed conditions if system protections and reserves
-            are not designed for this behavior.
-          </p>
-          <p>
-            The facilities’ rapid fluctuations pose reliability risks in real-time and
-            distort long-term energy forecasts. Without greater transparency into how AI
-            data center loads behave, system operators cannot effectively monitor the grid,
-            increasing the likelihood of under- or over-scheduling power delivery to the
-            data center. If operators underschedule, there won’t be enough power to meet a
-            sudden AI surge, risking a blackout. If they overschedule, they waste money and
-            fuel on power plants that weren’t needed in the first place.
-          </p>
-          <p>
-            Third, many AI data centers operate as “inflexible loads,” meaning they cannot
-            automatically adjust their power consumption in response to grid conditions
-            without affecting their own operations. This is a problem during periods of
-            peak demand, such as hot summer days, when grid operators need to balance
-            supply and demand quickly. Unlike more flexible loads, data centers cannot
-            curtail demand without degrading their own operations, making them a liability
-            precisely when the grid is stressed.
-          </p>
-          <p>
-            Fourth, if a hyperscaler abandons a promised project, the local utility must
-            recuperate the cost of preemptive electricity infrastructure upgrades by
-            passing it off to other ratepayers. This risk is not hypothetical. Hyperscalers
-            and utilities are already incentivized to inflate energy forecasts–the former to
-            secure priority infrastructure access, the latter to increase revenue. This
-            speculative “location shopping” drives overinvestment in grid upgrades that may
-            not be necessary. Moreover, regional operators are seeing double-counted sites
-            across the country. If a project unravels after upgrades are built, the
-            hyperscalers, which typically lease data centers, may face little financial
-            consequences, leaving stranded assets and higher bills for everyday consumers.
-          </p>
-          <h3 class="subhead">Industrial Externalities</h3>
-          <p>
-            Beyond electricity bills and reliability risks, data centers can impose other
-            invisible costs on the communities that host them, including diesel exhaust
-            emissions and industrial noise in residential areas.
-          </p>
-          <p>
-            First, AI data centers depend on 24/7 power reliability to train their AI models
-            and respond to our LLM queries. This round-the-clock demand means AI data
-            centers need backup power, typically in the form of diesel generators, which
-            emit hazardous air pollutants and particulates. On‑site equipment, such as
-            generators and HVAC systems, can reach levels above 85 dBA at close range, a
-            level the National Institute for Occupational Safety and Health considers
-            harmful over an eight‑hour period for occupational safety. Data centers, in
-            general, can surpass this threshold, leading to noisy industrial facilities near
-            residents.
-          </p>
-        </div>
-
-        <div class="field-notes on-dark">
-          <article class="note">
-            <span class="note-tag">Tennessee</span>
-            <p>Researchers found that the xAI Colossus data center campus in Tennessee
-            increased peak nitrogen dioxide concentration levels by 79% in nearby areas.
-            These spiked high pollutant concentrations can have adverse health impacts on
-            individuals.</p>
+    <!-- ░░ WINS ░░ -->
+    <section class="section wins-section" id="wins">
+      <div class="container">
+        <header class="section-head">
+          <p class="section-label"><span class="num">03</span> Proof</p>
+          <h2 class="section-title">It’s already working.</h2>
+          <p class="section-intro">Communities are not powerless — these are real outcomes,
+          driven by residents and local officials who organized and showed up.</p>
+        </header>
+        <div class="wins">
+          <article class="win">
+            <span class="win-place">Port Washington, WI</span>
+            <p>Residents formed a nonprofit, gathered ~1,000 signatures, and passed a ballot
+            measure that now requires voter approval before the city grants data center tax
+            incentives.</p>
+          </article>
+          <article class="win">
+            <span class="win-place">Cascade Locks, OR</span>
+            <p>Voters recalled two officials who backed a 10 MW data center, and two other
+            project advocates lost their re-election bids.</p>
+          </article>
+          <article class="win">
+            <span class="win-place">Pima County, AZ</span>
+            <p>Public backlash over Project Blue NDAs forced a 90-day sunshine period, a
+            two-year cap on economic-development NDA terms, and quarterly disclosure.</p>
+          </article>
+          <article class="win">
+            <span class="win-place">Minnesota</span>
+            <p>CURE MN intervened before the Public Utility Commission, which then rejected
+            Amazon’s request to skip a full regulatory review.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ░░ 03 STAKEHOLDERS ░░ -->
-    <section class="section" id="stakeholders">
+    <!-- ░░ WHY IT MATTERS ░░ -->
+    <section class="section section-alt" id="why">
       <div class="container">
         <header class="section-head">
-          <p class="section-label"><span class="num">03</span> Identifying Key Stakeholders</p>
-          <h2 class="section-title">How to Advocate<br />Successfully.</h2>
+          <p class="section-label"><span class="num">04</span> Why It Matters</p>
+          <h2 class="section-title">What’s actually at stake.</h2>
         </header>
-        <div class="measure">
-          <p>
-            Effective advocacy requires transparency. NDAs and race-to-the-bottom tax
-            incentives leave citizens uninformed and push local lawmakers to forfeit
-            community benefits. Front-end transparency and cost-benefit analyses can
-            mitigate these pressures, but only if stakeholders are equipped to demand them.
-            The most successful advocacy maximizes the authorities and resources of
-            residents, civil society organizations (CSOs), county officials, state
-            lawmakers, and federal authorities:
-          </p>
-        </div>
-
         <div class="actors">
-          <article class="actor">
-            <span class="actor-num">i</span>
-            <h4>Citizens &amp; local communities</h4>
-            <p>Citizens and local communities can vote, organize, and speak out to show
-            elected officials how data center buildouts affect them, and decide whether
-            those politicians deserve another term.</p>
-          </article>
-          <article class="actor">
-            <span class="actor-num">ii</span>
-            <h4>Civil society organizations</h4>
-            <p>CSOs can fill the technical, legal, and informational gaps that communities
-            and policymakers lack. Focused on specific issue areas, CSOs have the resources
-            to conduct research, organize, and advocate on behalf of citizens, intervene in
-            legal proceedings, and negotiate CBAs with data center developers.</p>
-          </article>
-          <article class="actor">
-            <span class="actor-num">iii</span>
-            <h4>County officials</h4>
-            <p>County officials are the key decision-makers for data center siting. They
-            hold immediate authority over local zoning, rezoning, and permitting. They can
-            issue ordinances requiring data centers to meet energy use, noise, and
-            workforce standards. They maintain a direct line of communication with
-            constituents through county board meetings, town halls, and public hearings
-            that surface local concerns.</p>
-          </article>
-          <article class="actor">
-            <span class="actor-num">iv</span>
-            <h4>State lawmakers</h4>
-            <p>State lawmakers can often regulate and protect ratepayers’ energy costs
-            (through public utility commissions (PUCs)), design tax incentives that attract
-            hyperscalers, and make permitting decisions that affect agricultural and
-            residential areas. They can strengthen or restrict local decision-making
-            authority and establish permanent reforms that set baseline standards for
-            future data center projects.</p>
-          </article>
-          <article class="actor">
-            <span class="actor-num">v</span>
-            <h4>Federal authorities</h4>
-            <p>Federal authorities provide the regulatory floor and technical oversight
-            necessary to standardize the fragmented energy landscape. While energy remains
-            largely a local issue, federal agencies address the opacity gap through
-            specialized tools, such as energy consumption data collection, grid reliability
-            standards, and regulations governing power plant use and pollution.</p>
-          </article>
-        </div>
-
-        <div class="measure">
-          <p>
-            When citizens, CSOs, county officials, state lawmakers, and federal agencies
-            act in concert, they can shift the terms of data center developments to
-            maximize local gains and mitigate local harms.
-          </p>
+          <a class="actor why-card" href="playbook.html#incentives">
+            <img class="why-photo" src="images/bills-1.jpg" alt="" loading="lazy" />
+            <h4>Your bills</h4>
+            <p>Utilities often socialize the cost of grid and transmission upgrades across all
+            ratepayers — and abandoned projects can strand those costs on you.</p>
+            <span class="role-go">How the costs land on you →</span>
+          </a>
+          <a class="actor why-card" href="playbook.html#energy">
+            <img class="why-photo" src="images/grid-1.jpg" alt="" loading="lazy" />
+            <h4>Your grid</h4>
+            <p>AI loads spike and collapse in seconds. In 2024, a single fault dropped ~1,500
+            MW at once — the equivalent of a nuclear plant vanishing without warning.</p>
+            <span class="role-go">See the reliability risk →</span>
+          </a>
+          <a class="actor why-card" href="playbook.html#energy">
+            <img class="why-photo" src="images/neighborhood-1.jpg" alt="" loading="lazy" />
+            <h4>Your neighborhood</h4>
+            <p>Diesel backup generators, equipment above 85 dBA, and 24/7 lighting — one
+            campus raised peak NO₂ by 79% in nearby areas.</p>
+            <span class="role-go">See the local harms →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ░░ 04 GUIDES (TABS) ░░ -->
-    <section class="section section-alt" id="guides">
+    <!-- ░░ FULL-WIDTH IMAGE BAND (placeholder) ░░ -->
+    <section class="section section-alt">
       <div class="container">
-        <header class="section-head">
-          <p class="section-label"><span class="num">04</span> Tear-Away Guides</p>
-          <h2 class="section-title">Advocacy Guides<br />by Stakeholder.</h2>
-          <p class="section-intro">Successful advocacy for responsible data center
-          construction takes different shapes for different stakeholders. Our guides share
-          tools to be an effective advocate for responsible policy and maximized benefits,
-          complete with examples of how other stakeholders have used these tactics to
-          effectuate change. Take a moment to review the guide that’s relevant to your
-          community.</p>
-        </header>
-
-        <div class="tabs" role="tablist" aria-label="Advocacy guides">
-          <button class="tab is-active" role="tab" aria-selected="true" data-tab="county">County Officials</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="state">State Lawmakers</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="cso">Civil Society Organizations</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="citizens">Individual Citizens</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="federal">Federal Levers</button>
-        </div>
-
-        <!-- COUNTY -->
-        <div class="panel is-active" role="tabpanel" data-panel="county">
-          <p class="panel-lead">County officials wield significant authority over data
-          center development through zoning; permitting; moratoriums; and standards on
-          noise levels and energy use.</p>
-
-          <h4 class="play-group">Secure Smart Siting</h4>
-          <ul class="plays">
-            <li><b>Optimize Existing Assets:</b> Externalities such as diesel backup
-            generators, noise, design, and 24/7 lighting are common flashpoints for local
-            communities and can lead to lawsuits and opposition. Prioritize development on
-            pre-zoned industrial, commercial, or brownfield sites to reduce litigation and
-            infrastructure friction.</li>
-            <li><b>Use Appropriate Approvals:</b> Shift from automatic “by-right” approvals
-            to “special-use” permits to ensure the public has a voice in projects and
-            secures the best possible terms for residents.</li>
-            <li><b>Secure Neighborhood Character:</b> Require developers to fully enclose
-            cooling and ventilation systems and screen mechanical equipment from view to
-            maintain local aesthetic and property value near residential zones.</li>
-            <li><b>Siting for Grid Stability:</b> Demand grid reliability assessments before
-            granting permits.</li>
-            <li><b>Use Temporary Pauses:</b> Implement moratoriums to create the political
-            space to develop lasting ordinances that protect communities and to update
-            outdated regulations.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Sterling Heights, MI</span>
-            <p>The Sterling Heights, MI City Council unanimously voted to pause new data
-            center developments for one year. Officials note that current zoning
-            restrictions (written in 1978) no longer reflect the demands of modern computing
-            infrastructure, prompting planning and legal staff to use the moratorium period
-            to study and develop updated regulations.</p></article>
-          </div>
-
-          <h4 class="play-group">Mandate Transparency</h4>
-          <ul class="plays">
-            <li><b>Standardized Disclosure:</b> To better understand local impacts, require
-            data center developers to provide clear, non-aggregated data on predicted energy
-            demand, backup energy systems, flexible load assurance, and contingency plans in
-            case of power delivery interruptions.</li>
-            <li><b>Avoid Secrecy:</b> Refrain from agreeing to or allowing NDAs to maintain
-            transparency and trust with constituents and to mitigate data center development
-            aversion–often a result of initial opacity.</li>
-            <li><b>Implement Sunshine Periods:</b> Adopt mandatory public review periods
-            before public bodies vote on projects covered by NDAs.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Pima County, AZ</span>
-            <p>Pima County, AZ, instituted a 90-day sunshine period after Project Blue NDAs
-            were uncovered and received public backlash. The sunshine period aims to increase
-            transparency and public knowledge of proposed data centers. The county also
-            capped economic development NDA terms at two years and now requires that a list
-            of active NDAs for economic development projects be provided to the Board of
-            Supervisors quarterly.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Amplify Public Forum Messaging:</b> Public engagement allows for informed
-            constituents and democratic participation; it eliminates backend opposition and
-            public distrust. Local officials should use communications tools to publicize
-            local forums, including public budget hearings and citizens’ assemblies, to
-            increase citizens’ awareness of avenues for reform. Forums can inform communities
-            about the benefits of data center development and allow officials to explain how
-            they have mitigated externalities and maximized community benefits.</li>
-            <li><b>Follow Generally Accepted Accounting Principles:</b> Publicly disclose
-            local tax abatement revenue losses to data centers under the Governmental
-            Accounting Standards Board’s (GASB) Statement No. 77 on Tax Abatement Disclosures
-            in an Annual Comprehensive Financial Report (ACFR) for economic development
-            projects.</li>
-          </ul>
-
-          <h4 class="play-group">Optimize Incentives</h4>
-          <ul class="plays">
-            <li><b>Know Your Worth:</b> In high-demand data center clusters (with lower-cost
-            energy, a skilled workforce, fiber-optic connectivity, pre-zoned land, and
-            proximity to metropolitan areas), county officials have the leverage to raise
-            taxes on computer equipment and peripherals or to remove existing exemptions,
-            securing higher revenues to fund communities.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Prince William County, VA</span>
-            <p>In Prince William County, VA, the Board of County Supervisors raised the
-            computer and peripheral tax rates from $2.15 to $4.15 per $100 of assessed value
-            from 2024 to 2026.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Protect Residential Electricity Consumers:</b> Ensure rates protect
-            residents from bearing the up-front costs of transmission, grid capacity
-            upgrades, and stranded asset contingency funding.</li>
-            <li><b>Review Underperforming Incentives:</b> Periodically assess whether data
-            center tax exemptions (e.g., property taxes) provide a balanced return on
-            investment compared to the community costs they impose.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Prince William County, VA</span>
-            <p>Prince William County, VA, Board of County Supervisors commissioned a “Data
-            Center Fiscal Impact Analysis,” a cost-benefit analysis of data center revenue
-            versus expenditures. The report concluded that the data center industry is a
-            local “net benefit.”</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Lobby the State:</b> Employ state legislative lobbyists to repeal
-            unproductive state tax exemptions for data centers to increase county funds that
-            flow from the state revenue.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Pima County, AZ</span>
-            <p>The Pima County, AZ Board of Supervisors voted to direct the state legislative
-            lobbyist to advocate on the county’s behalf to eliminate state and local tax
-            exemptions on data center equipment.</p></article>
-          </div>
-
-          <h4 class="play-group">Ensure Quality of Life Protections</h4>
-          <ul class="plays">
-            <li><b>Set Enforceable Development Thresholds:</b> Establish local limits for
-            noise and residential protection distances from developments.</li>
-            <li><b>Enforce Community Benefit Standards:</b> Use agreements with developers
-            that mandate and enforce minimum tax payments and local hiring standards in
-            exchange for subsidies. Establish Community Benefit Agreements (CBAs) with local
-            buy-in and input.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">West Des Moines, IA</span>
-            <p>West Des Moines, Iowa, officials struck a deal with Microsoft, securing
-            commitments that its data centers will run entirely on renewable energy and
-            generate over $2 billion in tax revenue.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Translate Technical Impacts:</b> Before approval, require the scale of
-            power demand to be translated into meaningful local terms (e.g., as a percentage
-            of total local power consumption) so that residents can understand the measurable
-            footprint of the data center.</li>
-          </ul>
-          <p class="resources"><b>Additional Resources:</b> Data Center Regulation Tracker ·
-          Database of Emerging Large-Load Tariffs</p>
-        </div>
-
-        <!-- STATE -->
-        <div class="panel" role="tabpanel" data-panel="state" hidden>
-          <p class="panel-lead">State lawmakers hold the highest level of authority to
-          regulate utility mandates, design tax incentives, and establish permanent reforms
-          that protect ratepayers while ensuring responsible industrial growth.</p>
-
-          <h4 class="play-group">Codify Grid Stability &amp; Ratepayer Protections</h4>
-          <p class="play-note">Unregulated data center growth can strain the grid and
-          socialize infrastructure costs across all residential users. Lawmakers can act to
-          ensure data centers pay their fair share.</p>
-          <ul class="plays">
-            <li><b>Create Advisory Boards:</b> Establish expert-led advisory boards to guide
-            lawmakers on policies aligned with their business and constituent goals.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Oregon</span>
-            <p>Oregon’s governor created a Data Center Advisory Committee to develop policy
-            recommendations on data center expansion, balancing the state’s “Prosperity
-            Roadmap” with ratepayer affordability and the protection of forests and
-            farmland.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Implement Grid Impact Assessments:</b> Mandate standardized grid impact
-            assessments for any interconnection request exceeding a specified threshold to
-            mitigate the risk of cascading failures or blackouts.</li>
-            <li><b>Determine Cost Causation:</b> Authorize public utility commissions (PUCs)
-            to assess and publish how the costs of new data center loads will result in cost
-            shifts for other utility customers.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">California · SB 57</span>
-            <p>California’s SB57 allows the PUC to evaluate whether data center energy costs
-            are being shifted onto other utility customers, with findings reported to relevant
-            legislative committees and posted publicly on the commission’s website.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Recover Capacity and Infrastructure Costs:</b> Assign recovery rates to
-            the large-load customers that are increasing generation capacity and grid
-            modernization costs. Use trackers, such as the Database of Emerging Large-Load
-            Tariffs, to find examples of similar regulations.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Virginia · HB 1393</span>
-            <p>Virginia’s HB1393 would direct Dominion Energy to petition the State
-            Corporation Commission to establish rates recovering increased generating
-            capacity costs, requiring customers with 25MW or more in demand and a 75%
-            electric load factor to bear those costs (excluding qualifying non-data center
-            customers).</p></article>
-            <article class="note"><span class="note-tag">Virginia · HB 503</span>
-            <p>Virginia’s HB503 would require that any generation, transmission, or fuel
-            costs that would not have been incurred but for the demand of data centers be
-            recovered solely from data center customers (with a peak demand of 100 MW or
-            greater).</p></article>
-          </div>
-
-          <h4 class="play-group">Plan for Contingencies</h4>
-          <p class="play-note">If hyperscalers or developers abandon a project after
-          utilities upgrade the energy infrastructure, the “ghost site” costs can fall on
-          local ratepayers.</p>
-          <ul class="plays">
-            <li><b>Establish Stranded Asset Contingency Funding:</b> Pass legislation
-            requiring developers to provide financial assurances or “contingency funding”
-            before construction begins to cover infrastructure costs if the project is
-            abandoned or if the limited liability corporation (LLC) is unable to follow
-            through with commitments on development.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">South Carolina · SB 867</span>
-            <p>South Carolina SB867 would establish a Data Center Development Office to
-            oversee a tiered permitting process based on energy load, shifting much of the
-            siting authority from local counties to the state while mandating strict noise
-            mitigation and decommissioning standards.</p></article>
-          </div>
-          <p class="play-note">Many AI data centers are not “flexible loads,” so they cannot
-          automatically adjust consumption to help balance the grid.</p>
-          <ul class="plays">
-            <li><b>Define Flexible Load Standards:</b> Establish state-level requirements for
-            data centers to qualify as “flexible loads,” requiring the ability to raise or
-            lower power consumption in response to grid needs without degrading their own
-            operations.</li>
-            <li><b>Incentivize “Temporal Flexibility:”</b> Encourage AI data centers to shift
-            their energy-intensive workloads to off-peak hours or periods of high renewable
-            availability.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">9 states + D.C. → PJM</span>
-            <p>A bipartisan group of state legislators from nine states and D.C. submitted a
-            letter to PJM, demanding that data centers joining the regional grid be subject
-            to interruptible service, so PJM can force them to stop using electricity during
-            peak demand.</p></article>
-          </div>
-
-          <h4 class="play-group">Maximize Benefits</h4>
-          <p class="play-note">Data centers are among the most subsidized industries, often
-          at a high cost-per-job ratio. States should restructure these deals to ensure they
-          deliver a balanced return on investment.</p>
-          <ul class="plays">
-            <li><b>Freeze or Restructure Underperforming Exemptions:</b> Audit existing sales
-            and use tax exemptions. If benefits granted to data center developments do not
-            proportionally increase local tech jobs and revenues, consider freezing
-            eligibility, narrowing the scope of exemptions, raising sales taxes, or repealing
-            the incentives altogether.</li>
-            <li><b>Tie Incentives to Community-Enhancing Standards and Long-Term
-            Commitments:</b> Make tax exemptions contingent upon strict employment quotas,
-            specific wage thresholds, environmental baselines for on-site generation, and
-            commitments to remain in operation for 20 or more years.</li>
-            <li><b>Support Community Benefit Agreements (CBAs):</b> Create legal frameworks
-            that encourage or require developers to enter into CBAs, ensuring enforceable
-            commitments for local hiring, job quality standards (e.g., above market wages and
-            paid family leave), apprenticeship programs, infrastructure investments, and
-            environmental safeguards.</li>
-            <li><b>Unlock Industry Development:</b> Make siting agreements contingent on
-            investments in the state’s technology ecosystem, including compute donations to
-            local universities, R&amp;D partnerships, and support for AI startup
-            intermediaries.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">New Jersey</span>
-            <p>CoreWeave is building data centers in New Jersey; simultaneously, the company
-            co-founded Princeton University’s NJ AI Hub and worked with the New Jersey
-            Economic Development Authority to invest $20 million into the Hub’s emerging
-            startups.</p></article>
-            <article class="note"><span class="note-tag">New Jersey</span>
-            <p>In 2025, New Jersey passed legislation offering AI companies up to $250 million
-            in tradable tax incentives in exchange for making similarly sized investments in
-            New Jersey’s tech ecosystem.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Generate Wealth for Residents:</b> Enable communities to co-invest in new
-            developments and derive profits from successful buildouts.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Alaska · North Dakota</span>
-            <p>Residents of Alaska and North Dakota have received direct payments from oil
-            revenues through state-operated entities, including the Alaska Permanent Fund and
-            the North Dakota Legacy Fund.</p></article>
-            <article class="note"><span class="note-tag">New Mexico</span>
-            <p>New Mexico created a $7 billion fund for universal childcare, using endowment
-            revenues from the oil and gas industry.</p></article>
-          </div>
-
-          <h4 class="play-group">Mandate Transparency</h4>
-          <p class="play-note">The use of Non-Disclosure Agreements (NDAs) and the lack of
-          standardized energy consumption reporting leave regulators and the public “flying
-          blind” regarding the true footprint of these facilities.</p>
-          <ul class="plays">
-            <li><b>Prohibit NDAs:</b> Ban state and municipal government officials from
-            entering into non-disclosure agreements tied to data center projects, ensuring
-            public and legislative scrutiny of all contract details.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">New York · SB 373</span>
-            <p>New York SB373 would prohibit the state and its public authorities from
-            entering confidentiality and non-disclosure agreements “pertaining to economic
-            development.”</p></article>
-            <article class="note"><span class="note-tag">Kentucky · HB 544</span>
-            <p>Kentucky HB544 would prohibit utilities from providing services to data centers
-            with &gt;100 MW of contracted load without the PSC approving a tariff or contract.
-            All new infrastructure costs must be assigned to the data center, and other
-            customer classes must not face adverse impacts on energy prices.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Require Resource Reporting:</b> Require data center owners to report
-            standardized, non-aggregated data on energy consumption and total pollutant
-            emissions.</li>
-            <li><b>Follow Generally Accepted Accounting Principles:</b> Publicly disclose
-            state tax abatement revenue losses to data centers under the Governmental
-            Accounting Standards Board’s (GASB) Statement No. 77 on Tax Abatement Disclosures
-            in an Annual Comprehensive Financial Report (ACFR) for economic development
-            projects.</li>
-            <li><b>Publicize Secured Commitments:</b> Launch online dashboards to publicize
-            the commitments that state and local governments secured from data center
-            developers, including capital and community investments, jobs, and wage and
-            benefit agreements.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Nevada</span>
-            <p>Nevada publishes data center projects’ promised jobs, wages, and
-            subsidies.</p></article>
-            <article class="note"><span class="note-tag">Illinois</span>
-            <p>Illinois discloses select aggregate data on data center projects across the
-            state, including the total number of jobs created and company applications for
-            incentive programs.</p></article>
-          </div>
-          <p class="resources"><b>Additional Resources:</b> Data Center Regulation Tracker ·
-          Database of Emerging Large-Load Tariffs · Multistate.ai</p>
-        </div>
-
-        <!-- CSO -->
-        <div class="panel" role="tabpanel" data-panel="cso" hidden>
-          <p class="panel-lead">CSOs provide the specialized legal, technical, and regulatory
-          expertise that individual citizens often lack. They can serve as effective
-          advocates for responsible data center buildouts.</p>
-
-          <h4 class="play-group">Identify Risks &amp; Leverage Points</h4>
-          <ul class="plays">
-            <li><b>Unpermitted Infrastructure:</b> Monitor data center energy assets, such as
-            natural gas turbines, which operate without permits or leave communities with
-            unmitigated externalities.</li>
-            <li><b>Inadequate Cost-Benefit Analysis:</b> Use the organization’s resources to
-            produce independent analyses on the costs and benefits communities will face as a
-            result of buildouts.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Oregon</span>
-            <p>The Oregon Citizens Utility Board (CUB) conducted an independent analysis, which
-            revealed that PGE planned to allocate 34-45% of new supply and transmission costs
-            to households despite data centers driving the demand. CUB accused PGE of
-            circumventing Oregon’s POWER Act, requiring the PUC to make a final decision on the
-            matter.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Technical Translation:</b> Articulate complex impacts–such as how
-            transmission upgrades affect energy rates or how 24/7 operations impact local
-            noise and pollutant standards–into clear terms for citizens and government
-            officials.</li>
-          </ul>
-
-          <h4 class="play-group">Master Technical Foundations</h4>
-          <ul class="plays">
-            <li><b>Commission Expert Studies:</b> Fund independent public health, externality,
-            and cost analyses to examine the effects of co-located power plants, onsite
-            generators, and infrastructure upgrade costs on local citizens.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">South Memphis, TN</span>
-            <p>The South Memphis, Tennessee xAI Colossus data center campus operated 20
-            unpermitted gas turbines and consumed double its permitted capacity. A CSO
-            commissioned independent flyovers after residents reported gas smells. TIME
-            Magazine journalists also commissioned an independent analysis that revealed a 79%
-            spike in peak pollutants near the facility.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Monitor Legislative Trends:</b> Track state bills, such as South Carolina’s
-            H4583, which aim to assign new infrastructure costs to the data centers rather
-            than the public.</li>
-            <li><b>Analyze Data Centers’ Energy Use Metrics:</b> Investigate data centers’
-            reliance on outdated metrics, such as Power Usage Effectiveness (PUE), which fail
-            to capture how facility components, such as IT equipment efficiency and cooling
-            infrastructure, strain local energy resources.</li>
-          </ul>
-
-          <h4 class="play-group">Ask Questions</h4>
-          <ul class="plays qlist">
-            <li>Have the relevant utilities and public utility commissions conducted
-            cost-causation analyses to determine who is bearing the costs of transmission and
-            grid upgrades for data center buildouts?</li>
-            <li>Are new data centers classified as “flexible loads,” and if not, what
-            contingency plans exist in case multiple facilities simultaneously disconnect
-            during peak demand?</li>
-            <li>Which data collection tools are available to conduct open-source intelligence
-            analysis on data center developments?</li>
-            <li>How can state freedom of information laws be used to surface data center
-            contracts, tax incentive agreements, and non-disclosure agreements?</li>
-            <li>How can community benefit agreements (CBAs) be structured to enforce
-            commitments, including local hiring, energy use, and public service funding?</li>
-          </ul>
-
-          <h4 class="play-group">Formally Intervene</h4>
-          <ul class="plays">
-            <li><b>Secure Intervenor Status:</b> File as a formal intervenor in public utility
-            commission (PUC) proceedings. Intervenors have the right to cross-examine witnesses
-            and to submit expert testimony as recognized parties, formally amplifying local
-            communities’ voices, and ensuring customers receive the safe, reliable, and
-            affordable service they are entitled to.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Virginia</span>
-            <p>Virginia’s Piedmont Environmental Council intervened in a state rate-setting
-            case, submitting expert analyses on transmission costs and data center-driven
-            infrastructure spending. This intervention led to a State Corporation Commission
-            (SCC) ruling acknowledging that data centers are driving massive costs for grid
-            infrastructure, potentially subsidized by ratepayers.</p></article>
-          </div>
-
-          <h4 class="play-group">Empower Communities</h4>
-          <ul class="plays">
-            <li><b>Draft Community Benefit Agreements:</b> Help local groups negotiate CBAs
-            that include specific, enforceable commitments for local hiring, noise limits,
-            community investments, upfront financial commitments for grid upgrades, and
-            contingency funds in case of project abandonment.</li>
-            <li><b>Develop Coalitions:</b> Form coalitions with organizations that are aligned
-            on specific issues to maximize advocacy impact.</li>
-            <li><b>Coordinate Public Record Requests:</b> Leverage state-level freedom of
-            information laws to request project documentation, identify stakeholders, and
-            ensure communities have the necessary information to make informed decisions about
-            proposed developments.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Arizona</span>
-            <p>Arizona Luminaria made a public records request and revealed that the final user
-            for a Project Blue data center campus was Amazon Web Services (AWS). Under the NDA,
-            the county agreed not to share the name and, if prompted, to give AWS 10 days’
-            notice to allow AWS to seek protective orders in court.</p></article>
-          </div>
-          <p class="resources"><b>Additional Resources:</b> Data Center Regulation Tracker ·
-          Database of Emerging Large-Load Tariffs · Community Benefit Agreements · Heatmap</p>
-        </div>
-
-        <!-- CITIZENS -->
-        <div class="panel" role="tabpanel" data-panel="citizens" hidden>
-          <p class="panel-lead">How to ensure new data centers bring benefits to
-          communities.</p>
-
-          <h4 class="play-group">Know the Risks</h4>
-          <p class="play-note"><b>Watch for Red Flags:</b></p>
-          <ul class="subplays">
-            <li>Unregulated data center externalities, such as noise, emissions, 24/7
-            lighting, and exposed mechanical equipment, in residential and agricultural
-            zones</li>
-            <li>Local or state incentives for data centers that lock in long-term tax
-            concessions, such as property tax exemptions (which would impact public services,
-            such as K-12 education funding).</li>
-            <li>The risk of “phantom load” or stranded assets if a developer abandons a
-            project after the utility has already invested in upgrades can lead to increased
-            residential energy costs.</li>
-          </ul>
-          <ul class="plays">
-            <li><b>Keep in Mind:</b> Data center facilities can bring local benefits, such as
-            revenue, reduced taxes, community public service funds, expanded digital access,
-            employment, and workforce and AI training. Community benefit agreements (CBAs) are
-            one way to ensure these commitments materialize.</li>
-          </ul>
-
-          <h4 class="play-group">Get the Facts</h4>
-          <ul class="plays">
-            <li><b>Use Public Records:</b> Opacity is widespread in data center deals, but most
-            U.S. state laws allow citizens to request records, such as non-disclosure
-            agreements (NDAs).</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Pima County, AZ</span>
-            <p>In Pima County, AZ, a public records request revealed that the final user for a
-            Project Blue data center campus was Amazon Web Services (AWS). The county agreed not
-            to share the name, and, if prompted, to give AWS 10 days’ notice to allow them to
-            seek protective orders in court.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Leverage Expert Help:</b> Reach out to Civil Society Organizations (CSOs) to
-            obtain a cost-benefit analysis of the project and determine if it will increase
-            energy rates for the average ratepayer.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">South Memphis, TN</span>
-            <p>The South Memphis, Tennessee xAI Colossus data center campus operated 20
-            unpermitted gas turbines and consumed double their permitted capacity. A civil
-            society organization commissioned independent flyovers after residents reported gas
-            smells. After nearby residents reported their respiratory symptoms to journalists, a
-            TIME Magazine-commissioned independent analysis revealed a 79% spike in peak
-            pollutant levels near the facility.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Adopt Proven Strategies:</b> Use online trackers, such as
-            datacentertracker.org and Data Center Regulation Tracker, to see what’s happening
-            nearby and throughout the country to find examples of effective advocacy
-            strategies.</li>
-          </ul>
-
-          <h4 class="play-group">Speak Up &amp; Show Up</h4>
-          <p class="play-note"><b>Demand Transparency:</b></p>
-          <ul class="subplays">
-            <li>Ask local officials (Planning Commissions, City Councils, Public Utility
-            Commissions) for a breakdown of contract agreements and tax exemptions before any
-            vote occurs.</li>
-            <li>Use city council or town board meetings, public hearings, state legislative
-            public hearings, and public comment periods.</li>
-            <li>Voice concerns at state Public Utility Commissions (PUC) rate case proceedings
-            (the formal regulatory forums where the cost impacts of data center infrastructure
-            are debated).</li>
-            <li><i>FYI:</i> PUCs act as quasi-judicial mediators between providers and the
-            public to ensure customers receive safe, reliable, and affordable service.</li>
-            <li>Demand transparency on the incentives data centers received before final votes
-            and decisions, including breakdowns of contract agreements, tax exemptions, and
-            other deals.</li>
-          </ul>
-          <p class="play-note"><b>Ask Questions:</b></p>
-          <ul class="subplays qlist">
-            <li>Who is responsible for the cost of transmission and grid upgrades at the
-            outset?</li>
-            <li>What is the contingency plan if multiple facilities suddenly disconnect and
-            strain the grid?</li>
-            <li>Are developers paying upfront costs in case hyperscalers (Google, Meta, Amazon)
-            do not use the facility after it is built?</li>
-            <li>Have county officials proposed Community Benefit Agreements (CBAs)?</li>
-            <li>What kinds of incentives have local governments granted to developers?</li>
-          </ul>
-          <ul class="plays">
-            <li><b>Show up in Numbers:</b> A large presence at public hearings and thousands of
-            signatures on petition platforms like Change.org provide a rationale for officials
-            to consider community input.</li>
-            <li><b>Organize:</b> Use social media groups and webpages to raise awareness. Form
-            civil society organizations (CSOs), which can use internal resources to amplify
-            individual voices.</li>
-            <li><b>Formally Intervene:</b> Contact advocacy groups to serve as “intervenors” in
-            public utility proceedings, which grants the right to cross-examine witnesses and
-            submit expert testimony to Public Utility Commissions (PUCs).</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Minnesota</span>
-            <p>CURE MN served as an intervenor before the Minnesota Public Utility Commission
-            and argued that an Amazon project proposal must undergo a full regulatory review.
-            The PUC ultimately rejected Amazon’s request for exemption from the review.</p></article>
-          </div>
-
-          <h4 class="play-group">Exercise Legal &amp; Electoral Power</h4>
-          <ul class="plays">
-            <li><b>Vote for Utility Oversight:</b> In 11 states (e.g., GA, AZ, AL), citizens can
-            vote directly for the PUC members who regulate electricity prices.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Georgia</span>
-            <p>In a Georgia Public Utility Commission election, two incumbents, who had voted to
-            approve six rate increases for consumers over two years, were unseated.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Recall Elections:</b> If locally elected officials back unregulated buildouts
-            that run counter to community interests or engage in wrongful acts, citizens can
-            organize recall elections.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Cascade Locks, OR</span>
-            <p>In Cascade Locks, Oregon, voters recalled two officials who backed a 10 MW data
-            center, and two other project advocates lost their re-election bids.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>Referendums:</b> Residents can collect signatures and place data center
-            issues on the ballot.</li>
-          </ul>
-          <div class="field-notes">
-            <article class="note"><span class="note-tag">Port Washington, WI</span>
-            <p>In Port Washington, Wisconsin, residents formed a nonprofit, collected roughly
-            1,000 signatures, and placed a data center transparency ordinance on the ballot for
-            a referendum vote. The measure passed and now requires voter approval before the
-            city grants tax incentives to data centers.</p></article>
-          </div>
-          <ul class="plays">
-            <li><b>The Legal Option:</b> Harmed residents can file lawsuits when officials
-            engage in opaque decision making and violate zoning laws. In Prince William County,
-            VA, residents successfully sued to overturn a rezoning decision due to inadequate
-            public notice.</li>
-          </ul>
-        </div>
-
-        <!-- FEDERAL -->
-        <div class="panel" role="tabpanel" data-panel="federal" hidden>
-          <p class="panel-lead">While much of U.S. energy and AI infrastructure construction is
-          regulated at the state and county levels, many members of Congress are increasingly
-          intent on using federal policy levers to secure a responsible nationwide data center
-          buildout in support of their constituents.</p>
-          <p>
-            Distinct state and local approaches to data center regulation and incentivization
-            across the country have led to a race to the bottom, minimizing community benefits
-            while maximizing hyperscaler gains. Even though many of the states in which data
-            centers are currently clustered are the result of choices made by state and local
-            governments, Congress faces increased constituent pressure to act, and twelve
-            relevant bills were introduced between January 1, 2026 to March 31, 2026. This
-            indicates an increased appetite for federal action to address these negative
-            externalities, even though many of these siting decisions traditionally fall within
-            state and local jurisdiction.
-          </p>
-          <p>
-            There are substantive issues related to federalism at play on this issue, but
-            members of Congress have a number of pre-existing federal authorities they could
-            utilize to help bring relief to their constituents:
-          </p>
-
-          <h4 class="play-group">Authorities</h4>
-          <ul class="plays">
-            <li><b>The Energy Information Administration (EIA)</b> has information collection
-            authorities for major energy consumption, and has launched pilots to start
-            collecting information on data centers’ energy sources, electricity consumption, and
-            cooling systems. The collection and publication of aggregated energy-use statistics
-            can provide grid planners and lawmakers with insight into data center load behavior
-            and utility needs. EIA also informs the public on energy-related concepts through
-            “Energy Explained.”</li>
-            <li><b>The Federal Energy Regulatory Commission (FERC)</b> regulates the wholesale
-            interstate electricity market, but the Commission is now considering whether to more
-            directly assert authority over the interconnection of large loads to the transmission
-            system to accelerate the interconnection of large loads under an Advance Notice of
-            Proposed Rulemaking (ANOPR). FERC also has a statutory obligation to ensure all
-            rates, charges, and jurisdiction of electric service are “just and reasonable,”
-            though what constitutes these terms is mostly up to the Commissioners’ discretion and
-            prevailing case law.</li>
-            <li><b>The North American Electric Reliability Corporation (NERC)</b> could set
-            mandatory reliability standards to address data center loads’ unique grid demand and
-            novel load behavior. FERC would then approve these standards.</li>
-            <li><b>The Department of Energy (DOE)</b> conducts research into data centers’ grid
-            impacts; produces national resource adequacy and grid risk assessment reports;
-            develops efficiency studies; protects the grid by serving as the Sector Risk
-            Management Agency (SRMA) for energy; and, under recent executive orders, can select
-            specific federal sites for AI data center construction and energy co-location.</li>
-            <li><b>The Environmental Protection Agency (EPA)</b> can set pollution standards in
-            accordance with existing laws, such as the Clean Air Act.</li>
-            <li><b>The Nuclear Regulatory Commission (NRC)</b> licenses and oversees civilian
-            nuclear reactors, which hyperscalers are increasingly considering as power sources
-            for their data centers.</li>
-          </ul>
-
-          <h4 class="play-group">Areas for Potential Action</h4>
-          <div class="ledger">
-            <div class="ledger-row ledger-head"><div>Action</div><div>Description</div></div>
-            <div class="ledger-row"><div class="ledger-term">Hyperscalers Pay for Infrastructure Upgrade Costs</div>
-            <div>Condition federal tax benefits on states directing public utility commissions
-            (PUCs) to allocate data center-driven transmission and grid modernization expenses
-            directly to data centers; facilitate federal-local coordination to determine these
-            costs.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Efficiency R&amp;D Co-Investments</div>
-            <div>All data centers above a defined size and capacity threshold must co-invest in
-            federal R&amp;D programs for liquid cooling, advanced power distribution, and
-            low-power chip design as a near-term alternative to grid expansion.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Environmental Floor</div>
-            <div>Establish a federal environmental floor that limits emissions and imposes
-            energy-efficiency standards for all data center developments, correlated to facility
-            size and load.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Incentivize Buildouts in Industrial Zones</div>
-            <div>Create a federal program to incentivize data center buildouts on commercial,
-            industrial, brownfield, and disturbed land sites.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Enforceable Community Benefit Agreements (CBAs)</div>
-            <div>Enforce CBAs that include (1) a revenue-sharing floor, (2) NDA restrictions, and
-            (3) local labor and wage requirements.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Electricity-Consumption Reporting to Improve Forecasting</div>
-            <div>Mandate public and federal disclosures on load behavior, energy consumption, and
-            the prices paid for electricity consumed to inform operators’ grid monitoring and the
-            DOE’s forecasting and demand models.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Flexible Load Requirements</div>
-            <div>Incentivize states to pass laws and NERC to recommend rules that direct PUCs to
-            enforce flexible load requirements across utilities, including commitments to backup
-            generation or storage and the ability to disconnect during peak demand without
-            compromising internal operations.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Opportunity Zones with Enforceable Commitments</div>
-            <div>All Opportunity Zones must have enforceable CBAs (see above), with civil society
-            organization (CSO) involvement to ensure communities benefit from buildouts.</div></div>
-          </div>
-        </div>
+        <img class="band-photo" src="images/dc-interior-1.jpg" alt="Inside a data center" loading="lazy" />
       </div>
     </section>
 
-    <!-- ░░ CONCLUSION ░░ -->
-    <section class="section conclusion" id="conclusion">
-      <div class="container measure">
-        <p class="section-label"><span class="num">05</span> Conclusion</p>
-        <h2 class="section-title">Communities are<br />not powerless.</h2>
-        <p>
-          Hyperscalers are proposing data center buildouts at an unprecedented gigawatt
-          scale, with local communities often caught off guard by the facilities’ energy
-          demands and industrial externalities. New data center loads are straining the
-          grid, and utilities’ socialized cost allocation models are increasing residential
-          consumers’ electricity prices. Moreover, if companies abandon these projects,
-          utilities may pass data center-related energy upgrades onto other local and
-          regional consumers.
-        </p>
-        <p>
-          All the while, states are losing up to billions of dollars in tax revenue through
-          exemptions, rather than maximizing their tax base. Status quo policies are also
-          allowing data center owners to secure sweetheart deals at the cost of U.S.
-          families’ bills and democratic participation in benefit-maximizing development
-          decisions. Data center owners and operators are not required to report their
-          energy use in any standardized form, meaning these facilities can pick and choose
-          what they disclose to the public and lawmakers. NDAs obscure the tradeoffs,
-          preventing residents from accurately assessing whether the promised benefits, such
-          as local jobs, grid upgrades, and tax revenues, justify these industrial
-          buildouts.
-        </p>
-        <p class="closing-line">
-          Yet communities are not powerless. Local and state actors are already
-          demonstrating that responsible data center development is achievable. Citizens are
-          attending public hearings, CSOs are intervening in PUC proceedings, and state
-          lawmakers are introducing legislation that shifts costs back onto developers and
-          mandates transparency. The tools for change are in people’s hands. With the right
-          information and coordination across stakeholders, communities can ensure that the
-          data center boom works for <em>them</em>.
-        </p>
+    <!-- ░░ CLOSING CTA ░░ -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>You can shape this. People already have.</h2>
+        <p>Find your role, learn the tactics, and make your voice heard before the next vote.</p>
+        <div class="hero-cta center">
+          <a href="#roles" class="btn btn-primary">Find your role</a>
+          <a href="playbook.html" class="btn btn-ghost">Read the full playbook</a>
+        </div>
       </div>
     </section>
   </main>
