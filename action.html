@@ -28,9 +28,30 @@
   <main id="top">
     <!-- ░░ ACTION HERO ░░ -->
     <section class="action-hero">
-      <div class="ekg ekg-bold" aria-hidden="true">
-        <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
-          <path d="M0,100 L260,100 L290,100 L305,40 L320,160 L335,70 L350,100 L600,100 L630,100 L645,30 L662,170 L678,60 L694,100 L960,100 L990,100 L1005,45 L1020,155 L1035,75 L1050,100 L1200,100" />
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax meet">
+          <path class="ha-ground" d="M0 186 H1200" />
+          <!-- transmission tower -->
+          <g class="ha-tower">
+            <path d="M104 186 L140 34 L176 186" />
+            <path d="M140 34 V20" />
+            <path d="M130 28 H150" />
+            <path d="M126 148 H154" />
+            <path d="M118 116 H162" />
+            <path d="M74 82 H206" />
+            <path d="M86 110 H194" />
+            <path d="M74 82 V90 M206 82 V90 M86 110 V118 M194 110 V118" />
+          </g>
+          <!-- sagging power line -->
+          <path class="ha-line" d="M194 110 Q470 178 742 126" />
+          <!-- spiky 'load' line carrying the signal into the building -->
+          <path class="ha-signal" d="M206 82 L300 82 L322 30 L344 150 L366 70 L520 82 L544 30 L566 158 L588 78 L742 82" />
+          <!-- data center building -->
+          <g class="ha-dc">
+            <path d="M742 186 V82 H1124 V186" />
+            <path d="M770 98 V176 M810 98 V176 M850 98 V176 M890 98 V176 M930 98 V176 M970 98 V176 M1010 98 V176 M1050 98 V176 M1090 98 V176" />
+            <path d="M780 82 V68 H824 V82 M900 82 V68 H944 V82 M1020 82 V68 H1064 V82" />
+          </g>
         </svg>
       </div>
       <div class="container action-hero-inner">
@@ -61,6 +82,7 @@
 
         <div class="roles">
           <a class="role-card role-card--primary" href="index.html?guide=citizens#guides">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><circle cx="17" cy="9.5" r="2.3"/><path d="M16 14.6c2.8.2 4.8 2.3 4.8 5.4"/></svg></span>
             <span class="role-eyebrow">Most common</span>
             <h3>I’m a resident or neighbor</h3>
             <p>Vote, organize, and show up. Use public records, public hearings, petitions,
@@ -69,6 +91,7 @@
             <span class="role-go">Open the resident guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=county#guides">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M5 10h14"/><path d="M8.5 13v5M12 13v5M15.5 13v5"/></svg></span>
             <span class="role-eyebrow">Local government</span>
             <h3>I’m a county official</h3>
             <p>Zoning, permitting, moratoriums, transparency rules, and enforceable community
@@ -76,6 +99,7 @@
             <span class="role-go">Open the county guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=state#guides">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21v-8h14v8"/><path d="M6 13a6 6 0 0112 0"/><path d="M12 3.5V7"/><path d="M9 13v8M12 13v8M15 13v8"/></svg></span>
             <span class="role-eyebrow">State government</span>
             <h3>I’m a state lawmaker</h3>
             <p>Protect ratepayers through PUCs, redesign incentives, plan for stranded assets,
@@ -83,6 +107,7 @@
             <span class="role-go">Open the state guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=cso#guides">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M4 9.5v5l10 4v-13l-10 4z"/><path d="M14 7.5l5-2v13l-5-2"/><path d="M6.5 15v3.2l2.8 1"/></svg></span>
             <span class="role-eyebrow">Civil society</span>
             <h3>I’m an organizer or nonprofit</h3>
             <p>Bring the technical firepower: independent analysis, PUC intervention, public
@@ -90,6 +115,7 @@
             <span class="role-go">Open the CSO guide →</span>
           </a>
           <a class="role-card" href="index.html?guide=federal#guides">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M8 20h8"/><path d="M5 7.5h14"/><path d="M12 4.5l-7 3M12 4.5l7 3"/><path d="M2.5 13a2.5 2.5 0 005 0L5 7.5 2.5 13z"/><path d="M16.5 13a2.5 2.5 0 005 0L19 7.5l-2.5 5.5z"/></svg></span>
             <span class="role-eyebrow">Federal</span>
             <h3>I work in federal policy</h3>
             <p>Use the levers Congress and agencies already hold — EIA, FERC, NERC, DOE, EPA —
@@ -97,6 +123,7 @@
             <span class="role-go">Open the federal guide →</span>
           </a>
           <a class="role-card role-card--muted" href="index.html">
+            <span class="ico role-ico"><svg viewBox="0 0 24 24"><path d="M12 6.5C9.8 5 6.5 5 4 6v13c2.5-1 5.8-1 8 .5 2.2-1.5 5.5-1.5 8-.5V6c-2.5-1-5.8-1-8 .5z"/><path d="M12 6.5V20"/></svg></span>
             <span class="role-eyebrow">Not sure?</span>
             <h3>I’m just getting up to speed</h3>
             <p>Start with the full playbook — the explainer, the evidence, and every guide in
@@ -117,6 +144,7 @@
 
         <div class="moves">
           <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h7"/><path d="M14 3l4 4v4"/><path d="M14 3v4h4"/><circle cx="16" cy="16" r="3.2"/><path d="M18.4 18.4L21 21"/></svg></span>
             <span class="move-num">01</span>
             <h3>Get the facts</h3>
             <p>Opacity is widespread, but most state laws let you request records — including
@@ -125,6 +153,7 @@
             rates.</p>
           </article>
           <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.4"/><circle cx="5" cy="9" r="2"/><circle cx="19" cy="9" r="2"/><path d="M7.5 20c0-3 2-4.8 4.5-4.8s4.5 1.8 4.5 4.8"/><path d="M2 19c0-2 1-3.4 3-3.9M22 19c0-2-1-3.4-3-3.9"/></svg></span>
             <span class="move-num">02</span>
             <h3>Show up in numbers</h3>
             <p>Pack the hearing and circulate a petition — a large presence and thousands of
@@ -132,6 +161,7 @@
             and tax exemptions <em>before</em> any vote.</p>
           </article>
           <article class="move">
+            <span class="ico move-ico"><svg viewBox="0 0 24 24"><path d="M3.5 9.5L12 6l8.5 3.5"/><path d="M4 9.5V20h16V9.5"/><path d="M9 9.5v2.2h6V9.5"/><path d="M8.8 15.7l2 2 3.6-3.8"/></svg></span>
             <span class="move-num">03</span>
             <h3>Use your power</h3>
             <p>Intervene at the Public Utility Commission, place a transparency ordinance on
@@ -189,21 +219,21 @@
         </header>
         <div class="actors">
           <a class="actor why-card" href="index.html#incentives">
-            <span class="actor-num">$</span>
+            <span class="ico why-ico"><svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="1.5"/><circle cx="12" cy="12" r="2.4"/><path d="M6 9.5v5M18 9.5v5"/></svg></span>
             <h4>Your bills</h4>
             <p>Utilities often socialize the cost of grid and transmission upgrades across all
             ratepayers — and abandoned projects can strand those costs on you.</p>
             <span class="role-go">How the costs land on you →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="actor-num">⚡</span>
+            <span class="ico why-ico"><svg viewBox="0 0 24 24"><path d="M7.5 21L12 3l4.5 18"/><path d="M5 8h14"/><path d="M6.5 13h11"/><path d="M9.3 17h5.4"/></svg></span>
             <h4>Your grid</h4>
             <p>AI loads spike and collapse in seconds. In 2024, a single fault dropped ~1,500
             MW at once — the equivalent of a nuclear plant vanishing without warning.</p>
             <span class="role-go">See the reliability risk →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="actor-num">◍</span>
+            <span class="ico why-ico"><svg viewBox="0 0 24 24"><path d="M2.5 12l5.5-4.5L13.5 12"/><path d="M4 11v8h8v-8"/><path d="M13 19v-6l4-3 4 3v6"/><path d="M6.5 19v-3h3v3"/></svg></span>
             <h4>Your neighborhood</h4>
             <p>Diesel backup generators, equipment above 85 dBA, and 24/7 lighting — one
             campus raised peak NO₂ by 79% in nearby areas.</p>

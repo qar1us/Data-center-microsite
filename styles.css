@@ -536,10 +536,38 @@ strong, b { font-weight: 600; }
 
 /* ── Role router ────────────────────────────────────── */
 .roles {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--rule);
   border: 1px solid var(--rule); border-radius: 4px; overflow: hidden;
 }
+
+/* ── Line icons (shared) ────────────────────────────── */
+.ico { display: inline-block; color: var(--signal); }
+.ico svg {
+  display: block; width: 100%; height: 100%;
+  fill: none; stroke: currentColor; stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.role-ico { width: 40px; height: 40px; margin-bottom: 1.1rem; }
+.role-card--muted .role-ico { color: var(--ink-3); }
+.move-ico { width: 44px; height: 44px; margin-bottom: 0.7rem; }
+.why-ico { width: 38px; height: 38px; margin-bottom: 0.2rem; }
+
+/* ── Hero illustration ──────────────────────────────── */
+.hero-art {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: clamp(150px, 22vh, 215px); pointer-events: none;
+}
+.hero-art svg { width: 100%; height: 100%; display: block; }
+.hero-art path, .hero-art rect {
+  fill: none; stroke: #e8754f; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.ha-ground { opacity: 0.2; }
+.ha-tower { opacity: 0.5; }
+.ha-line { opacity: 0.38; }
+.ha-dc { opacity: 0.5; }
+.ha-signal { opacity: 0.92; stroke-width: 2.4; }
 .role-card {
   background: var(--paper); padding: 2rem 1.7rem; text-decoration: none; color: inherit;
   display: flex; flex-direction: column; transition: background 0.2s;
@@ -604,8 +632,14 @@ strong, b { font-weight: 600; }
 }
 .cta-band > .container > p { color: #cfcabf; font-size: 1.15rem; margin: 1rem 0 2rem; }
 
+@media (max-width: 900px) {
+  .roles { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 860px) {
   .moves { grid-template-columns: 1fr; gap: 1.8rem; }
+}
+@media (max-width: 560px) {
+  .roles { grid-template-columns: 1fr; }
 }
 
 /* ── Sources page ───────────────────────────────────── */
