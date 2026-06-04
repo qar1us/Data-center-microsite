@@ -512,7 +512,7 @@ strong, b { font-weight: 600; }
 .action-hero {
   position: relative; overflow: hidden;
   background: var(--dark); color: var(--dark-paper);
-  padding: clamp(5rem, 14vh, 9.5rem) 0 clamp(4rem, 11vh, 7rem);
+  padding: clamp(5rem, 13vh, 9rem) 0 clamp(10.5rem, 24vh, 15rem);
   border-bottom: 1px solid #2a2a30;
 }
 .ekg-bold { inset: auto 0 0 0; height: 150px; opacity: 0.16; }
@@ -556,18 +556,19 @@ strong, b { font-weight: 600; }
 /* ── Hero illustration ──────────────────────────────── */
 .hero-art {
   position: absolute; left: 0; right: 0; bottom: 0;
-  height: clamp(150px, 22vh, 215px); pointer-events: none;
+  height: clamp(115px, 15vh, 160px); pointer-events: none;
 }
 .hero-art svg { width: 100%; height: 100%; display: block; }
 .hero-art path, .hero-art rect {
-  fill: none; stroke: #e8754f; stroke-width: 2;
+  fill: none; stroke: #e8754f; stroke-width: 1.8;
   stroke-linecap: round; stroke-linejoin: round;
 }
-.ha-ground { opacity: 0.2; }
+.ha-ground { opacity: 0.22; }
 .ha-tower { opacity: 0.5; }
-.ha-line { opacity: 0.38; }
-.ha-dc { opacity: 0.5; }
-.ha-signal { opacity: 0.92; stroke-width: 2.4; }
+.ha-line { opacity: 0.34; }
+.ha-louver { opacity: 0.3; stroke-width: 1.1; }
+.ha-dc { opacity: 0.52; }
+.ha-signal { opacity: 0.9; stroke-width: 2.2; }
 .role-card {
   background: var(--paper); padding: 2rem 1.7rem; text-decoration: none; color: inherit;
   display: flex; flex-direction: column; transition: background 0.2s;
