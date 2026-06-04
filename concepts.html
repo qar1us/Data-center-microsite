@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Concepts — Grid Mitigation &amp; Data Centers</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --serif:"Fraunces",Georgia,serif;
+      --body:"Newsreader",Georgia,serif;
+      --ui:"Archivo",system-ui,sans-serif;
+      --anton:"Anton",Impact,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--body);background:#e9e9ea;color:#161616;line-height:1.6;}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+    .page-head{padding:3.5rem 0 2rem;}
+    .page-head .tag{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;color:#9a3417;}
+    .page-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;margin:.6rem 0;}
+    .page-head p{max-width:46rem;color:#444;font-size:1.1rem;}
+
+    /* board scaffold (themed via CSS vars) */
+    .board{margin:2.5rem 0 4rem;border:1px solid #cfcfd2;border-radius:10px;overflow:hidden;background:#fff;}
+    .board-label{display:flex;align-items:baseline;gap:1rem;padding:1.2rem 1.6rem;border-bottom:1px solid #e3e3e6;background:#fafafa;}
+    .board-label .n{font-family:var(--ui);font-weight:800;font-size:.8rem;letter-spacing:.1em;color:var(--accent);}
+    .board-label h2{font-family:var(--ui);font-weight:700;font-size:1.05rem;letter-spacing:.02em;}
+    .board-label .sub{font-family:var(--ui);font-size:.8rem;color:#888;margin-left:auto;}
+
+    /* hero mock */
+    .bhero{background:var(--bg);color:var(--fg);padding:3.2rem 2rem 2.4rem;position:relative;overflow:hidden;}
+    .bhero .pre{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--accent);margin-bottom:1rem;}
+    .bhero .title{font-family:var(--display);line-height:.95;margin-bottom:1.1rem;}
+    .dir-energy .bhero .title{font-weight:600;font-size:clamp(2.4rem,5.5vw,4rem);letter-spacing:-.025em;}
+    .dir-activist .bhero .title{font-family:var(--anton);text-transform:uppercase;font-size:clamp(2.6rem,6.5vw,5rem);letter-spacing:.005em;line-height:.92;}
+    .bhero .sf{max-width:34rem;color:var(--fg-soft);font-size:1.05rem;margin-bottom:1.6rem;}
+    .cta{display:flex;gap:.8rem;flex-wrap:wrap;}
+    .b{font-family:var(--ui);font-weight:600;font-size:.9rem;text-decoration:none;padding:.75rem 1.3rem;border-radius:3px;display:inline-block;}
+    .dir-activist .b{border-radius:0;text-transform:uppercase;letter-spacing:.04em;font-weight:700;}
+    .b.solid{background:var(--accent);color:var(--on-accent);}
+    .b.ghost{border:1px solid var(--fg-line);color:var(--fg);}
+    .signal{margin-top:2rem;height:42px;width:100%;opacity:.8;}
+    .signal path{fill:none;stroke:var(--accent);stroke-width:2.4;}
+
+    /* board body grid */
+    .bbody{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2rem 1.6rem 2.4rem;background:var(--light);}
+    .panel h3{font-family:var(--ui);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--accent);margin-bottom:1rem;}
+    /* swatches */
+    .sw{display:flex;flex-wrap:wrap;gap:.6rem;}
+    .chip{width:84px;}
+    .chip .b0{height:54px;border-radius:5px;border:1px solid rgba(0,0,0,.12);}
+    .chip span{display:block;font-family:var(--ui);font-size:.66rem;color:#555;margin-top:.35rem;letter-spacing:.02em;}
+    /* type specimen */
+    .spec-display{font-family:var(--display);line-height:1;margin-bottom:.6rem;color:var(--ink);}
+    .dir-energy .spec-display{font-weight:600;font-size:2.4rem;letter-spacing:-.02em;}
+    .dir-activist .spec-display{font-family:var(--anton);text-transform:uppercase;font-size:2.7rem;}
+    .spec-body{font-family:var(--body);font-size:1rem;color:#333;max-width:26rem;}
+    .spec-label{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--accent);margin-top:.9rem;}
+    /* duotone demo */
+    .duo{height:150px;border-radius:6px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+    .duo .ramp{position:absolute;inset:0;background:linear-gradient(120deg,var(--duo-dark),var(--duo-light));}
+    .duo .grain{position:absolute;inset:0;opacity:.5;background:
+      radial-gradient(circle at 30% 40%,rgba(255,255,255,.25),transparent 40%),
+      radial-gradient(circle at 70% 65%,rgba(0,0,0,.3),transparent 45%);mix-blend-mode:overlay;}
+    .duo .cap{position:relative;font-family:var(--ui);font-weight:600;font-size:.72rem;color:#fff;padding:.7rem .9rem;text-shadow:0 1px 3px rgba(0,0,0,.5);}
+    .duo-note{font-family:var(--ui);font-size:.78rem;color:#666;margin-top:.6rem;}
+    .duo-pair{display:flex;gap:.5rem;margin-top:.6rem;align-items:center;}
+    .duo-pair i{width:20px;height:20px;border-radius:4px;display:inline-block;}
+    .duo-pair span{font-family:var(--ui);font-size:.7rem;color:#666;}
+    /* sample card */
+    .scard{background:#fff;border:1px solid var(--card-line);border-radius:6px;padding:1.3rem;box-shadow:0 1px 0 rgba(0,0,0,.03);}
+    .scard.accent{box-shadow:inset 0 3px 0 var(--accent);}
+    .scard .ek{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--accent);}
+    .scard h4{font-family:var(--display);margin:.5rem 0;color:var(--ink);}
+    .dir-energy .scard h4{font-weight:600;font-size:1.3rem;}
+    .dir-activist .scard h4{font-family:var(--anton);text-transform:uppercase;font-weight:400;font-size:1.4rem;letter-spacing:.01em;}
+    .scard p{font-size:.95rem;color:#444;}
+    .scard .go{font-family:var(--ui);font-weight:600;font-size:.82rem;color:var(--accent);margin-top:.8rem;display:block;}
+    .full{grid-column:1 / -1;}
+    @media(max-width:760px){.bbody{grid-template-columns:1fr;}}
+
+    /* ── DIRECTION 02: GRID / ENERGY ── */
+    .dir-energy{
+      --bg:#0f1318;--fg:#eaf0f7;--fg-soft:#aeb8c4;--fg-line:#3a444f;
+      --accent:#3f7dff;--on-accent:#fff;--accent2:#ffc23a;
+      --light:#eef1f5;--ink:#141a21;--card-line:#dde1e7;
+      --display:var(--serif);
+      --duo-dark:#0c1830;--duo-light:#4f93ff;
+    }
+    /* ── DIRECTION 03: HIGH-CONTRAST ACTIVIST ── */
+    .dir-activist{
+      --bg:#0a0a0a;--fg:#fafaf7;--fg-soft:#bdbdb8;--fg-line:#444;
+      --accent:#ec2d24;--on-accent:#fff;--accent2:#111;
+      --light:#f5f3ee;--ink:#111;--card-line:#e0ddd5;
+      --display:var(--anton);
+      --duo-dark:#180605;--duo-light:#ff5247;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="tag">Brand Concepts · Internal</p>
+      <h1>Two bespoke directions to compare</h1>
+      <p>Both are photo-forward and use <strong>duotone</strong> imagery. Direction 02 leans
+      cool, infrastructural, and modern; Direction 03 is loud and campaign-forward. Pick one —
+      or tell me what to borrow from each. (Photo tiles below are placeholders showing the
+      duotone color range; real photos will map across those two tones.)</p>
+    </header>
+  </div>
+
+  <!-- ════ DIRECTION 02 ════ -->
+  <div class="wrap">
+    <div class="board dir-energy">
+      <div class="board-label"><span class="n">02</span><h2>Grid / Energy</h2><span class="sub">charcoal · electric blue · signal amber · Fraunces</span></div>
+      <div class="bhero">
+        <p class="pre">A data center is proposed or being built near you?</p>
+        <p class="title">Here’s what<br>you can do.</p>
+        <p class="sf">You are not powerless. Communities across the country are already
+        reshaping these projects — and some have stopped them outright.</p>
+        <div class="cta"><a class="b solid">Find your role</a><a class="b ghost">Read the playbook</a></div>
+        <svg class="signal" viewBox="0 0 600 42" preserveAspectRatio="none"><path d="M0 21H180l14-17 14 34 12-25 10 8H600"/></svg>
+      </div>
+      <div class="bbody">
+        <div class="panel">
+          <h3>Palette</h3>
+          <div class="sw">
+            <div class="chip"><div class="b0" style="background:#0f1318"></div><span>#0F1318 ink</span></div>
+            <div class="chip"><div class="b0" style="background:#1b2530"></div><span>#1B2530 surface</span></div>
+            <div class="chip"><div class="b0" style="background:#3f7dff"></div><span>#3F7DFF blue</span></div>
+            <div class="chip"><div class="b0" style="background:#ffc23a"></div><span>#FFC23A amber</span></div>
+            <div class="chip"><div class="b0" style="background:#eef1f5"></div><span>#EEF1F5 paper</span></div>
+          </div>
+          <h3 style="margin-top:1.6rem">Components</h3>
+          <div style="display:flex;gap:.7rem;margin-bottom:1rem;flex-wrap:wrap">
+            <a class="b solid">Take action</a><a class="b ghost" style="--fg:#161a21;--fg-line:#c2c8d0;color:#161a21">Learn more</a>
+          </div>
+          <div class="scard accent">
+            <span class="ek">Most common</span>
+            <h4>I’m a resident</h4>
+            <p>Vote, organize, and show up — use records, hearings, and the ballot box.</p>
+            <span class="go">Open the resident guide →</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Typography</h3>
+          <div class="spec-display">Power, in your hands.</div>
+          <p class="spec-body">Newsreader sets the body — calm, readable, credible. Fraunces
+          carries the headlines with editorial weight.</p>
+          <p class="spec-label">Archivo · labels &amp; UI</p>
+          <h3 style="margin-top:1.6rem">Photo treatment — duotone</h3>
+          <div class="duo"><div class="ramp"></div><div class="grain"></div><span class="cap">your photo, duotoned</span></div>
+          <div class="duo-pair"><i style="background:#0c1830"></i><span>shadows #0C1830</span><i style="background:#4f93ff"></i><span>highlights #4F93FF</span></div>
+          <p class="duo-note">Every photo mapped to these two tones so mixed stock feels unified.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ DIRECTION 03 ════ -->
+  <div class="wrap">
+    <div class="board dir-activist">
+      <div class="board-label"><span class="n">03</span><h2>High-Contrast Activist</h2><span class="sub">near-black · off-white · signal red · Anton</span></div>
+      <div class="bhero">
+        <p class="pre">A data center is proposed or being built near you?</p>
+        <p class="title">Here’s what<br>you can do.</p>
+        <p class="sf">You are not powerless. Communities across the country are already
+        reshaping these projects — and some have stopped them outright.</p>
+        <div class="cta"><a class="b solid">Find your role</a><a class="b ghost">Read the playbook</a></div>
+        <svg class="signal" viewBox="0 0 600 42" preserveAspectRatio="none"><path d="M0 21H180l14-17 14 34 12-25 10 8H600"/></svg>
+      </div>
+      <div class="bbody">
+        <div class="panel">
+          <h3>Palette</h3>
+          <div class="sw">
+            <div class="chip"><div class="b0" style="background:#0a0a0a"></div><span>#0A0A0A black</span></div>
+            <div class="chip"><div class="b0" style="background:#ec2d24"></div><span>#EC2D24 red</span></div>
+            <div class="chip"><div class="b0" style="background:#f5f3ee"></div><span>#F5F3EE paper</span></div>
+            <div class="chip"><div class="b0" style="background:#111111"></div><span>#111 ink</span></div>
+          </div>
+          <h3 style="margin-top:1.6rem">Components</h3>
+          <div style="display:flex;gap:.7rem;margin-bottom:1rem;flex-wrap:wrap">
+            <a class="b solid">Take action</a><a class="b ghost" style="--fg:#111;--fg-line:#cdcabf;color:#111">Learn more</a>
+          </div>
+          <div class="scard accent">
+            <span class="ek">Most common</span>
+            <h4>I’m a resident</h4>
+            <p>Vote, organize, and show up — use records, hearings, and the ballot box.</p>
+            <span class="go">Open the resident guide →</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Typography</h3>
+          <div class="spec-display">Don’t build it in the dark.</div>
+          <p class="spec-body">Anton sets loud, condensed, poster-style headlines. Newsreader
+          keeps the body readable; Archivo handles labels.</p>
+          <p class="spec-label">Archivo · labels &amp; UI</p>
+          <h3 style="margin-top:1.6rem">Photo treatment — duotone</h3>
+          <div class="duo"><div class="ramp"></div><div class="grain"></div><span class="cap">your photo, duotoned</span></div>
+          <div class="duo-pair"><i style="background:#180605"></i><span>shadows #180605</span><i style="background:#ff5247"></i><span>highlights #FF5247</span></div>
+          <p class="duo-note">High-contrast red duotone — urgent, protest-poster energy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:4rem;color:#666;font-family:var(--ui);font-size:.82rem">
+    Internal concept page — not linked from the live site.
+  </div>
+</body>
+</html>
