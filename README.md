@@ -32,11 +32,17 @@ All content lives in the HTML, so it remains fully readable if JavaScript is dis
 
 ```
 .
-├── index.html    # All content and page sections
-├── styles.css    # Design system: tokens, typography, layout
-├── script.js     # Progress bar, scroll-spy, counters, tabs
+├── index.html      # Homepage — action landing ("Here's what you can do")
+├── playbook.html   # The full verbatim long-read playbook
+├── sources.html    # Bibliography (153 sources, A–Z)
+├── concepts.html   # Internal brand-exploration page (noindex)
+├── styles.css      # Design system: tokens, typography, layout
+├── script.js       # Progress bar, scroll-spy, counters, tabs, ?guide deep-link
+├── images/         # Duotone-treated photography (+ specs in images/README.md)
 └── README.md
 ```
+
+Brand: "Grid / Energy" — cool charcoal/paper with an amber signal; Fraunces (display), Newsreader (body), Archivo (labels). Imagery uses an amber duotone SVG filter. Bump `styles.css?vN` on any CSS change to bust caches.
 
 ## Running locally
 
