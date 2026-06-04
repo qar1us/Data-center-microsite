@@ -633,6 +633,76 @@ strong, b { font-weight: 600; }
 }
 .cta-band > .container > p { color: #cfcabf; font-size: 1.15rem; margin: 1rem 0 2rem; }
 
+/* ============================================================
+   ACTION PAGE — Direction 02 (Grid / Energy, amber-forward)
+   Scoped to .action-page so other pages keep the warm theme.
+   ============================================================ */
+.action-page {
+  --paper: #eef1f5; --paper-2: #e4e9ef; --ink: #141a21; --ink-2: #44505c;
+  --ink-3: #6b7682; --rule: #d4dae2; --signal: #f2a81e; --signal-2: #cc8810;
+  --accent-text: #9a6510; --dark: #0f1318; --dark-paper: #eef2f6;
+}
+.action-page .topbar { background: rgba(238, 241, 245, 0.85); }
+/* amber is a great fill but too light as small text on light → use bronze */
+.action-page .section-label,
+.action-page .role-eyebrow,
+.action-page .role-go,
+.action-page .win-place,
+.action-page .move-num,
+.action-page .ico,
+.action-page .section-nav a:hover,
+.action-page .section-nav a.active { color: var(--accent-text); }
+.action-page .section-nav a.active { border-color: var(--accent-text); }
+.action-page .action-hero .preline { color: var(--signal); }
+.action-page .action-hero .standfirst { color: #aeb8c4; }
+.action-page .btn-primary, .action-page .btn-primary:hover { color: #1a1206; }
+.action-page .role-card--primary { background: #e7edf4; }
+.action-page .action-hero { padding: clamp(5.5rem, 13vh, 9rem) 0 clamp(5.5rem, 13vh, 9rem); }
+
+/* ── Branded image placeholders (until real photos land) ── */
+.ph { position: relative; background: #0f1318; border-radius: 6px; overflow: hidden; display: block; }
+.ph::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(242,168,30,0.13) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg, rgba(242,168,30,0.13) 0 1px, transparent 1px 26px),
+    radial-gradient(130% 120% at 82% 10%, rgba(242,168,30,0.20), transparent 55%);
+}
+.ph::after {
+  content: "Image"; position: absolute; left: 0.8rem; bottom: 0.7rem;
+  font-family: var(--ui); font-weight: 600; font-size: 0.62rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #f2a81e;
+  border: 1px solid rgba(242,168,30,0.45); padding: 0.22rem 0.5rem; border-radius: 3px;
+}
+.ph[data-label]::after { content: attr(data-label); }
+.ph-16x9 { aspect-ratio: 16 / 9; }
+.ph-wide { aspect-ratio: 3 / 1; }
+
+/* ── Photo-forward hero background placeholder ── */
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: #0f1318; }
+.hero-bg::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(242,168,30,0.08) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(90deg, rgba(242,168,30,0.08) 0 1px, transparent 1px 30px),
+    radial-gradient(85% 130% at 88% 0%, rgba(242,168,30,0.22), transparent 55%);
+}
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(15,19,24,0.95) 0 36%, rgba(15,19,24,0.6) 72%, rgba(15,19,24,0.42) 100%);
+}
+.action-hero-inner { position: relative; z-index: 1; }
+.hero-tag {
+  position: absolute; right: 1rem; top: 1rem; z-index: 1;
+  font-family: var(--ui); font-weight: 600; font-size: 0.62rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #f2a81e;
+  border: 1px solid rgba(242,168,30,0.4); padding: 0.25rem 0.5rem; border-radius: 3px;
+}
+.ph-caption {
+  font-family: var(--ui); font-size: 0.78rem; color: var(--ink-3);
+  margin-top: 0.7rem; text-align: center;
+}
+
 @media (max-width: 900px) {
   .roles { grid-template-columns: repeat(2, 1fr); }
 }

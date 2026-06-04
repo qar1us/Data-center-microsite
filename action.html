@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body class="action-page">
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -28,30 +28,8 @@
   <main id="top">
     <!-- ░░ ACTION HERO ░░ -->
     <section class="action-hero">
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice">
-          <path class="ha-ground" d="M0 150 H1200" />
-          <!-- transmission tower -->
-          <g class="ha-tower">
-            <path d="M126 150 L150 40 L174 150" />
-            <path d="M150 40 V32 M145 36 H155" />
-            <path d="M134 128 H166 M140 100 H160 M145 74 H155" />
-            <path d="M120 62 H180 M124 82 H176" />
-            <path d="M120 62 V68 M180 62 V68 M124 82 V88 M176 82 V88" />
-          </g>
-          <!-- lower sagging transmission line -->
-          <path class="ha-line" d="M176 84 Q500 140 840 96" />
-          <!-- spiky 'load' line carrying the signal into the building -->
-          <path class="ha-signal" d="M180 64 L300 74 L330 74 L348 50 L366 100 L386 74 L560 74 L588 50 L606 100 L626 74 L840 74" />
-          <!-- data center building -->
-          <g class="ha-dc">
-            <path d="M840 150 V74 H1160 V150" />
-            <path d="M876 74 V62 H918 V74 M996 74 V62 H1038 V74 M1096 74 V62 H1134 V74" />
-            <path d="M978 150 V118 H1018 V150" />
-          </g>
-          <path class="ha-louver" d="M858 88 V142 M890 88 V142 M921 88 V142 M953 88 V142 M1047 88 V142 M1079 88 V142 M1110 88 V142 M1142 88 V142" />
-        </svg>
-      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <span class="hero-tag" aria-hidden="true">Hero image →</span>
       <div class="container action-hero-inner">
         <p class="preline">A data center is proposed or being built near you?</p>
         <h1>Here’s what<br />you can do.</h1>
@@ -217,27 +195,35 @@
         </header>
         <div class="actors">
           <a class="actor why-card" href="index.html#incentives">
-            <span class="ico why-ico"><svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="1.5"/><circle cx="12" cy="12" r="2.4"/><path d="M6 9.5v5M18 9.5v5"/></svg></span>
+            <span class="ph ph-16x9" data-label="Utility bill / meter" style="margin-bottom:1.1rem"></span>
             <h4>Your bills</h4>
             <p>Utilities often socialize the cost of grid and transmission upgrades across all
             ratepayers — and abandoned projects can strand those costs on you.</p>
             <span class="role-go">How the costs land on you →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="ico why-ico"><svg viewBox="0 0 24 24"><path d="M7.5 21L12 3l4.5 18"/><path d="M5 8h14"/><path d="M6.5 13h11"/><path d="M9.3 17h5.4"/></svg></span>
+            <span class="ph ph-16x9" data-label="Transmission lines" style="margin-bottom:1.1rem"></span>
             <h4>Your grid</h4>
             <p>AI loads spike and collapse in seconds. In 2024, a single fault dropped ~1,500
             MW at once — the equivalent of a nuclear plant vanishing without warning.</p>
             <span class="role-go">See the reliability risk →</span>
           </a>
           <a class="actor why-card" href="index.html#energy">
-            <span class="ico why-ico"><svg viewBox="0 0 24 24"><path d="M2.5 12l5.5-4.5L13.5 12"/><path d="M4 11v8h8v-8"/><path d="M13 19v-6l4-3 4 3v6"/><path d="M6.5 19v-3h3v3"/></svg></span>
+            <span class="ph ph-16x9" data-label="Neighborhood" style="margin-bottom:1.1rem"></span>
             <h4>Your neighborhood</h4>
             <p>Diesel backup generators, equipment above 85 dBA, and 24/7 lighting — one
             campus raised peak NO₂ by 79% in nearby areas.</p>
             <span class="role-go">See the local harms →</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ░░ FULL-WIDTH IMAGE BAND (placeholder) ░░ -->
+    <section class="section section-alt">
+      <div class="container">
+        <span class="ph ph-wide" data-label="Full-width image — e.g., a packed public hearing"></span>
+        <p class="ph-caption">Placeholder — a wide, duotone-treated photo will live here.</p>
       </div>
     </section>
 
