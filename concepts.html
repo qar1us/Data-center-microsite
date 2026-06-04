@@ -26,7 +26,7 @@
     /* board scaffold (themed via CSS vars) */
     .board{margin:2.5rem 0 4rem;border:1px solid #cfcfd2;border-radius:10px;overflow:hidden;background:#fff;}
     .board-label{display:flex;align-items:baseline;gap:1rem;padding:1.2rem 1.6rem;border-bottom:1px solid #e3e3e6;background:#fafafa;}
-    .board-label .n{font-family:var(--ui);font-weight:800;font-size:.8rem;letter-spacing:.1em;color:var(--accent);}
+    .board-label .n{font-family:var(--ui);font-weight:800;font-size:.8rem;letter-spacing:.1em;color:var(--accent-text);}
     .board-label h2{font-family:var(--ui);font-weight:700;font-size:1.05rem;letter-spacing:.02em;}
     .board-label .sub{font-family:var(--ui);font-size:.8rem;color:#888;margin-left:auto;}
 
@@ -47,7 +47,7 @@
 
     /* board body grid */
     .bbody{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2rem 1.6rem 2.4rem;background:var(--light);}
-    .panel h3{font-family:var(--ui);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--accent);margin-bottom:1rem;}
+    .panel h3{font-family:var(--ui);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--accent-text);margin-bottom:1rem;}
     /* swatches */
     .sw{display:flex;flex-wrap:wrap;gap:.6rem;}
     .chip{width:84px;}
@@ -58,7 +58,7 @@
     .dir-energy .spec-display{font-weight:600;font-size:2.4rem;letter-spacing:-.02em;}
     .dir-activist .spec-display{font-family:var(--anton);text-transform:uppercase;font-size:2.7rem;}
     .spec-body{font-family:var(--body);font-size:1rem;color:#333;max-width:26rem;}
-    .spec-label{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--accent);margin-top:.9rem;}
+    .spec-label{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--accent-text);margin-top:.9rem;}
     /* duotone demo */
     .duo{height:150px;border-radius:6px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
     .duo .ramp{position:absolute;inset:0;background:linear-gradient(120deg,var(--duo-dark),var(--duo-light));}
@@ -73,27 +73,27 @@
     /* sample card */
     .scard{background:#fff;border:1px solid var(--card-line);border-radius:6px;padding:1.3rem;box-shadow:0 1px 0 rgba(0,0,0,.03);}
     .scard.accent{box-shadow:inset 0 3px 0 var(--accent);}
-    .scard .ek{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--accent);}
+    .scard .ek{font-family:var(--ui);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--accent-text);}
     .scard h4{font-family:var(--display);margin:.5rem 0;color:var(--ink);}
     .dir-energy .scard h4{font-weight:600;font-size:1.3rem;}
     .dir-activist .scard h4{font-family:var(--anton);text-transform:uppercase;font-weight:400;font-size:1.4rem;letter-spacing:.01em;}
     .scard p{font-size:.95rem;color:#444;}
-    .scard .go{font-family:var(--ui);font-weight:600;font-size:.82rem;color:var(--accent);margin-top:.8rem;display:block;}
+    .scard .go{font-family:var(--ui);font-weight:600;font-size:.82rem;color:var(--accent-text);margin-top:.8rem;display:block;}
     .full{grid-column:1 / -1;}
     @media(max-width:760px){.bbody{grid-template-columns:1fr;}}
 
     /* ── DIRECTION 02: GRID / ENERGY ── */
     .dir-energy{
-      --bg:#0f1318;--fg:#eaf0f7;--fg-soft:#aeb8c4;--fg-line:#3a444f;
-      --accent:#3f7dff;--on-accent:#fff;--accent2:#ffc23a;
+      --bg:#0f1318;--fg:#eef2f6;--fg-soft:#aeb8c4;--fg-line:#3a444f;
+      --accent:#f2a81e;--on-accent:#1a1206;--accent2:#4f93ff;--accent-text:#9a6510;
       --light:#eef1f5;--ink:#141a21;--card-line:#dde1e7;
       --display:var(--serif);
-      --duo-dark:#0c1830;--duo-light:#4f93ff;
+      --duo-dark:#10141b;--duo-light:#f6b22e;
     }
     /* ── DIRECTION 03: HIGH-CONTRAST ACTIVIST ── */
     .dir-activist{
       --bg:#0a0a0a;--fg:#fafaf7;--fg-soft:#bdbdb8;--fg-line:#444;
-      --accent:#ec2d24;--on-accent:#fff;--accent2:#111;
+      --accent:#ec2d24;--on-accent:#fff;--accent2:#111;--accent-text:#d62318;
       --light:#f5f3ee;--ink:#111;--card-line:#e0ddd5;
       --display:var(--anton);
       --duo-dark:#180605;--duo-light:#ff5247;
@@ -115,7 +115,7 @@
   <!-- ════ DIRECTION 02 ════ -->
   <div class="wrap">
     <div class="board dir-energy">
-      <div class="board-label"><span class="n">02</span><h2>Grid / Energy</h2><span class="sub">charcoal · electric blue · signal amber · Fraunces</span></div>
+      <div class="board-label"><span class="n">02</span><h2>Grid / Energy</h2><span class="sub">charcoal · signal amber · electric-blue support · Fraunces</span></div>
       <div class="bhero">
         <p class="pre">A data center is proposed or being built near you?</p>
         <p class="title">Here’s what<br>you can do.</p>
@@ -128,10 +128,10 @@
         <div class="panel">
           <h3>Palette</h3>
           <div class="sw">
+            <div class="chip"><div class="b0" style="background:#f2a81e"></div><span>#F2A81E amber</span></div>
             <div class="chip"><div class="b0" style="background:#0f1318"></div><span>#0F1318 ink</span></div>
             <div class="chip"><div class="b0" style="background:#1b2530"></div><span>#1B2530 surface</span></div>
-            <div class="chip"><div class="b0" style="background:#3f7dff"></div><span>#3F7DFF blue</span></div>
-            <div class="chip"><div class="b0" style="background:#ffc23a"></div><span>#FFC23A amber</span></div>
+            <div class="chip"><div class="b0" style="background:#4f93ff"></div><span>#4F93FF blue</span></div>
             <div class="chip"><div class="b0" style="background:#eef1f5"></div><span>#EEF1F5 paper</span></div>
           </div>
           <h3 style="margin-top:1.6rem">Components</h3>
@@ -153,8 +153,8 @@
           <p class="spec-label">Archivo · labels &amp; UI</p>
           <h3 style="margin-top:1.6rem">Photo treatment — duotone</h3>
           <div class="duo"><div class="ramp"></div><div class="grain"></div><span class="cap">your photo, duotoned</span></div>
-          <div class="duo-pair"><i style="background:#0c1830"></i><span>shadows #0C1830</span><i style="background:#4f93ff"></i><span>highlights #4F93FF</span></div>
-          <p class="duo-note">Every photo mapped to these two tones so mixed stock feels unified.</p>
+          <div class="duo-pair"><i style="background:#10141b"></i><span>shadows #10141B</span><i style="background:#f6b22e"></i><span>highlights #F6B22E</span></div>
+          <p class="duo-note">Cool charcoal shadows lifting to amber highlights — warm, electric, and clearly a graphic treatment (not a literal photo).</p>
         </div>
       </div>
     </div>
