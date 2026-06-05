@@ -148,15 +148,25 @@ tabs.forEach((tab) => {
   tab.addEventListener("click", () => activateTab(tab.dataset.tab));
 });
 
-// Deep-link from the action page: ?guide=<key> opens that guide and scrolls to it
+// Deep-link from the action page: ?guide=<key> opens that guide and scrolls to it.
+// The playbook is a very long page, so the browser's initial #guides jump lands
+// wrong once web-fonts load and reflow the page. We re-land after fonts + full load.
 const guideParam = new URLSearchParams(window.location.search).get("guide");
 if (guideParam && tabs.some((t) => t.dataset.tab === guideParam)) {
   activateTab(guideParam);
   const guidesSection = document.getElementById("guides");
   if (guidesSection) {
-    requestAnimationFrame(() =>
-      guidesSection.scrollIntoView({ behavior: "smooth", block: "start" })
-    );
+    let settled = false;
+    const land = () => guidesSection.scrollIntoView({ behavior: "auto", block: "start" });
+    // initial + a few corrective passes as fonts/layout settle
+    land();
+    requestAnimationFrame(land);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => { land(); settled = true; });
+    }
+    window.addEventListener("load", () => setTimeout(land, 80));
+    // final safety pass
+    setTimeout(() => { if (!settled) land(); }, 600);
   }
 }
 
