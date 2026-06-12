@@ -282,6 +282,10 @@ strong, b { font-weight: 600; }
   color: var(--accent-text); margin-bottom: 0.6rem; font-weight: 500;
 }
 .note p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-2); }
+/* notes inside dark sections: dark card, light text (avoids .dark p override) */
+.dark .note { background: #181d24; border-color: #2a323c; }
+.dark .note p { color: #cfcabf; }
+.dark .note .note-tag { color: var(--signal); }
 
 /* ── Dark section ───────────────────────────────────── */
 .dark {
@@ -374,7 +378,7 @@ strong, b { font-weight: 600; }
 
 /* ── Actors grid ────────────────────────────────────── */
 .actors {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1px; background: var(--rule);
   border: 1px solid var(--rule); border-radius: 4px; overflow: hidden;
   margin-top: 1rem;
@@ -389,6 +393,20 @@ strong, b { font-weight: 600; }
   letter-spacing: -0.01em; margin: 0.9rem 0 0.6rem;
 }
 .actor p { font-size: 1rem; line-height: 1.5; color: var(--ink-2); margin: 0; }
+/* closing-thought cell that fills the grid's empty slot */
+.actor--note { background: var(--paper-2); display: flex; align-items: center; }
+.actor--note p {
+  font-family: var(--serif-text); font-style: italic;
+  font-size: 1.15rem; line-height: 1.5; color: var(--ink);
+}
+
+/* back-to-home breadcrumb (guides page) */
+.back-home {
+  display: inline-block; font-family: var(--ui); font-weight: 600;
+  font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase;
+  text-decoration: none; color: var(--ink-3); margin-bottom: 1.8rem;
+}
+.back-home:hover { color: var(--accent-text); }
 
 /* ── Tabs / guides ──────────────────────────────────── */
 .tabs {
@@ -414,10 +432,13 @@ strong, b { font-weight: 600; }
   max-width: 40rem; margin-bottom: 2.5rem; color: var(--ink);
 }
 .play-group {
-  font-family: var(--ui); font-size: 0.8rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--accent-text);
-  margin: 2.6rem 0 1.2rem; padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--rule);
+  font-family: var(--serif-display); font-weight: 600;
+  font-size: 1.5rem; letter-spacing: -0.01em; color: var(--ink);
+  margin: 3rem 0 1.2rem;
+}
+.play-group::after {
+  content: ""; display: block; width: 3rem;
+  border-top: 3px solid var(--signal); margin-top: 0.5rem;
 }
 .plays { list-style: none; max-width: 44rem; }
 .plays li {
@@ -738,13 +759,13 @@ strong, b { font-weight: 600; }
 }
 
 @media (max-width: 900px) {
-  .roles { grid-template-columns: repeat(2, 1fr); }
+  .roles, .actors { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .moves { grid-template-columns: 1fr; gap: 1.8rem; }
 }
 @media (max-width: 560px) {
-  .roles { grid-template-columns: 1fr; }
+  .roles, .actors { grid-template-columns: 1fr; }
 }
 
 /* ── Sources page ───────────────────────────────────── */
