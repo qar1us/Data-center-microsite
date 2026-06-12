@@ -134,6 +134,15 @@ if ("IntersectionObserver" in window) {
 const tabs = Array.from(document.querySelectorAll(".tab"));
 const panels = Array.from(document.querySelectorAll(".panel"));
 
+// role → hero image (same images as the homepage role cards)
+const GUIDE_IMAGES = {
+  county: "images/zoning.jpg",
+  state: "images/town-hall.jpg",
+  cso: "images/grassroots.jpg",
+  citizens: "images/family.jpg",
+  federal: "images/capitol.jpg",
+};
+
 function activateTab(key) {
   tabs.forEach((t) => {
     const on = t.dataset.tab === key;
@@ -145,32 +154,29 @@ function activateTab(key) {
     p.classList.toggle("is-active", on);
     p.hidden = !on;
   });
+  // swap the guide-hero photo to match the active role
+  const heroPhoto = document.getElementById("guide-hero-photo");
+  if (heroPhoto && GUIDE_IMAGES[key]) {
+    const next = GUIDE_IMAGES[key];
+    if (!heroPhoto.src.endsWith(next)) {
+      heroPhoto.style.opacity = "0";
+      setTimeout(() => {
+        heroPhoto.src = next;
+        heroPhoto.style.opacity = "1";
+      }, 200);
+    }
+  }
 }
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => activateTab(tab.dataset.tab));
 });
 
-// Deep-link from the action page: ?guide=<key> opens that guide and scrolls to it.
-// The playbook is a very long page, so the browser's initial #guides jump lands
-// wrong once web-fonts load and reflow the page. We re-land after fonts + full load.
+// Deep-link: ?guide=<key> opens that guide. The guides live at the top of their
+// own page now (with a role hero), so no scroll is needed on arrival.
 const guideParam = new URLSearchParams(window.location.search).get("guide");
 if (guideParam && tabs.some((t) => t.dataset.tab === guideParam)) {
   activateTab(guideParam);
-  const guidesSection = document.getElementById("guides");
-  if (guidesSection) {
-    let settled = false;
-    const land = () => guidesSection.scrollIntoView({ behavior: "auto", block: "start" });
-    // initial + a few corrective passes as fonts/layout settle
-    land();
-    requestAnimationFrame(land);
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(() => { land(); settled = true; });
-    }
-    window.addEventListener("load", () => setTimeout(land, 80));
-    // final safety pass
-    setTimeout(() => { if (!settled) land(); }, 600);
-  }
 }
 
 // Keyboard navigation for the tablist
