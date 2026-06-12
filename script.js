@@ -15,7 +15,10 @@ updateProgress();
 // ── Section nav highlighting ──────────────────────────
 const navLinks = Array.from(document.querySelectorAll(".section-nav a"));
 const sections = navLinks
-  .map((a) => document.querySelector(a.getAttribute("href")))
+  .map((a) => {
+    const href = a.getAttribute("href") || "";
+    return href.startsWith("#") ? document.querySelector(href) : null;
+  })
   .filter(Boolean);
 
 if ("IntersectionObserver" in window && sections.length) {
