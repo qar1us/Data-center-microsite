@@ -43,7 +43,7 @@
   <main id="top">
     <!-- ░░ ROLE HERO (image swaps with the active guide) ░░ -->
     <section class="guide-hero">
-      <img class="hero-photo" id="guide-hero-photo" src="images/zoning.jpg" alt="" aria-hidden="true" />
+      <img class="hero-photo" id="guide-hero-photo" src="images/family.jpg" alt="" aria-hidden="true" />
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="container">
         <a class="back-home" href="index.html">← Home</a>
@@ -63,17 +63,17 @@
     <section class="section section-alt" id="guides">
       <div class="container">
         <div class="tabs" role="tablist" aria-label="Advocacy guides">
-          <button class="tab is-active" role="tab" aria-selected="true" data-tab="county">County Officials</button>
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="citizens">Residents</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="county">County Officials</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="state">State Lawmakers</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="cso">Civil Society Organizations</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="citizens">Individual Citizens</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="federal">Federal Levers</button>
         </div>
 
         <!-- COUNTY -->
-        <div class="panel is-active" role="tabpanel" data-panel="county">
+        <div class="panel" role="tabpanel" data-panel="county" hidden>
           <p class="panel-lead">County officials wield significant authority over data
-          center development through zoning; permitting; moratoriums; and standards on
+          center development through zoning, permitting, moratoriums, and standards on
           noise levels and energy use.</p>
 
           <h4 class="play-group">Secure Smart Siting</h4>
@@ -110,9 +110,9 @@
             data center developers to provide clear, non-aggregated data on predicted energy
             demand, backup energy systems, flexible load assurance, and contingency plans in
             case of power delivery interruptions.</li>
-            <li><b>Avoid Secrecy:</b> Refrain from agreeing to or allowing NDAs to maintain
-            transparency and trust with constituents and to mitigate data center development
-            aversion–often a result of initial opacity.</li>
+            <li><b>Avoid Secrecy:</b> Refrain from agreeing to or allowing NDAs. Instead,
+            maintain transparency and trust with constituents, mitigating data center
+            development aversion.</li>
             <li><b>Implement Sunshine Periods:</b> Adopt mandatory public review periods
             before public bodies vote on projects covered by NDAs.</li>
           </ul>
@@ -506,7 +506,7 @@
         </div>
 
         <!-- CITIZENS -->
-        <div class="panel" role="tabpanel" data-panel="citizens" hidden>
+        <div class="panel is-active" role="tabpanel" data-panel="citizens">
           <p class="panel-lead">How to ensure new data centers bring benefits to
           communities.</p>
 
@@ -515,7 +515,7 @@
           <ul class="subplays">
             <li>Unregulated data center externalities, such as noise, emissions, 24/7
             lighting, and exposed mechanical equipment, in residential and agricultural
-            zones</li>
+            zones.</li>
             <li>Local or state incentives for data centers that lock in long-term tax
             concessions, such as property tax exemptions (which would impact public services,
             such as K-12 education funding).</li>
@@ -532,7 +532,7 @@
 
           <h4 class="play-group">Get the Facts</h4>
           <ul class="plays">
-            <li><b>Use Public Records:</b> Opacity is widespread in data center deals, but most
+            <li><b>Use Public Records:</b> Data center deals often lack transparency, but most
             U.S. state laws allow citizens to request records, such as non-disclosure
             agreements (NDAs).</li>
           </ul>
@@ -652,9 +652,8 @@
         <!-- FEDERAL -->
         <div class="panel" role="tabpanel" data-panel="federal" hidden>
           <p class="panel-lead">While much of U.S. energy and AI infrastructure construction is
-          regulated at the state and county levels, many members of Congress are increasingly
-          intent on using federal policy levers to secure a responsible nationwide data center
-          buildout in support of their constituents.</p>
+          regulated at the state and county levels, federal lawmakers have levers for securing
+          a responsible nationwide data center buildout in support of their constituents.</p>
           <p>
             Distinct state and local approaches to data center regulation and incentivization
             across the country have led to a race to the bottom, minimizing community benefits
@@ -716,9 +715,6 @@
             <div>All data centers above a defined size and capacity threshold must co-invest in
             federal R&amp;D programs for liquid cooling, advanced power distribution, and
             low-power chip design as a near-term alternative to grid expansion.</div></div>
-            <div class="ledger-row"><div class="ledger-term">Environmental Standards</div>
-            <div>Establish federal standards that limit emissions and incentivize
-            energy-efficiency for data center developments.</div></div>
             <div class="ledger-row"><div class="ledger-term">Incentivize Buildouts in Industrial Zones</div>
             <div>Create a federal program to incentivize data center buildouts on commercial,
             industrial, brownfield, and disturbed land sites.</div></div>
