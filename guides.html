@@ -8,27 +8,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <!-- ARI duotone filter (navy shadows → light-rose highlights) -->
+  <!-- ARI duotone filter (navy shadows → cool-light highlights) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <filter id="duo-amber" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0" />
       <feComponentTransfer>
-        <feFuncR type="table" tableValues="0.082 0.949" />
-        <feFuncG type="table" tableValues="0.110 0.741" />
-        <feFuncB type="table" tableValues="0.259 0.792" />
+        <feFuncR type="table" tableValues="0.082 0.870" />
+        <feFuncG type="table" tableValues="0.110 0.895" />
+        <feFuncB type="table" tableValues="0.259 0.965" />
       </feComponentTransfer>
     </filter>
   </svg>
 
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="org" href="index.html"><img src="images/ari-logo-navy.svg" alt="Americans for Responsible Innovation" /></a>
+      <a class="org" href="https://ari.us" target="_blank" rel="noopener"><img src="images/ari-logo-navy.svg" alt="Americans for Responsible Innovation" /></a>
       <nav class="section-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
         <a href="guides.html?guide=citizens">Residents</a>
         <a href="guides.html?guide=county">County</a>
         <a href="guides.html?guide=state">State</a>
@@ -244,8 +245,8 @@
           <ul class="plays">
             <li><b>Recover Capacity and Infrastructure Costs:</b> Assign recovery rates to
             the large-load customers that are increasing generation capacity and grid
-            modernization costs. Use trackers, such as the Database of Emerging Large-Load
-            Tariffs, to find examples of similar regulations.</li>
+            modernization costs. Use trackers, such as the <a href="https://sepapower.org/large-load-tariffs-database/" target="_blank" rel="noopener">Database
+            of Emerging Large-Load Tariffs</a>, to find examples of similar regulations.</li>
           </ul>
           <div class="field-notes">
             <article class="note"><span class="note-tag">Virginia · HB 1393</span>
@@ -559,9 +560,10 @@
           </div>
           <ul class="plays">
             <li><b>Adopt Proven Strategies:</b> Use online trackers, such as
-            datacentertracker.org and Data Center Regulation Tracker, to see what’s happening
-            nearby and throughout the country to find examples of effective advocacy
-            strategies.</li>
+            <a href="https://datacentertracker.org" target="_blank" rel="noopener">datacentertracker.org</a>
+            and the <a href="https://www.steptoe.com/en/data-center-regulation-tracker.html" target="_blank" rel="noopener">Data
+            Center Regulation Tracker</a>, to see what’s happening nearby and throughout the
+            country to find examples of effective advocacy strategies.</li>
           </ul>
 
           <h4 class="play-group">Participate in the Process</h4>

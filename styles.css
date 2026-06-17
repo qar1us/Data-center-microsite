@@ -490,6 +490,11 @@ strong, b { font-weight: 600; }
   background: var(--paper-2); border-radius: 0 4px 4px 0;
 }
 .play-fyi i { color: var(--accent-text); font-style: normal; font-weight: 600; }
+.plays a, .subplays a, .play-note a {
+  color: var(--accent-text); text-decoration: underline;
+  text-underline-offset: 2px; text-decoration-thickness: 1px;
+}
+.plays a:hover, .subplays a:hover, .play-note a:hover { color: var(--signal); }
 .subplays {
   list-style: none; max-width: 44rem; margin: 0.4rem 0 1.4rem;
 }
