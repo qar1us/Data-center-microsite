@@ -858,5 +858,6 @@ strong, b { font-weight: 600; }
 /* ── ARI logo lockup (replaces the text wordmark) ───── */
 .org { display: inline-flex; align-items: center; padding: 2px 0; }
 .org img { height: 27px; width: auto; display: block; }
+.footer-org a { display: inline-block; }
 .footer-org img { height: 34px; width: auto; display: block; }
 @media (max-width: 520px) { .org img { height: 23px; } }
