@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=14" />
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -389,7 +389,7 @@
           </p>
         </div>
 
-        <figure class="loadchart" aria-labelledby="lc-cap">
+        <figure class="loadchart">
           <div class="loadchart-frame">
             <svg viewBox="0 0 800 380" role="img" aria-label="Chart comparing a smooth typical industrial power load against the spiky, intermittent load of an AI data center that ends in a sudden disconnect.">
               <g class="lc-grid">
@@ -413,11 +413,6 @@
             <span class="lc-key lc-key-flat">Typical industrial load</span>
             <span class="lc-key lc-key-spiky">AI data center load</span>
           </div>
-          <figcaption id="lc-cap" class="lc-cap">
-            AI data center demand looks more like a spiky EKG chart than the flat demand
-            line common across other industrial loads — until a single fault can drop
-            ~1,500 MW at once.
-          </figcaption>
         </figure>
 
         <div class="measure">
@@ -467,6 +462,12 @@
             hyperscalers, which typically lease data centers, may face little financial
             consequences, leaving stranded assets and higher bills for everyday consumers.
           </p>
+          <div class="field-notes">
+            <article class="note"><span class="note-tag">Ohio</span>
+            <p>American Electric Power (AEP) Ohio reported that its interconnection requests
+            fell from 30 to 13 gigawatts (GW) after a new data center tariff required data
+            centers to pay for 85 percent of their requested energy over a 12-year period.</p></article>
+          </div>
           <h3 class="subhead">Industrial Externalities</h3>
           <p>
             Beyond electricity bills and reliability risks, data centers can impose other

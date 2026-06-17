@@ -483,6 +483,13 @@ strong, b { font-weight: 600; }
   color: var(--ink-2); margin: 1.2rem 0;
 }
 .play-note b { color: var(--ink); }
+.play-fyi {
+  max-width: 44rem; font-size: 1rem; line-height: 1.55;
+  color: var(--ink-2); margin: 1rem 0 1.4rem;
+  padding: 0.7rem 1rem; border-left: 2px solid var(--signal);
+  background: var(--paper-2); border-radius: 0 4px 4px 0;
+}
+.play-fyi i { color: var(--accent-text); font-style: normal; font-weight: 600; }
 .subplays {
   list-style: none; max-width: 44rem; margin: 0.4rem 0 1.4rem;
 }
