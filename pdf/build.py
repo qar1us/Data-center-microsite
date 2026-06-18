@@ -44,8 +44,9 @@ def whitepaper_cover():
       '<p class="meta">Americans for Responsible Innovation&nbsp;&nbsp;·&nbsp;&nbsp;June 2026</p></div></section>')
 
 def guide_cover(g):
+    op = f' style="opacity:{g["op"]}"' if g.get("op") else ''
     return (f'<section class="pdf-cover guide">'
-      f'<img class="bg" src="images/{g["img"]}" alt="" aria-hidden="true">'
+      f'<img class="bg" src="images/{g["img"]}"{op} alt="" aria-hidden="true">'
       '<div class="scrim" aria-hidden="true"></div>'
       '<img class="logo" src="images/ari-logo-white.svg" alt="Americans for Responsible Innovation">'
       '<div class="mid"><span class="gtag">Field Guide</span><hr class="crule">'
@@ -89,9 +90,9 @@ main = fill_stats(main)
 GUIDES = [
  ('citizens', {'title':'Residents','eyebrow':'For Residents &amp; Neighbors','img':'family.jpg',
    'standfirst':'How to ensure new data centers bring real benefits to your community — know the risks, get the facts, participate in the process, and use your legal and electoral options.'}),
- ('county', {'title':'County Officials','eyebrow':'For Local Government','img':'zoning.jpg',
+ ('county', {'title':'County Officials','eyebrow':'For Local Government','img':'zoning.jpg','op':0.62,
    'standfirst':'Zoning, permitting, moratoriums, transparency rules, and enforceable community benefit agreements are tools available to you.'}),
- ('state', {'title':'State Lawmakers','eyebrow':'For State Government','img':'town-hall.jpg',
+ ('state', {'title':'State Lawmakers','eyebrow':'For State Government','img':'town-hall.jpg','op':0.62,
    'standfirst':'Protect ratepayers through public utility commissions, redesign incentives, plan for stranded assets, and mandate transparency.'}),
  ('cso', {'title':'Civil Society Organizations','eyebrow':'For Civil Society','img':'grassroots.jpg',
    'standfirst':'Bring the technical expertise — independent analysis, PUC intervention, public records requests, and community benefit agreements.'}),
