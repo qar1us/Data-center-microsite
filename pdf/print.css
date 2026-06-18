@@ -43,6 +43,8 @@ h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid;
 /* don't split these blocks across pages; trim single-line orphans/widows */
 .closing-line, .kicker-inline, .stat-strip, .bigstat, li { break-inside: avoid; }
 p { orphans: 2; widows: 2; }
+/* keep a heading together with its following list/paragraph (build.py wraps them) */
+.kwn { break-inside: avoid; }
 
 /* the load chart animates via JS; force it fully drawn for static print */
 .lc-line { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }

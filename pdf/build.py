@@ -68,6 +68,14 @@ def fill_stats(html):
                 f'{pre.group(1) if pre else ""}{val}{suf.group(1) if suf else ""}</span>')
     return re.sub(r'<span class="stat-value"([^>]*)>\s*0\s*</span>', repl, html)
 
+def keep_with_next(html):
+    """Chrome ignores break-after:avoid, so headings can strand at a page
+    bottom. Wrap each subhead/play-group together with its following list or
+    paragraph in a break-inside:avoid box so the heading travels with it."""
+    pat = re.compile(r'(<h([34]) class="(?:play-group|subhead)">.*?</h\2>)\s*'
+                     r'(<(ul|p)\b[^>]*>.*?</\4>)', re.S)
+    return pat.sub(r'<div class="kwn">\1\3</div>', html)
+
 def match_div(html, open_idx):
     """Return (inner_html, end_idx) for the <div ...> opening at open_idx."""
     i = html.index('>', open_idx) + 1
@@ -82,7 +90,7 @@ def match_div(html, open_idx):
 # ---- whitepaper ----
 main = re.search(r'<main id="top">(.*)</main>', playbook, re.S).group(1)
 main = re.sub(r'<!-- ░░ COVER ░░ -->.*?(?=<!-- ░░ EXECUTIVE SUMMARY ░░ -->)', '', main, flags=re.S)
-main = fill_stats(main)
+main = keep_with_next(fill_stats(main))
 (ROOT / "_print_playbook.html").write_text(page("Grid Mitigation & Data Centers — Advocacy Playbook",
     whitepaper_cover() + '<main>' + main + '</main>'))
 
@@ -103,7 +111,7 @@ for key, g in GUIDES:
     idx = guides.index(f'data-panel="{key}"')
     open_idx = guides.rfind('<div', 0, idx)
     inner, _ = match_div(guides, open_idx)
-    panel = f'<div class="panel is-active">{inner}</div>'
+    panel = f'<div class="panel is-active">{keep_with_next(inner)}</div>'
     (ROOT / f"_print_guide-{key}.html").write_text(
         page(f'{g["title"]} — ARI Field Guide',
              guide_cover(g) + '<main><section class="section pdf-leadin"><div class="container">' + panel + '</div></section></main>'))
