@@ -1,0 +1,88 @@
+/* ============================================================
+   print.css — paged-media layer for the ARI playbook PDFs.
+   Loaded AFTER styles.css; the document classes/markup are the
+   same as the website so interiors match exactly.
+   ============================================================ */
+
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+@page { size: Letter; margin: 0.85in 0.8in; }
+@page cover { margin: 0; }
+
+html { scroll-behavior: auto; }
+body { background: #fff; font-size: 11.5pt; }
+
+/* hide website chrome that has no place in a PDF */
+.topbar, .site-footer, .progress, .back-home, .scroll-cue,
+.tabs, .moves-more, #guides .section-head, #guides p:last-child { display: none !important; }
+
+/* the embedded "tear-away guides" teaser links out — drop it from the whitepaper */
+#guides { display: none !important; }
+
+/* tighten web spacing for print */
+.container { max-width: none !important; padding: 0 !important; }
+.section { padding: 0.34in 0 !important; border-bottom: 0 !important; }
+.measure, .measure-wide { max-width: none !important; }
+main { padding: 0 !important; }
+
+/* keep blocks intact across page breaks */
+h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid; }
+.field-notes, .note, .move, .win, .actor, figure, .ledger-row, .play-fyi { break-inside: avoid; }
+.section-title { break-after: avoid; }
+
+/* the load chart animates via JS; force it fully drawn for static print */
+.lc-line { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+.loadchart { break-inside: avoid; }
+
+/* ---------- COVER (full-bleed, page 1) ---------- */
+.pdf-cover {
+  page: cover; break-after: page; position: relative; overflow: hidden;
+  width: 8.5in; min-height: 11in; margin: 0;
+  background: var(--ink); color: #fff;
+  display: flex; flex-direction: column; padding: 0.95in 0.85in;
+}
+.pdf-cover .bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: .38; filter: url(#duo-amber); z-index: 0;
+}
+.pdf-cover .scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(21,28,66,.70) 0%, rgba(21,28,66,.82) 48%, rgba(14,19,48,.94) 100%);
+}
+.pdf-cover > .logo, .pdf-cover > .mid, .pdf-cover > .foot { position: relative; z-index: 2; }
+.pdf-cover .logo { height: 0.5in; width: auto; align-self: flex-end; }
+.pdf-cover .mid { margin-top: auto; }
+.pdf-cover .crule { width: 54px; height: 3px; background: var(--signal); border: 0; margin-bottom: 20px; }
+.pdf-cover .eyebrow {
+  font-family: var(--ui); font-weight: 600; text-transform: uppercase;
+  letter-spacing: .18em; font-size: 13px; color: var(--signal); margin: 0 0 18px;
+}
+.pdf-cover h1 {
+  font-family: var(--serif-display); font-weight: 600; font-size: 60px;
+  line-height: .98; letter-spacing: -.02em; color: #fff; margin: 0 0 24px;
+}
+.pdf-cover h1 .amp { color: var(--signal); font-style: italic; font-weight: 400; }
+.pdf-cover .standfirst {
+  font-family: var(--serif-text); font-size: 19px; line-height: 1.45;
+  color: #c3c7d2; max-width: 80%; margin: 0;
+}
+.pdf-cover .gtag {
+  display: inline-block; font-family: var(--ui); font-weight: 600; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink);
+  background: #fff; padding: 5px 11px; border-radius: 3px; margin-bottom: 18px;
+}
+.pdf-cover .foot { margin-top: auto; }
+.pdf-cover .ekg { width: 100%; height: 48px; opacity: .3; margin-bottom: 22px; display: block; }
+.pdf-cover .ekg path { fill: none; stroke: var(--signal); stroke-width: 2; }
+.pdf-cover .meta {
+  font-family: var(--ui); font-size: 12px; letter-spacing: .1em;
+  text-transform: uppercase; color: #aab0c2; margin: 0;
+}
+
+/* guide panels are tab-hidden on the site; always show them in the PDF */
+.panel { display: block !important; }
+.panel[hidden] { display: block !important; }
+
+/* a light section intro band on content page 1 of the guides */
+.pdf-leadin { padding-top: 0.1in !important; }
+.pdf-leadin .panel-lead { margin-top: 0; }

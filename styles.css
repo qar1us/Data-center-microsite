@@ -865,3 +865,19 @@ strong, b { font-weight: 600; }
 .footer-org a { display: inline-block; }
 .footer-org img { height: 34px; width: auto; display: block; }
 @media (max-width: 520px) { .org img { height: 23px; } }
+
+/* ── PDF download buttons ───────────────────────────── */
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--ui); font-weight: 600; font-size: 0.8rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent-text); text-decoration: none;
+  border: 1.5px solid var(--rule); border-radius: 4px;
+  padding: 0.55rem 0.95rem; transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.dl-btn:hover { border-color: var(--signal); color: var(--signal); background: #fff; }
+.dl-btn svg { width: 15px; height: 15px; flex: none; }
+.guide-dl { margin: -0.2rem 0 2rem; }
+.dl-btn--light { color: #fff; border-color: rgba(255,255,255,0.45); }
+.dl-btn--light:hover { color: #fff; border-color: var(--signal); background: rgba(255,255,255,0.08); }
+.cover-dl { margin-top: 1.5rem; }
