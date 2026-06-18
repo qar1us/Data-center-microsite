@@ -54,6 +54,19 @@ def guide_cover(g):
       f'<div class="foot">{EKG}'
       '<p class="meta">Grid Mitigation &amp; Data Centers&nbsp;&nbsp;·&nbsp;&nbsp;June 2026</p></div></section>')
 
+def fill_stats(html):
+    """Animated stat counters start at '0' and are filled by JS on the live
+    site; static print never runs that, so bake the final values in."""
+    def repl(m):
+        attrs = m.group(1)
+        tgt = re.search(r'data-target="([^"]+)"', attrs)
+        pre = re.search(r'data-prefix="([^"]*)"', attrs)
+        suf = re.search(r'data-suffix="([^"]*)"', attrs)
+        val = f'{int(tgt.group(1)):,}' if tgt else '0'
+        return (f'<span class="stat-value"{attrs}>'
+                f'{pre.group(1) if pre else ""}{val}{suf.group(1) if suf else ""}</span>')
+    return re.sub(r'<span class="stat-value"([^>]*)>\s*0\s*</span>', repl, html)
+
 def match_div(html, open_idx):
     """Return (inner_html, end_idx) for the <div ...> opening at open_idx."""
     i = html.index('>', open_idx) + 1
@@ -68,6 +81,7 @@ def match_div(html, open_idx):
 # ---- whitepaper ----
 main = re.search(r'<main id="top">(.*)</main>', playbook, re.S).group(1)
 main = re.sub(r'<!-- ░░ COVER ░░ -->.*?(?=<!-- ░░ EXECUTIVE SUMMARY ░░ -->)', '', main, flags=re.S)
+main = fill_stats(main)
 (ROOT / "_print_playbook.html").write_text(page("Grid Mitigation & Data Centers — Advocacy Playbook",
     whitepaper_cover() + '<main>' + main + '</main>'))
 
