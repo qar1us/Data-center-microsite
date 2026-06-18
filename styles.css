@@ -94,14 +94,14 @@ strong, b { font-weight: 600; }
   padding: 2px 0; border-bottom: 1.5px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
-.section-nav .nav-pb {
+.section-nav .nav-pb, .section-nav .nav-home {
   color: var(--ink-3); margin-left: 0.95rem; position: relative;
 }
-.section-nav .nav-pb::before {
+.section-nav .nav-pb::before, .section-nav .nav-home::before {
   content: ""; position: absolute; left: -0.9rem; top: 50%; transform: translateY(-50%);
   height: 0.95rem; width: 1px; background: var(--rule);
 }
-.section-nav .nav-pb:hover { color: var(--accent-text); }
+.section-nav .nav-pb:hover, .section-nav .nav-home:hover { color: var(--accent-text); }
 .section-nav a:hover, .section-nav a.active { color: var(--accent-text); border-bottom-color: var(--signal); }
 .section-nav a.nav-action {
   color: #ffffff; background: var(--signal); border: none;
