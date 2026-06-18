@@ -95,10 +95,14 @@ strong, b { font-weight: 600; }
   transition: color 0.2s, border-color 0.2s;
 }
 .section-nav .nav-pb {
-  color: var(--ink-3); padding-left: 0.85rem; border-left: 1px solid var(--rule);
+  color: var(--ink-3); margin-left: 0.95rem; position: relative;
+}
+.section-nav .nav-pb::before {
+  content: ""; position: absolute; left: -0.9rem; top: 50%; transform: translateY(-50%);
+  height: 0.95rem; width: 1px; background: var(--rule);
 }
 .section-nav .nav-pb:hover { color: var(--accent-text); }
-.section-nav a:hover, .section-nav a.active { color: var(--accent-text); border-color: var(--signal); }
+.section-nav a:hover, .section-nav a.active { color: var(--accent-text); border-bottom-color: var(--signal); }
 .section-nav a.nav-action {
   color: #ffffff; background: var(--signal); border: none;
   padding: 5px 12px; border-radius: 3px; letter-spacing: 0.04em;
@@ -721,7 +725,7 @@ strong, b { font-weight: 600; }
 .action-page .ico,
 .action-page .section-nav a:hover,
 .action-page .section-nav a.active { color: var(--accent-text); }
-.action-page .section-nav a.active { border-color: var(--signal); }
+.action-page .section-nav a.active { border-bottom-color: var(--signal); }
 .action-page .action-hero .preline { color: var(--signal); }
 .action-page .action-hero .standfirst { color: #aeb8c4; }
 .action-page .btn-primary, .action-page .btn-primary:hover { color: #ffffff; }
