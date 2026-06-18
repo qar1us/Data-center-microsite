@@ -8,6 +8,7 @@
 
 @page { size: Letter; margin: 0.55in 0.7in; }
 @page cover { margin: 0; }
+@page dark { margin: 0.5in 0; }   /* dark sections bleed to the side edges */
 
 html { scroll-behavior: auto; }
 body { background: #fff; font-size: 10pt; line-height: 1.45; }
@@ -24,6 +25,15 @@ body { background: #fff; font-size: 10pt; line-height: 1.45; }
 .section { padding: 0.13in 0 !important; border-bottom: 0 !important; }
 .measure, .measure-wide { max-width: none !important; }
 main { padding: 0 !important; }
+
+/* dark sections (energy, conclusion): bleed past the side margins into a
+   full-width navy band, then re-inset the text. box-decoration-break:clone
+   re-applies the padding/background on each page fragment so multi-page
+   bands stay padded top and bottom. */
+.section.dark, .section.conclusion {
+  page: dark; margin: 0 !important;
+  padding: 0.45in 0.7in !important;
+}
 
 /* keep blocks intact across page breaks */
 h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid; }
