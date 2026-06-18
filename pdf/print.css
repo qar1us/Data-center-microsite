@@ -8,7 +8,7 @@
 
 @page { size: Letter; margin: 0.55in 0.7in; }
 @page cover { margin: 0; }
-@page dark { margin: 0.5in 0; }   /* dark sections bleed to the side edges */
+@page dark { margin: 0; }   /* dark sections bleed to ALL edges (no white top/bottom) */
 
 html { scroll-behavior: auto; }
 body { background: #fff; font-size: 10pt; line-height: 1.45; }
@@ -32,7 +32,8 @@ main { padding: 0 !important; }
    bands stay padded top and bottom. */
 .section.dark, .section.conclusion {
   page: dark; margin: 0 !important;
-  padding: 0.45in 0.7in !important;
+  padding: 0.6in 0.7in !important;
+  min-height: 100vh;   /* fill the page so the navy runs to the bottom edge */
 }
 
 /* keep blocks intact across page breaks */
