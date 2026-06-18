@@ -115,6 +115,10 @@ p { margin-bottom: 0.5rem !important; }
 .play-group { font-size: 12.5pt !important; margin: 0.95rem 0 0.4rem !important; }
 .plays, .subplays { margin: 0.35rem 0 !important; }
 .plays li, .subplays li { margin-bottom: 0.3rem !important; line-height: 1.38 !important; }
+/* markers are rem-based and don't shrink with the compact body font; size
+   them in em so they stay proportional to the text in the PDF */
+.plays li::before { width: 0.5em !important; height: 0.5em !important; top: 0.5em !important; }
+.subplays li::before { width: 0.42em !important; height: 0.42em !important; top: 0.55em !important; }
 .play-note { font-size: 10pt !important; margin: 0.5rem 0 !important; }
 .play-fyi { font-size: 9.5pt !important; margin: 0.45rem 0 !important; padding: 0.5rem 0.8rem !important; }
 .field-notes { margin: 0.6rem 0 !important; }
