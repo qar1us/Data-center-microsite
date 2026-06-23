@@ -11,7 +11,7 @@
 @page dark { margin: 0; }   /* dark sections bleed to ALL edges (no white top/bottom) */
 
 /* each numbered section opens its own page (dark sections already do via @page dark) */
-#incentives, #stakeholders { break-before: page; }
+#incentives, #energy, #stakeholders { break-before: page; }
 
 html { scroll-behavior: auto; }
 body { background: #fff; font-size: 10pt; line-height: 1.45; }
@@ -33,11 +33,23 @@ main { padding: 0 !important; }
    full-width navy band, then re-inset the text. box-decoration-break:clone
    re-applies the padding/background on each page fragment so multi-page
    bands stay padded top and bottom. */
-.section.dark, .section.conclusion {
+/* Conclusion stays full-bleed navy — single page, fills cleanly. */
+.section.conclusion {
   page: dark; margin: 0 !important;
-  padding: 0.8in 0.95in !important;   /* match the wider light-page margins */
-  min-height: 100vh;   /* fill the page so the navy runs to the bottom edge */
+  padding: 0.8in 0.95in !important;
+  min-height: 100vh;
 }
+/* Energy: rendered LIGHT in print. A multi-page full-bleed navy section
+   can't fill its last page in Chrome, so use white pages with navy/crimson
+   accents. The load chart keeps its dark frame as a self-contained figure. */
+.section.dark { background: #fff !important; margin: 0 !important; padding: 0.2in 0 !important; }
+.section.dark .section-title, .section.dark .subhead { color: var(--ink) !important; }
+.section.dark p { color: var(--ink-2) !important; }
+.section.dark strong { color: var(--ink) !important; }
+.section.dark .section-label .num { color: var(--ink) !important; border-color: var(--rule) !important; }
+.section.dark .note { background: var(--paper-2) !important; border-color: var(--rule) !important; }
+.section.dark .note p { color: var(--ink) !important; }
+.section.dark .lc-key { color: var(--ink-2) !important; }
 
 /* keep blocks intact across page breaks */
 h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid; }

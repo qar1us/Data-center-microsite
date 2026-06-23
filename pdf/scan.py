@@ -72,7 +72,7 @@ for path in sorted(glob.glob(str(ROOT / "pdf" / "*.pdf"))):
     # dark pages: a navy page should not have a white band at top/bottom edge
     for i in range(d.page_count):
         t = d[i].get_text()
-        if "ENERGY IMPACTS" in t or "Hyperscalers are proposing" in t:  # dark sections
+        if "Hyperscalers are proposing" in t:  # the Conclusion is the only dark section now
             pix = d[i].get_pixmap(dpi=72)
             top = color_at(pix, pix.width//2, 2)
             if top[0] > 200 and top[1] > 200:   # white-ish at top edge
