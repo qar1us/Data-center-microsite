@@ -13,3 +13,6 @@ node_modules/
 
 # PDF QA render artifacts
 pdf/_review/
+
+# PDF build temp files (intermediate HTML for headless Chrome)
+_print_*.html

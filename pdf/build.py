@@ -125,7 +125,7 @@ def place_footnotes(htmltext, fns):
             i += 1
         inserts.append((last, f['num']))
     for pos, num in sorted(inserts, reverse=True):
-        htmltext = htmltext[:pos+1] + f'<sup class="fn">{num}</sup>' + htmltext[pos+1:]
+        htmltext = htmltext[:pos+1] + f'<sup class="fn" id="fnref-{num}"><a href="#fn-{num}">{num}</a></sup>' + htmltext[pos+1:]
     return htmltext, missing
 
 def match_div(html, open_idx):
@@ -151,7 +151,7 @@ FOOTNOTES = json.loads((ROOT / "pdf" / "playbook-footnotes.json").read_text())
 main, _fn_missing = place_footnotes(main, FOOTNOTES)
 if _fn_missing:
     print("WARNING: footnotes not placed:", _fn_missing)
-_notes = ''.join(f'<li id="fn-{f["num"]}">{linkify(f["cite"])}</li>' for f in FOOTNOTES)
+_notes = ''.join(f'<li id="fn-{f["num"]}">{linkify(f["cite"])} <a class="fn-back" href="#fnref-{f["num"]}">↩</a></li>' for f in FOOTNOTES)
 main += ('<section class="section pdf-notes"><div class="container">'
          '<p class="section-label"><span class="num">§</span> References</p>'
          '<h2 class="section-title">Notes</h2>'

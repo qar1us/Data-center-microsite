@@ -527,9 +527,13 @@ strong, b { font-weight: 600; }
 .conclusion .section-title { color: var(--paper); margin-bottom: 2rem; }
 .conclusion p { color: #cdd1db; }
 .conclusion .closing-line {
-  font-family: var(--serif-display); font-weight: 400; font-style: italic;
-  font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.35; color: var(--paper);
+  font-family: var(--serif-text); font-weight: 400; font-style: normal;
+  font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.45; color: var(--paper);
   margin-top: 2rem;
+}
+.conclusion .closing-line .lead {
+  font-family: var(--serif-display); font-style: italic; font-weight: 400;
+  color: var(--paper);
 }
 .conclusion .closing-line em { color: #d6234d; font-style: italic; }
 
