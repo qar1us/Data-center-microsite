@@ -6,7 +6,7 @@
 
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-@page { size: Letter; margin: 0.8in 0.95in; }
+@page { size: Letter; margin: 0.95in; }
 @page cover { margin: 0; }
 @page dark { margin: 0; }   /* dark sections bleed to ALL edges (no white top/bottom) */
 
@@ -36,7 +36,7 @@ main { padding: 0 !important; }
 /* Conclusion stays full-bleed navy — single page, fills cleanly. */
 .section.conclusion {
   page: dark; margin: 0 !important;
-  padding: 0.8in 0.95in !important;
+  padding: 0.95in !important;
   min-height: 100vh;
 }
 /* Energy: rendered LIGHT in print. A multi-page full-bleed navy section
@@ -124,8 +124,10 @@ p { orphans: 2; widows: 2; }
 .panel[hidden] { display: block !important; }
 
 /* a light section intro band on content page 1 of the guides */
-.pdf-leadin { padding-top: 0.1in !important; }
+.pdf-leadin { padding-top: 0.1in !important; padding-bottom: 0 !important; }
 .pdf-leadin .panel-lead { margin-top: 0; }
+/* drop trailing margins so a full last page doesn't spill into a blank page */
+.pdf-leadin .panel > *:last-child, .ledger { margin-bottom: 0 !important; }
 
 /* ---------- compact pass: fewer pages, less air ---------- */
 p { margin-bottom: 0.5rem !important; }
@@ -143,7 +145,13 @@ p { margin-bottom: 0.5rem !important; }
 .plays li, .subplays li { margin-bottom: 0.3rem !important; line-height: 1.38 !important; }
 /* markers are rem-based and don't shrink with the compact body font; size
    them in em so they stay proportional to the text in the PDF */
-.plays li::before { width: 0.5em !important; height: 0.5em !important; top: 0.5em !important; }
+/* draw the diamond with clip-path INSIDE its box (not a rotated square whose
+   corners stick out and get clipped in the PDF) so no renderer cuts it */
+.plays li::before {
+  width: 0.62em !important; height: 0.62em !important; top: 0.4em !important; left: 0.04em !important;
+  transform: none !important;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
 .subplays li::before { width: 0.42em !important; height: 0.42em !important; top: 0.55em !important; }
 .play-note { font-size: 10pt !important; margin: 0.5rem 0 !important; }
 .play-fyi { font-size: 9.5pt !important; margin: 0.45rem 0 !important; padding: 0.5rem 0.8rem !important; }
