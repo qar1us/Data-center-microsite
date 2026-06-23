@@ -10,3 +10,6 @@ Thumbs.db
 
 # Dependency dirs (in case tooling is added later)
 node_modules/
+
+# PDF QA render artifacts
+pdf/_review/
