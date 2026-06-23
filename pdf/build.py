@@ -90,6 +90,9 @@ def match_div(html, open_idx):
 # ---- whitepaper ----
 main = re.search(r'<main id="top">(.*)</main>', playbook, re.S).group(1)
 main = re.sub(r'<!-- ░░ COVER ░░ -->.*?(?=<!-- ░░ EXECUTIVE SUMMARY ░░ -->)', '', main, flags=re.S)
+# the "04 Tear-Away Guides" teaser is hidden in the PDF (#guides display:none),
+# so renumber the Conclusion 05 -> 04 to keep the section sequence contiguous
+main = main.replace('<span class="num">05</span> Conclusion', '<span class="num">04</span> Conclusion')
 main = keep_with_next(fill_stats(main))
 (ROOT / "_print_playbook.html").write_text(page("Grid Mitigation & Data Centers — Advocacy Playbook",
     whitepaper_cover() + '<main>' + main + '</main>'))

@@ -6,9 +6,12 @@
 
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-@page { size: Letter; margin: 0.55in 0.7in; }
+@page { size: Letter; margin: 0.8in 0.95in; }
 @page cover { margin: 0; }
 @page dark { margin: 0; }   /* dark sections bleed to ALL edges (no white top/bottom) */
+
+/* each numbered section opens its own page (dark sections already do via @page dark) */
+#incentives, #stakeholders { break-before: page; }
 
 html { scroll-behavior: auto; }
 body { background: #fff; font-size: 10pt; line-height: 1.45; }
@@ -22,7 +25,7 @@ body { background: #fff; font-size: 10pt; line-height: 1.45; }
 
 /* tighten web spacing for print */
 .container { max-width: none !important; padding: 0 !important; }
-.section { padding: 0.13in 0 !important; border-bottom: 0 !important; }
+.section { padding: 0.2in 0 !important; border-bottom: 0 !important; }
 .measure, .measure-wide { max-width: none !important; }
 main { padding: 0 !important; }
 
@@ -32,7 +35,7 @@ main { padding: 0 !important; }
    bands stay padded top and bottom. */
 .section.dark, .section.conclusion {
   page: dark; margin: 0 !important;
-  padding: 0.6in 0.7in !important;
+  padding: 0.8in 0.95in !important;   /* match the wider light-page margins */
   min-height: 100vh;   /* fill the page so the navy runs to the bottom edge */
 }
 
@@ -46,6 +49,15 @@ p { orphans: 2; widows: 2; }
 /* keep a heading together with its following list/paragraph (build.py wraps them) */
 .kwn { break-inside: avoid; }
 
+/* stakeholders: the actor grid leaves empty gray cells and breaks awkwardly
+   across pages — render it as a clean hairline-separated list for print */
+.actors { display: block !important; background: none !important; border: 0 !important;
+  border-radius: 0 !important; overflow: visible !important; gap: 0 !important; margin-top: 0.4rem !important; }
+.actor { background: none !important; padding: 0.5rem 0 0.6rem !important;
+  border-top: 1px solid var(--rule) !important; }
+.actors .actor:first-child { border-top: 0 !important; }
+.actor-num { display: block; margin-bottom: 0.25rem; }
+
 /* the load chart animates via JS; force it fully drawn for static print */
 .lc-line { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
 .loadchart { break-inside: avoid; }
@@ -55,7 +67,7 @@ p { orphans: 2; widows: 2; }
   page: cover; break-after: page; position: relative; overflow: hidden;
   width: 8.5in; min-height: 11in; margin: 0;
   background: var(--ink); color: #fff;
-  display: flex; flex-direction: column; padding: 0.95in 0.85in;
+  display: flex; flex-direction: column; padding: 0.95in 0.95in;
 }
 .pdf-cover .bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
