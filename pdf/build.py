@@ -2,7 +2,7 @@
 """Assemble print-ready HTML for the ARI playbook PDFs from the live page
 content, so PDF interiors match the website exactly. Outputs temp _print_*.html
 at the repo root (relative asset paths resolve there); render with Chrome."""
-import re, pathlib
+import re, pathlib, json
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 playbook = (ROOT / "playbook.html").read_text()
@@ -76,6 +76,58 @@ def keep_with_next(html):
                      r'(<(ul|p)\b[^>]*>.*?</\4>)', re.S)
     return pat.sub(r'<div class="kwn">\1\3</div>', html)
 
+def esc(s):
+    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+def linkify(text):
+    parts = re.split(r'(https?://[^\s,)]+)', text)
+    out = ''
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            url = part.rstrip('.')
+            out += f'<a href="{url.replace("&","&amp;")}">{esc(url)}</a>'
+        else:
+            out += esc(part)
+    return out
+
+def place_footnotes(htmltext, fns):
+    """PDF-only: insert <sup> markers at each footnote anchor (matched in the
+    page's visible text, normalized) and return the html + a list of misses."""
+    vis = []                       # (lowercased-or-space char, html index) for visible chars
+    intag = False
+    for pos, c in enumerate(htmltext):
+        if c == '<': intag = True
+        elif c == '>': intag = False
+        elif not intag: vis.append((c, pos))
+    norm = []; npos = []; prev_space = False
+    for c, pos in vis:
+        if c.isalnum():
+            norm.append(c.lower()); npos.append(pos); prev_space = False
+        elif not prev_space:
+            norm.append(' '); npos.append(pos); prev_space = True
+    norm = ''.join(norm)
+    inserts = []; missing = []
+    for f in fns:
+        a = f['anchor']
+        p = norm.find(a)
+        if p < 0 or norm.find(a, p + 1) != -1:   # not found OR not unique
+            missing.append(f['num']); continue
+        hp = npos[p + len(a) - 1]                 # html index of anchor's last alnum char
+        # advance past trailing punctuation (skipping tags) so the marker sits after it
+        i = hp + 1; last = hp; t = False
+        while i < len(htmltext):
+            c = htmltext[i]
+            if c == '<': t = True
+            elif c == '>': t = False
+            elif not t:
+                if c in '.,;:!?")”’]': last = i
+                else: break
+            i += 1
+        inserts.append((last, f['num']))
+    for pos, num in sorted(inserts, reverse=True):
+        htmltext = htmltext[:pos+1] + f'<sup class="fn">{num}</sup>' + htmltext[pos+1:]
+    return htmltext, missing
+
 def match_div(html, open_idx):
     """Return (inner_html, end_idx) for the <div ...> opening at open_idx."""
     i = html.index('>', open_idx) + 1
@@ -94,6 +146,16 @@ main = re.sub(r'<!-- ░░ COVER ░░ -->.*?(?=<!-- ░░ EXECUTIVE SUMMARY 
 # so renumber the Conclusion 05 -> 04 to keep the section sequence contiguous
 main = main.replace('<span class="num">05</span> Conclusion', '<span class="num">04</span> Conclusion')
 main = keep_with_next(fill_stats(main))
+# PDF-only footnotes: place superscript markers + a Notes section (the website stays clean)
+FOOTNOTES = json.loads((ROOT / "pdf" / "playbook-footnotes.json").read_text())
+main, _fn_missing = place_footnotes(main, FOOTNOTES)
+if _fn_missing:
+    print("WARNING: footnotes not placed:", _fn_missing)
+_notes = ''.join(f'<li id="fn-{f["num"]}">{linkify(f["cite"])}</li>' for f in FOOTNOTES)
+main += ('<section class="section pdf-notes"><div class="container">'
+         '<p class="section-label"><span class="num">§</span> References</p>'
+         '<h2 class="section-title">Notes</h2>'
+         f'<ol class="notes-list">{_notes}</ol></div></section>')
 (ROOT / "_print_playbook.html").write_text(page("Grid Mitigation & Data Centers — Advocacy Playbook",
     whitepaper_cover() + '<main>' + main + '</main>'))
 
