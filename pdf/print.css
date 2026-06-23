@@ -48,6 +48,8 @@ main { padding: 0 !important; }
 .section.dark .note { background: var(--paper-2) !important; border-color: var(--rule) !important; }
 .section.dark .note p { color: var(--ink) !important; }
 .section.dark .lc-key { color: var(--ink-2) !important; }
+.section.dark .lc-title { color: var(--ink) !important; }
+.section.dark .lc-cap { color: var(--ink-2) !important; }
 
 /* keep blocks intact across page breaks */
 h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid; }
