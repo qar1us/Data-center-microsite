@@ -10,8 +10,6 @@
 @page cover { margin: 0; }
 @page dark { margin: 0; }   /* dark sections bleed to ALL edges (no white top/bottom) */
 
-/* each numbered section opens its own page (dark sections already do via @page dark) */
-#incentives, #energy, #stakeholders { break-before: page; }
 
 html { scroll-behavior: auto; }
 body { background: #fff; font-size: 11.5pt; line-height: 1.5; }
