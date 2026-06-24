@@ -37,7 +37,7 @@ def whitepaper_cover():
       '<div class="scrim" aria-hidden="true"></div>'
       '<img class="logo" src="images/ari-logo-white.svg" alt="Americans for Responsible Innovation">'
       '<div class="mid"><hr class="crule"><p class="eyebrow">Advocacy Playbook</p>'
-      '<h1>Grid Mitigation <span class="amp">&amp;</span><br>Data Centers</h1>'
+      '<h1><span class="cover-series">Behind the Build:</span>Grid Mitigation <span class="amp">&amp;</span><br>Data Centers</h1>'
       '<p class="standfirst">Federal, state, and local lawmakers have the power to ensure a '
       'responsible data center boom benefits communities and advances U.S. innovation.</p></div>'
       f'<div class="foot">{EKG}'
@@ -53,7 +53,7 @@ def guide_cover(g):
       f'<p class="eyebrow">{g["eyebrow"]}</p><h1>{g["title"]}</h1>'
       f'<p class="standfirst">{g["standfirst"]}</p></div>'
       f'<div class="foot">{EKG}'
-      '<p class="meta">Grid Mitigation &amp; Data Centers&nbsp;&nbsp;·&nbsp;&nbsp;June 2026</p></div></section>')
+      '<p class="meta">Behind the Build: Grid Mitigation &amp; Data Centers&nbsp;&nbsp;·&nbsp;&nbsp;June 2026</p></div></section>')
 
 def fill_stats(html):
     """Animated stat counters start at '0' and are filled by JS on the live
@@ -156,7 +156,7 @@ main += ('<section class="section pdf-notes"><div class="container">'
          '<p class="section-label"><span class="num">§</span> References</p>'
          '<h2 class="section-title">Notes</h2>'
          f'<ol class="notes-list">{_notes}</ol></div></section>')
-(ROOT / "_print_playbook.html").write_text(page("Grid Mitigation & Data Centers — Advocacy Playbook",
+(ROOT / "_print_playbook.html").write_text(page("Behind the Build: Grid Mitigation & Data Centers — Advocacy Playbook",
     whitepaper_cover() + '<main>' + main + '</main>'))
 
 # ---- guides ----

@@ -48,8 +48,9 @@ main { padding: 0 !important; }
 .section.dark .note { background: var(--paper-2) !important; border-color: var(--rule) !important; }
 .section.dark .note p { color: var(--ink) !important; }
 .section.dark .lc-key { color: var(--ink-2) !important; }
-.section.dark .lc-title { color: var(--ink) !important; }
-.section.dark .lc-cap { color: var(--ink-2) !important; }
+/* the load chart is a decorative visual only — drop it from the PDF entirely
+   (it stays on the site, sans title/caption) so it doesn't read as real data */
+.loadchart { display: none !important; }
 
 /* keep blocks intact across page breaks */
 h1, h2, h3, h4, .section-head, .section-label, .play-group { break-after: avoid; }
@@ -114,6 +115,10 @@ sup.fn a { color: inherit; text-decoration: none; }
   line-height: .98; letter-spacing: -.02em; color: #fff; margin: 0 0 24px;
 }
 .pdf-cover h1 .amp { color: var(--signal); font-style: italic; font-weight: 400; }
+.pdf-cover h1 .cover-series {
+  display: block; font-size: 26px; font-style: italic; font-weight: 400;
+  letter-spacing: -.01em; color: var(--signal); margin-bottom: 8px; line-height: 1;
+}
 .pdf-cover .standfirst {
   font-family: var(--serif-text); font-size: 19px; line-height: 1.45;
   color: #c3c7d2; max-width: 80%; margin: 0;
@@ -180,7 +185,23 @@ p { margin-bottom: 0.5rem !important; }
 .ledger-row > div:last-child { font-size: 11pt !important; }
 /* #4: keep the 36 / 9 / $1.6B figures three-across (responsive stacks them) */
 .figure-row { grid-template-columns: repeat(3, 1fr) !important; gap: 1rem !important;
-  margin: 1.3rem 0 !important; break-inside: avoid; }
+  margin: 0.8rem 0 !important; break-inside: avoid; }
 .figure { padding-top: 0.5rem !important; }
 .figure-value { font-size: 2.2rem !important; }
 .figure-label { font-size: 8pt !important; margin-top: 0.4rem !important; }
+
+/* ── Round-4 PDF layout fixes ─────────────────────────── */
+/* (2) the energy section label was caught by `.section.dark p` above and
+   greyed to ink-2 — restore the crimson so "02" matches every other label */
+.section.dark .section-label { color: var(--accent-text) !important; }
+
+/* (1) pull the 2x2 construction stat box up onto the previous page: trim
+   its margins and cell padding so it fits in the space left at the bottom */
+.stat-strip { margin: 0.5rem 0 !important; }
+.stat-strip .stat { padding: 1rem 1.2rem !important; }
+.stat-value { font-size: 2.1rem !important; margin-bottom: 0.3rem !important; }
+.stat-label { font-size: 8pt !important; }
+
+/* (3) with the box moved up, tighten the incentive block so the economic-
+   promise text through the $1.6B figure all land on one page */
+.ledger-row { padding: 0.35rem 0 !important; }
