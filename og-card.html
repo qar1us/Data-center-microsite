@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Source for images/social-card.png (the 1200x630 Open Graph share card).
+     Regenerate: Chrome --headless --screenshot=images/social-card.png
+     --window-size=1200,630 --hide-scrollbars og-card.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1200px; height:630px; overflow:hidden; }
+  .card {
+    position:relative; width:1200px; height:630px; background:#151C42;
+    overflow:hidden; display:flex; flex-direction:column;
+    padding:62px 74px; font-family:"Newsreader",Georgia,serif;
+  }
+  .bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:.34; filter:url(#duo-amber); z-index:0; }
+  .scrim { position:absolute; inset:0; z-index:1;
+    background:linear-gradient(105deg, rgba(21,28,66,.92) 0%, rgba(21,28,66,.74) 52%, rgba(14,19,48,.86) 100%); }
+  .row { position:relative; z-index:2; display:flex; }
+  .top { justify-content:flex-end; }
+  .logo { height:50px; width:auto; }
+  .mid { position:relative; z-index:2; margin-top:auto; }
+  .eyebrow { font-family:"Archivo",sans-serif; font-weight:600; font-size:17px;
+    letter-spacing:.2em; text-transform:uppercase; color:#D6234D; margin-bottom:18px; }
+  .series { display:block; font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-size:36px; line-height:1; letter-spacing:-.01em; color:#D6234D; margin-bottom:8px; }
+  h1 { font-family:"Fraunces",serif; font-weight:600; font-size:76px; line-height:.96;
+    letter-spacing:-.025em; color:#fff; margin-bottom:22px; }
+  h1 .amp { font-style:italic; font-weight:400; color:#D6234D; }
+  .standfirst { font-family:"Newsreader",serif; font-size:24px; line-height:1.42;
+    color:#c3c7d2; max-width:640px; }
+  .foot { position:relative; z-index:2; margin-top:auto; font-family:"Archivo",sans-serif;
+    font-weight:600; font-size:15px; letter-spacing:.14em; text-transform:uppercase; color:#8a90a6; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="duo-amber" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0"/>
+    <feComponentTransfer><feFuncR type="table" tableValues="0.082 0.870"/>
+    <feFuncG type="table" tableValues="0.110 0.895"/><feFuncB type="table" tableValues="0.259 0.965"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<div class="card">
+  <img class="bg" src="images/grid-1.jpg" alt="">
+  <div class="scrim"></div>
+  <div class="row top"><img class="logo" src="images/ari-logo-white.svg" alt="Americans for Responsible Innovation"></div>
+  <div class="mid">
+    <p class="eyebrow">Advocacy Playbook</p>
+    <span class="series">Behind the Build:</span>
+    <h1>Grid Mitigation <span class="amp">&amp;</span><br>Data Centers</h1>
+    <p class="standfirst">Federal, state, and local lawmakers have the power to ensure a
+      responsible data center boom benefits communities and advances U.S. innovation.</p>
+  </div>
+  <p class="foot">Americans for Responsible Innovation&nbsp;&nbsp;·&nbsp;&nbsp;June 2026</p>
+</div>
+</body>
+</html>
