@@ -3,13 +3,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}html,body{width:300px;height:150px;overflow:hidden}
-.ad{position:relative;width:300px;height:150px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:16px 18px;font-family:"Archivo",sans-serif;background:radial-gradient(130% 130% at 15% 10%,#1c2452,#151C42 55%,#0e1330)}
+.ad{position:relative;width:300px;height:150px;overflow:hidden;display:flex;flex-direction:column;padding:16px 18px;font-family:"Archivo",sans-serif;background:radial-gradient(130% 130% at 85% 10%,#1c2452,#151C42 55%,#0e1330)}
+.top{display:flex;justify-content:flex-end}
 .logo{height:19px;width:auto}
-h1{font-family:"Fraunces",serif;font-weight:600;font-size:20px;line-height:1.04;letter-spacing:-.02em;color:#fff;margin-top:9px}
-.btn{display:inline-flex;align-items:center;gap:7px;background:#D6234D;color:#fff;font-weight:600;font-size:14px;padding:10px 17px;border-radius:4px;white-space:nowrap}
+.mid{flex:1;display:flex;align-items:center}
+h1{font-family:"Fraunces",serif;font-weight:600;font-size:20px;line-height:1.04;letter-spacing:-.02em;color:#fff}
+.cta{display:flex;justify-content:flex-end}
+.btn{display:inline-flex;align-items:center;gap:7px;background:#D6234D;color:#fff;font-weight:600;font-size:14px;padding:9px 16px;border-radius:4px;white-space:nowrap}
 </style></head><body>
 <div class="ad">
-<div><img class="logo" src="../images/ari-logo-white.svg" alt="ARI">
-<h1>Here&rsquo;s what you can do about data centers.</h1></div>
-<div><span class="btn">Read the playbook &rarr;</span></div>
+<div class="top"><img class="logo" src="../images/ari-logo-white.svg" alt="ARI"></div>
+<div class="mid"><h1>Here&rsquo;s what you can do about data centers.</h1></div>
+<div class="cta"><span class="btn">Read the playbook &rarr;</span></div>
 </div></body></html>
