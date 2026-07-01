@@ -1,0 +1,173 @@
+<!doctype html>
+<!-- ARI Data Center Playbook: social card source.
+     Copy lives in the CARDS array below (edit there). Each card renders at 3 sizes.
+     Render to PNG (deviceScaleFactor 2) with: python3 render.py  -> output/ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root{
+    --navy:#151C42; --navy-deep:#0e1330; --red:#D6234D;
+    --bright:#eef2f6; --muted:#c3c7d2; --dim:#aab0c2;
+    --serif:"Fraunces",Georgia,serif; --read:"Newsreader",Georgia,serif; --sans:"Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0b0f24;display:flex;flex-wrap:wrap;gap:26px;padding:26px;font-family:var(--sans)}
+
+  .card{position:relative;overflow:hidden;background:var(--navy);color:var(--bright);
+    display:flex;flex-direction:column;flex:none}
+  .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.26;filter:url(#duo);z-index:0}
+  .scrim{position:absolute;inset:0;z-index:1}
+  .top,.body,.foot{position:relative;z-index:2}
+  .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .foot{display:flex;align-items:center;justify-content:flex-end;gap:20px}
+
+  .eyebrow{font-family:var(--sans);font-weight:600;text-transform:uppercase;color:var(--red)}
+  .logo{width:auto;display:block}
+  h1{font-family:var(--serif);font-weight:600;color:var(--bright);letter-spacing:-.02em;line-height:1.0}
+  .hero{line-height:.92;letter-spacing:-.03em}
+  .sub{font-family:var(--read);color:var(--muted);font-weight:400}
+  .kick{font-family:var(--read);font-style:italic;color:var(--dim);font-weight:400}
+  .url{font-family:var(--sans);font-weight:600;color:var(--muted);letter-spacing:.03em;white-space:nowrap}
+  .btn{font-family:var(--sans);font-weight:600;color:#fff;background:var(--red);
+    display:inline-flex;align-items:center;gap:9px;border-radius:5px;white-space:nowrap}
+
+  /* three-column stakes */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr)}
+  .col{border-top:3px solid var(--red)}
+  .col .lab{font-family:var(--sans);font-weight:700;color:var(--bright)}
+  .col .txt{font-family:var(--read);color:var(--muted);font-weight:400}
+
+  /* role chips */
+  .chips{display:flex;flex-wrap:wrap}
+  .chip{font-family:var(--sans);font-weight:600;color:var(--bright);
+    border:1.5px solid rgba(214,35,77,.75);border-radius:999px;line-height:1}
+
+  /* ---------- LANDSCAPE (1200x675 & 1200x627) ---------- */
+  .s-1200x675,.s-1200x627{width:1200px;padding:58px 64px}
+  .s-1200x675{height:675px}.s-1200x627{height:627px}
+  .s-1200x675 .scrim,.s-1200x627 .scrim{background:linear-gradient(102deg,rgba(21,28,66,.93) 0%,rgba(21,28,66,.72) 52%,rgba(14,19,48,.9) 100%)}
+  .s-1200x675 .eyebrow,.s-1200x627 .eyebrow{font-size:20px;letter-spacing:.19em}
+  .s-1200x675 .logo,.s-1200x627 .logo{height:44px}
+  .s-1200x675 h1,.s-1200x627 h1{font-size:62px;max-width:760px;margin-top:18px}
+  .s-1200x675 .hero,.s-1200x627 .hero{font-size:132px;max-width:none}
+  .s-1200x675 .sub,.s-1200x627 .sub{font-size:26px;line-height:1.4;max-width:720px;margin-top:20px}
+  .s-1200x675 .kick,.s-1200x627 .kick{font-size:22px;margin-top:16px}
+  .s-1200x675 .url,.s-1200x627 .url{font-size:19px}
+  .s-1200x675 .btn,.s-1200x627 .btn{font-size:20px;padding:13px 24px}
+  .s-1200x675 .cols,.s-1200x627 .cols{gap:30px;margin-top:26px}
+  .s-1200x675 .col,.s-1200x627 .col{padding-top:16px}
+  .s-1200x675 .col .lab,.s-1200x627 .col .lab{font-size:21px}
+  .s-1200x675 .col .txt,.s-1200x627 .col .txt{font-size:18px;line-height:1.4;margin-top:9px}
+  .s-1200x675 .chips,.s-1200x627 .chips{gap:12px;margin-top:26px}
+  .s-1200x675 .chip,.s-1200x627 .chip{font-size:20px;padding:10px 20px}
+
+  /* ---------- SQUARE (1080x1080) ---------- */
+  .s-1080x1080{width:1080px;height:1080px;padding:76px}
+  .s-1080x1080 .scrim{background:linear-gradient(160deg,rgba(21,28,66,.9) 0%,rgba(21,28,66,.66) 45%,rgba(14,19,48,.93) 100%)}
+  .s-1080x1080 .eyebrow{font-size:23px;letter-spacing:.19em}
+  .s-1080x1080 .logo{height:52px}
+  .s-1080x1080 h1{font-size:74px;max-width:900px;margin-top:22px}
+  .s-1080x1080 .hero{font-size:168px}
+  .s-1080x1080 .sub{font-size:32px;line-height:1.4;max-width:840px;margin-top:26px}
+  .s-1080x1080 .kick{font-size:27px;margin-top:22px}
+  .s-1080x1080 .url{font-size:22px}
+  .s-1080x1080 .btn{font-size:24px;padding:15px 28px}
+  .s-1080x1080 .cols{gap:34px;margin-top:38px}
+  .s-1080x1080 .col{padding-top:20px}
+  .s-1080x1080 .col .lab{font-size:26px}
+  .s-1080x1080 .col .txt{font-size:21px;line-height:1.42;margin-top:12px}
+  .s-1080x1080 .chips{gap:14px;margin-top:34px}
+  .s-1080x1080 .chip{font-size:24px;padding:12px 24px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="duo" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0"/>
+    <feComponentTransfer><feFuncR type="table" tableValues="0.082 0.870"/>
+    <feFuncG type="table" tableValues="0.110 0.895"/><feFuncB type="table" tableValues="0.259 0.965"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<div id="stage"></div>
+<script>
+const SIZES = ["1200x675","1200x627","1080x1080"];
+const LOGO = "assets/ari-logo-white.svg";
+const BG   = "assets/grid-1.jpg";
+const URL  = "datacenterplaybook.org";
+const CTA  = 'Read the playbook →';
+
+// ---- COPY (edit here) ----------------------------------------------------
+const CARDS = [
+  { id:"1-resident", type:"howto",
+    eyebrow:"A data center near you?",
+    headline:"Here’s what you can do about data centers.",
+    sub:"Whatever outcome you’re hoping for, you have a say." },
+
+  { id:"2-proof-wi", type:"proof",
+    eyebrow:"Port Washington, Wisconsin",
+    headline:"~1,000 signatures.",
+    sub:"Residents passed a ballot measure giving voters a say before the city grants data center tax breaks.",
+    kick:"Whatever outcome you’re hoping for, you have a say." },
+
+  { id:"3-stakes", type:"stakes",
+    eyebrow:"Why it matters",
+    headline:"What’s actually at stake.",
+    cols:[
+      { lab:"Your bills", txt:"Utilities often spread the cost of grid and transmission upgrades across all ratepayers." },
+      { lab:"Your grid", txt:"In 2024, a single fault dropped about 1,500 MW at once." },
+      { lab:"Your neighborhood", txt:"Diesel backups, 24/7 lighting, and higher local pollution; one campus raised peak NO2 by 79%." },
+    ] },
+
+  { id:"4-role", type:"role",
+    eyebrow:"The data center playbook",
+    headline:"Find your role.",
+    sub:"Residents, county officials, state lawmakers, organizers, and Congress each hold different tools.",
+    chips:["Residents","County","State","Organizers","Federal"],
+    kick:"Know your options before the decisions are made." },
+
+  { id:"5-proof-az", type:"proof",
+    eyebrow:"Pima County, Arizona",
+    headline:"90-day review.",
+    sub:"The county now requires a public review period before data center deals, caps NDA terms at two years, and discloses active NDAs every quarter.",
+    kick:"Whatever outcome you’re hoping for, you have a say." },
+];
+// --------------------------------------------------------------------------
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function bodyHTML(c){
+  const eb = `<p class="eyebrow">${esc(c.eyebrow)}</p>`;
+  if(c.type==="howto") return `${eb}<h1>${esc(c.headline)}</h1><p class="sub">${esc(c.sub)}</p>`;
+  if(c.type==="proof") return `${eb}<h1 class="hero">${esc(c.headline)}</h1><p class="sub">${esc(c.sub)}</p>${c.kick?`<p class="kick">${esc(c.kick)}</p>`:''}`;
+  if(c.type==="stakes"){
+    const cols = c.cols.map(x=>`<div class="col"><div class="lab">${esc(x.lab)}</div><div class="txt">${esc(x.txt)}</div></div>`).join("");
+    return `${eb}<h1>${esc(c.headline)}</h1><div class="cols">${cols}</div>`;
+  }
+  if(c.type==="role"){
+    const chips = c.chips.map(x=>`<span class="chip">${esc(x)}</span>`).join("");
+    return `${eb}<h1>${esc(c.headline)}</h1><p class="sub">${esc(c.sub)}</p><div class="chips">${chips}</div>${c.kick?`<p class="kick">${esc(c.kick)}</p>`:''}`;
+  }
+  return eb;
+}
+const stage = document.getElementById("stage");
+for(const c of CARDS){
+  for(const sz of SIZES){
+    const d = document.createElement("div");
+    d.className = `card s-${sz} t-${c.type}`;
+    d.setAttribute("data-name", `${c.id}_${sz}`);
+    d.innerHTML =
+      `<img class="bg" src="${BG}" alt="">`+
+      `<div class="scrim"></div>`+
+      `<div class="top"><div class="topL"></div><img class="logo" src="${LOGO}" alt="Americans for Responsible Innovation"></div>`+
+      `<div class="body">${bodyHTML(c)}</div>`+
+      `<div class="foot"><span class="url">${URL}</span><span class="btn">${CTA}</span></div>`;
+    stage.appendChild(d);
+  }
+}
+window.__ready = true;
+</script>
+</body>
+</html>

@@ -16,3 +16,6 @@ pdf/_review/
 
 # PDF build temp files (intermediate HTML for headless Chrome)
 _print_*.html
+
+# Rendered social-card PNGs (regenerate with social/render.py)
+social/output/
